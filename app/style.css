@@ -1,0 +1,40 @@
+.container {
+	width: 100%;
+	max-width: 80vw;
+	margin: 0 auto;
+	padding: 3rem 5rem;
+	display: grid;
+	grid-template-columns: 1fr 3fr;
+	grid-template-rows: auto auto;
+	grid-gap: 5vw;
+	grid-template-areas:
+		'form signature'
+		'form copy-signature';
+}
+
+.container__form {
+	grid-area: form;
+	display: flex;
+	justify-content: center;
+}
+
+.container__signature {
+	grid-area: signature;
+	display: flex;
+	justify-content: center;
+}
+
+.container__copy-signature {
+	grid-area: copy-signature;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.signature-textarea {
+	width: 70%;
+}
+
+.copy-success {
+	padding: 1rem;
+}
