@@ -1,33 +1,36 @@
 import React from 'react'
 
-const tableStyles = {
-	verticalAlign: '-webkit-baseline-middle',
-	fontSize: 'medium',
-	fontFamily: 'Arial'
-}
-
-const textCenter = {
-	textAlign: 'center'
-}
-
-const socialAnchor = {
-	display: 'inline-block',
-	padding: '0px',
-	backgroundColor: 'rgb(106, 120, 209)'
-}
-
-const socialImage = {
-	backgroundColor: 'rgb(106, 120, 209)',
-	maxWidth: '135px',
-	display: 'block'
-}
-
 export default class Signature extends React.Component {
 	constructor(props) {
 		super(props)
 	}
 
 	render() {
+		const accentColor = this.props.accentColor ? this.props.accentColor : '#000'
+		const socialColor = this.props.accentColor ? this.props.accentColor : '#000'
+
+		const tableStyles = {
+			verticalAlign: '-webkit-baseline-middle',
+			fontSize: 'medium',
+			fontFamily: 'Arial'
+		}
+
+		const textCenter = {
+			textAlign: 'center'
+		}
+
+		const socialAnchor = {
+			display: 'inline-block',
+			padding: '0px',
+			backgroundColor: socialColor
+		}
+
+		const socialImage = {
+			backgroundColor: socialAnchor,
+			maxWidth: '135px',
+			display: 'block'
+		}
+
 		return (
 			<table id="signature" cellPadding="0" cellSpacing="0"
 				style={tableStyles}>
@@ -67,11 +70,11 @@ export default class Signature extends React.Component {
 															{ this.props.socialFacebook &&
 																<React.Fragment>
 																	<td>
-																		<a href={ `https://${ this.props.socialFacebook }` } color="#6A78D1"
+																		<a href={ `https://${ this.props.socialFacebook }` } color={ socialColor }
 																			style={socialAnchor}>
 																			<img
 																				src="https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/icons/facebook-icon.png"
-																				alt="facebook" color="#6A78D1"
+																				alt="facebook" color={ socialColor }
 																				style={socialImage} />
 																		</a>
 																	</td>
@@ -81,11 +84,11 @@ export default class Signature extends React.Component {
 															{ this.props.socialTwitter &&
 																<React.Fragment>
 																	<td>
-																		<a href={ `https://${ this.props.socialTwitter }` } color="#6A78D1"
+																		<a href={ `https://${ this.props.socialTwitter }` } color={ socialColor }
 																			style={socialAnchor}>
 																			<img
 																				src="https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/icons/twitter-icon.png"
-																				alt="twitter" color="#6A78D1"
+																				alt="twitter" color={ socialColor }
 																				style={socialImage} />
 																		</a>
 																	</td>
@@ -153,8 +156,8 @@ export default class Signature extends React.Component {
 										<td height="24"></td>
 									</tr>
 									<tr>
-										<td height="1" color="#F2547D" direction="horizontal"
-											style={{width: '100%', borderBottom: '1px solid rgb(242, 84, 125)', borderLeft: 'none', display: 'block'}}>
+										<td height="1" color={ accentColor } direction="horizontal"
+											style={{width: '100%', borderBottom: `1px solid ${accentColor}`, borderLeft: 'none', display: 'block'}}>
 										</td>
 									</tr>
 									<tr>
@@ -175,12 +178,12 @@ export default class Signature extends React.Component {
 															<tr>
 																<td style={{verticalAlign: 'bottom'}}>
 																	<span
-																		color="#F2547D"
-																		style={{display: 'block', backgroundColor: 'rgb(242, 84, 125)', width: '11px'}}>
+																		color={ accentColor }
+																		style={{display: 'block', backgroundColor: accentColor, width: '11px'}}>
 																		<img
 																			src="https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/icons/phone-icon.png"
-																			color="#F2547D"
-																			style={{width: '12px', display: 'block', backgroundColor: 'rgb(242, 84, 125)'}} />
+																			color={ accentColor }
+																			style={{width: '12px', display: 'block', backgroundColor: accentColor}} />
 																	</span>
 																</td>
 															</tr>
@@ -206,12 +209,12 @@ export default class Signature extends React.Component {
 															<tr>
 																<td style={{verticalAlign: 'bottom'}}>
 																	<span
-																		color="#F2547D"
-																		style={{display: 'block', backgroundColor: 'rgb(242, 84, 125)', width: '11px'}}>
+																		color={ accentColor }
+																		style={{display: 'block', backgroundColor: accentColor, width: '11px'}}>
 																		<img
 																			src="https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/icons/email-icon.png"
-																			color="#F2547D"
-																			style={{width: '12px', display: 'block', backgroundColor: 'rgb(242, 84, 125)'}} />
+																			color={ accentColor }
+																			style={{width: '12px', display: 'block', backgroundColor: accentColor}} />
 																	</span>
 																</td>
 															</tr>
@@ -235,12 +238,12 @@ export default class Signature extends React.Component {
 															<tr>
 																<td style={{verticalAlign: 'bottom'}}>
 																	<span
-																		color="#F2547D"
-																		style={{display: 'block', backgroundColor: 'rgb(242, 84, 125)', width: '11px'}}>
+																		color={ accentColor }
+																		style={{display: 'block', backgroundColor: accentColor, width: '11px'}}>
 																		<img
 																			src="https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/icons/link-icon.png"
-																			color="#F2547D"
-																			style={{width: '12px', display: 'block', backgroundColor: 'rgb(242, 84, 125)'}} />
+																			color={ accentColor }
+																			style={{width: '12px', display: 'block', backgroundColor: accentColor}} />
 																	</span>
 																</td>
 															</tr>
@@ -264,12 +267,12 @@ export default class Signature extends React.Component {
 															<tr>
 																<td style={{verticalAlign: 'bottom'}}>
 																	<span
-																		color="#F2547D"
-																		style={{display: 'block', backgroundColor: 'rgb(242, 84, 125)', width: '11px'}}>
+																		color={ accentColor }
+																		style={{display: 'block', backgroundColor: accentColor, width: '11px'}}>
 																		<img
 																			src="https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/icons/address-icon.png"
-																			color="#F2547D"
-																			style={{width: '12px', display: 'block', backgroundColor: 'rgb(242, 84, 125)'}} />
+																			color={ accentColor }
+																			style={{width: '12px', display: 'block', backgroundColor: accentColor}} />
 																	</span>
 																</td>
 															</tr>

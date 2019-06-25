@@ -21,7 +21,7 @@ export default class Form extends React.Component {
 			socialLinkedin: '',
 			socialFacebook: '',
 			socialTwitter: '',
-			socialInstagram: ''
+			socialInstagram: '',
 		}
 
 		this.onUpdate = this.onUpdate.bind(this)
@@ -36,7 +36,11 @@ export default class Form extends React.Component {
 	}
 
 	clearLocalStorage(e) {
-		localStorage.clear()
+		if (window.confirm("Are you sure you want to reset all fields?")) {
+			e.preventDefault()
+			localStorage.clear()
+			location.reload()
+		}
 	}
 
 	hydrateStateWithLocalStorage() {
@@ -62,11 +66,11 @@ export default class Form extends React.Component {
 		return(
 			<form>
 				<div>
-					<label htmlFor="firstName">First name:</label><br/>
+					<label htmlFor="firstName">First name</label><br/>
 					<input
 						type="text"
 						placeholder="First"
-						value={ this.state.firstName }
+						value={this.props.firstName}
 						onChange={ this.onUpdate }
 						name="firstName"
 					/>
@@ -236,7 +240,13 @@ export default class Form extends React.Component {
 					/>
 				</div>
 				<br/>
-				<button onClick={ this.clearLocalStorage }>Reset All</button>
+				{ this.props.children }
+				<br/>
+				<button
+					onClick={ this.clearLocalStorage }
+				>
+					Reset All
+				</button>
 			</form>
 		)
 	}
