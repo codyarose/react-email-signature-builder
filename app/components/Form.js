@@ -14,10 +14,7 @@ export default class Form extends React.Component {
 			mobilePhone: '',
 			websiteUrl: '',
 			emailAddress: '',
-			addressOne: '',
-			addressTwo: '',
-			addressThree: '',
-			addressFour: '',
+			address: '',
 			socialLinkedin: '',
 			socialFacebook: '',
 			socialTwitter: '',
@@ -70,7 +67,7 @@ export default class Form extends React.Component {
 					<input
 						type="text"
 						placeholder="First"
-						value={this.props.firstName}
+						value={this.state.firstName}
 						onChange={ this.onUpdate }
 						name="firstName"
 					/>
@@ -165,34 +162,13 @@ export default class Form extends React.Component {
 				</div>
 				<br/>
 				<div>
-					<label htmlFor="addressOne">Address:</label><br/>
+					<label htmlFor="address">Address:</label><br/>
 					<input
 						type="text"
 						placeholder="Line 1"
-						value={ this.state.addressOne }
+						value={ this.state.address }
 						onChange={ this.onUpdate }
-						name="addressOne"
-					/>
-					<input
-						type="text"
-						placeholder="Line 2"
-						value={ this.state.addressTwo }
-						onChange={ this.onUpdate }
-						name="addressTwo"
-					/>
-					<input
-						type="text"
-						placeholder="Line 3"
-						value={ this.state.addressThree }
-						onChange={ this.onUpdate }
-						name="addressThree"
-					/>
-					<input
-						type="text"
-						placeholder="Line 4"
-						value={ this.state.addressFour }
-						onChange={ this.onUpdate }
-						name="addressFour"
+						name="address"
 					/>
 				</div>
 				<br/>

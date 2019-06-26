@@ -165,7 +165,7 @@ export default class Signature extends React.Component {
 									</tr>
 								</tbody>
 							</table>
-							{ (this.props.officePhone || this.props.mobilePhone || this.props.emailAddress || this.props.websiteUrl || this.props.addressOne) &&
+							{ (this.props.officePhone || this.props.mobilePhone || this.props.emailAddress || this.props.websiteUrl || this.props.address) &&
 								<table cellPadding="0" cellSpacing="0"
 									style={tableStyles}>
 									<tbody>
@@ -251,14 +251,14 @@ export default class Signature extends React.Component {
 													</table>
 												</td>
 												<td style={{padding: '0px'}}>
-													<a href={ this.props.websiteUrl } color="#000000"
+													<a href={`https://${this.props.websiteUrl}`} color="#000000"
 														style={{textDecoration: 'none', color: 'rgb(0, 0, 0)', fontSize: '12px'}}>
 														<span>{ this.props.websiteUrl }</span>
 													</a>
 												</td>
 											</tr>
 										}
-										{ this.props.addressOne &&
+										{ this.props.address &&
 											<tr height="25" style={{verticalAlign: 'middle'}}>
 												<td width="30" style={{verticalAlign: 'middle'}}>
 													<table cellPadding="0" cellSpacing="0"
@@ -283,13 +283,7 @@ export default class Signature extends React.Component {
 													<span color="#000000"
 														style={{fontSize: '12px', color: 'rgb(0, 0, 0)'}}>
 														<span>
-															{ this.props.addressOne }
-															{ this.props.addressTwo && ', '}
-															{ this.props.addressTwo }
-															{ this.props.addressThree && ', '}
-															{ this.props.addressThree }
-															{ this.props.addressFour && ', '}
-															{ this.props.addressFour }
+															{ this.props.address }
 														</span>
 													</span>
 												</td>

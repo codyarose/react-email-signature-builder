@@ -11,6 +11,7 @@ export default class Generate extends React.Component {
 		super(props)
 
 		this.state = {
+			layout: 'option1',
 			firstName: '',
 			lastName: '',
 			jobTitle: '',
@@ -20,10 +21,7 @@ export default class Generate extends React.Component {
 			mobilePhone: '',
 			websiteUrl: '',
 			emailAddress: '',
-			addressOne: '',
-			addressTwo: '',
-			addressThree: '',
-			addressFour: '',
+			address: '',
 			socialLinkedin: '',
 			socialFacebook: '',
 			socialTwitter: '',
@@ -36,6 +34,7 @@ export default class Generate extends React.Component {
 		this.getFormData = this.getFormData.bind(this)
 		this.hydrateStateWithLocalStorage = this.hydrateStateWithLocalStorage.bind(this)
 		this.getColor = this.getColor.bind(this)
+		this.getLayout = this.getLayout.bind(this)
 	}
 
 	getFormData(event) {
@@ -51,6 +50,14 @@ export default class Generate extends React.Component {
 			accentColor: color.hex
 		})
 		localStorage.setItem('accentColor', color.hex)
+	}
+
+	getLayout(e) {
+		this.setState({
+			layout: e.target.value
+
+		})
+		localStorage.setItem('layout', e.target.value)
 	}
 
 	copySignature() {
@@ -85,6 +92,36 @@ export default class Generate extends React.Component {
 		return(
 			<main className="container">
 				<article className="container__form">
+					<form>
+						<div className="radio">
+							<label>
+								<input
+									type="radio"
+									name="option1"
+									value="option1"
+									checked={
+										this.state.layout === 'option1'
+									}
+									onChange={ this.getLayout }
+								/>
+								Option 1
+							</label>
+						</div>
+						<div className="radio">
+							<label>
+								<input
+									type="radio"
+									name="option2"
+									value="option2"
+									checked={
+										this.state.layout === 'option2'
+									}
+									onChange={ this.getLayout }
+								/>
+								Option 2
+							</label>
+						</div>
+					</form>
 					<Form
 						onGetFormData={ this.getFormData }
 					>
@@ -96,10 +133,14 @@ export default class Generate extends React.Component {
 				</article>
 
 				<article className="container__signature">
-					<Signature
-						{...this.state}
-					/>
-					<Signature2 />
+					{(this.state.layout === 'option1') ?
+						<Signature
+							{...this.state}
+						/> :
+						<Signature2
+							{...this.state}
+						/>
+					}
 				</article>
 
 				<article className="container__copy-signature">
