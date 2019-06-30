@@ -11,7 +11,8 @@ export default class Generate extends React.Component {
 		super(props)
 
 		this.state = {
-			layout: 'layout1',
+			inputGroup: 'templates',
+			template: 'template1',
 			portrait: '',
 			logo: '',
 			firstName: '',
@@ -36,7 +37,8 @@ export default class Generate extends React.Component {
 		this.getFormData = this.getFormData.bind(this)
 		this.hydrateStateWithLocalStorage = this.hydrateStateWithLocalStorage.bind(this)
 		this.getColor = this.getColor.bind(this)
-		this.getLayout = this.getLayout.bind(this)
+		this.getTemplate = this.getTemplate.bind(this)
+		this.handleInputGroupChange = this.handleInputGroupChange.bind(this)
 	}
 
 	getFormData(event) {
@@ -54,12 +56,12 @@ export default class Generate extends React.Component {
 		localStorage.setItem('accentColor', color.hex)
 	}
 
-	getLayout(e) {
+	getTemplate(e) {
 		this.setState({
-			layout: e.target.value
+			template: e.target.value
 
 		})
-		localStorage.setItem('layout', e.target.value)
+		localStorage.setItem('template', e.target.value)
 	}
 
 	copySignature() {
@@ -90,8 +92,14 @@ export default class Generate extends React.Component {
 		this.hydrateStateWithLocalStorage()
 	}
 
+	handleInputGroupChange(e) {
+		this.setState({
+			inputGroup: e.target.value
+		})
+	}
+
 	render() {
-		const {layout, copySuccess, ...signatureState} = this.state;
+		const {inputGroup, template, copySuccess, ...signatureState} = this.state;
 
 		return(
 			<main className="container">
@@ -101,42 +109,79 @@ export default class Generate extends React.Component {
 							<label>
 								<input
 									type="radio"
-									name="layout1"
-									value="layout1"
-									checked={ layout === 'layout1' }
-									onChange={ this.getLayout }
+									name="templates"
+									value="templates"
+									checked={ inputGroup === 'templates' }
+									onChange={ this.handleInputGroupChange }
 								/>
-								Layout 1
+								Templates
 							</label>
 						</div>
 						<div className="radio">
 							<label>
 								<input
 									type="radio"
-									name="layout2"
-									value="layout2"
-									checked={ layout === 'layout2' }
-									onChange={ this.getLayout }
+									name="info"
+									value="info"
+									checked={ inputGroup === 'info' }
+									onChange={ this.handleInputGroupChange }
 								/>
-								Layout 2
+								Info
+							</label>
+						</div>
+						<div className="radio">
+							<label>
+								<input
+									type="radio"
+									name="styles"
+									value="styles"
+									checked={ inputGroup === 'styles' }
+									onChange={ this.handleInputGroupChange }
+								/>
+								Styles
 							</label>
 						</div>
 					</form>
-					<Form
-						onGetFormData={ this.getFormData }
-					>
+					{ inputGroup === 'templates' ?
+						<form>
+							<div className="radio">
+								<label>
+									<input
+										type="radio"
+										name="template1"
+										value="template1"
+										checked={ template === 'template1' }
+										onChange={ this.getTemplate }
+									/>
+									Template 1
+								</label>
+							</div>
+							<div className="radio">
+								<label>
+									<input
+										type="radio"
+										name="template2"
+										value="template2"
+										checked={ template === 'template2' }
+										onChange={ this.getTemplate }
+									/>
+									Template 2
+								</label>
+							</div>
+						</form> : inputGroup === 'info' ?
+						<Form onGetFormData={ this.getFormData } /> : inputGroup === 'styles' ?
 						<div>
 							<label>Accent color</label>
 							<ColorPicker
 								setColor={ this.state.accentColor }
 								action={ this.getColor }
 							/>
-						</div>
-					</Form>
+						</div> : null
+					}
 				</article>
 
 				<article className="container__signature">
-					{(layout === 'layout1') ?
+					{(template === 'template1') ?
 						<Signature
 							{...signatureState}
 						/> :
