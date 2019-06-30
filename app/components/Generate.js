@@ -89,6 +89,8 @@ export default class Generate extends React.Component {
 	}
 
 	render() {
+		const {layout, copySuccess, ...signatureState} = this.state;
+
 		return(
 			<main className="container">
 				<article className="container__form">
@@ -99,9 +101,7 @@ export default class Generate extends React.Component {
 									type="radio"
 									name="option1"
 									value="option1"
-									checked={
-										this.state.layout === 'option1'
-									}
+									checked={ layout === 'option1' }
 									onChange={ this.getLayout }
 								/>
 								Option 1
@@ -113,9 +113,7 @@ export default class Generate extends React.Component {
 									type="radio"
 									name="option2"
 									value="option2"
-									checked={
-										this.state.layout === 'option2'
-									}
+									checked={ layout === 'option2' }
 									onChange={ this.getLayout }
 								/>
 								Option 2
@@ -133,12 +131,12 @@ export default class Generate extends React.Component {
 				</article>
 
 				<article className="container__signature">
-					{(this.state.layout === 'option1') ?
+					{(layout === 'option1') ?
 						<Signature
-							{...this.state}
+							{...signatureState}
 						/> :
 						<Signature2
-							{...this.state}
+							{...signatureState}
 						/>
 					}
 				</article>
@@ -151,7 +149,7 @@ export default class Generate extends React.Component {
 						readOnly
 						value={renderToStaticMarkup(
 							<Signature
-								{...this.state}
+								{...signatureState}
 							/>
 						)}
 					>
@@ -159,7 +157,7 @@ export default class Generate extends React.Component {
 					<br/>
 					<button onClick={ this.copySignature }>copy</button>
 					<span className="copy-success">
-						{ this.state.copySuccess }
+						{ copySuccess }
 					</span>
 				</article>
 			</main>

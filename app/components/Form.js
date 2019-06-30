@@ -60,6 +60,23 @@ export default class Form extends React.Component {
 	}
 
 	render() {
+		const {
+			firstName,
+			lastName,
+			jobTitle,
+			department,
+			companyName,
+			officePhone,
+			mobilePhone,
+			websiteUrl,
+			emailAddress,
+			address,
+			socialLinkedin,
+			socialFacebook,
+			socialTwitter,
+			socialInstagram,
+		} = this.state
+
 		return(
 			<form>
 				<div>
@@ -67,150 +84,150 @@ export default class Form extends React.Component {
 					<input
 						type="text"
 						placeholder="First"
-						value={this.state.firstName}
+						value={firstName}
 						onChange={ this.onUpdate }
 						name="firstName"
 					/>
 				</div>
 				<br/>
 				<div>
-					<label htmlFor="lastName">Last name:</label><br/>
+					<label htmlFor="lastName">Last name</label><br/>
 					<input
 						type="text"
 						placeholder="Last"
-						value={ this.state.lastName }
+						value={ lastName }
 						onChange={ this.onUpdate }
 						name="lastName"
 					/>
 				</div>
 				<br/>
 				<div>
-					<label htmlFor="jobTitle">Job Title:</label><br/>
+					<label htmlFor="jobTitle">Job title</label><br/>
 					<input
 						type="text"
 						placeholder="Job Title"
-						value={ this.state.jobTitle }
+						value={ jobTitle }
 						onChange={ this.onUpdate }
 						name="jobTitle"
 					/>
 				</div>
 				<br/>
 				<div>
-					<label htmlFor="department">Department:</label><br/>
+					<label htmlFor="department">Department</label><br/>
 					<input
 						type="text"
 						placeholder="Department"
-						value={ this.state.department }
+						value={ department }
 						onChange={ this.onUpdate }
 						name="department"
 					/>
 				</div>
 				<br/>
 				<div>
-					<label htmlFor="jobTitle">Company name:</label><br/>
+					<label htmlFor="jobTitle">Company name</label><br/>
 					<input
 						type="text"
 						placeholder="Company Name"
-						value={ this.state.companyName }
+						value={ companyName }
 						onChange={ this.onUpdate }
 						name="companyName"
 					/>
 				</div>
 				<br/>
 				<div>
-					<label htmlFor="officePhone">Office Phone Number:</label><br/>
+					<label htmlFor="officePhone">Office phone number</label><br/>
 					<input
 						type="text"
 						placeholder="(123) 456-7890"
-						value={ this.state.officePhone }
+						value={ officePhone }
 						onChange={ this.onUpdate }
 						name="officePhone"
 					/>
 				</div>
 				<br/>
 				<div>
-					<label htmlFor="mobilePhone">Mobile Phone Number:</label><br/>
+					<label htmlFor="mobilePhone">Mobile phone number</label><br/>
 					<input
 						type="text"
 						placeholder="(123) 456-7890"
-						value={ this.state.mobilePhone }
+						value={ mobilePhone }
 						onChange={ this.onUpdate }
 						name="mobilePhone"
 					/>
 				</div>
 				<br/>
 				<div>
-					<label htmlFor="websiteUrl">Website Url:</label><br/>
+					<label htmlFor="websiteUrl">Website URL</label><br/>
 					<input
 						type="text"
 						placeholder="https://..."
-						value={ this.state.websiteUrl }
+						value={ websiteUrl }
 						onChange={ this.onUpdate }
 						name="websiteUrl"
 					/>
 				</div>
 				<br/>
 				<div>
-					<label htmlFor="emailAddress">Email Address:</label><br/>
+					<label htmlFor="emailAddress">Email address</label><br/>
 					<input
 						type="text"
 						placeholder="name@email.com"
-						value={ this.state.emailAddress }
+						value={ emailAddress }
 						onChange={ this.onUpdate }
 						name="emailAddress"
 					/>
 				</div>
 				<br/>
 				<div>
-					<label htmlFor="address">Address:</label><br/>
+					<label htmlFor="address">Address</label><br/>
 					<input
 						type="text"
 						placeholder="Line 1"
-						value={ this.state.address }
+						value={ address }
 						onChange={ this.onUpdate }
 						name="address"
 					/>
 				</div>
 				<br/>
 				<div>
-					<label htmlFor="socialFacebook">Facebook:</label><br/>
+					<label htmlFor="socialFacebook">Facebook</label><br/>
 					https://<input
 						type="text"
 						placeholder="..."
-						value={ this.state.socialFacebook }
+						value={ socialFacebook }
 						onChange={ this.onUpdate }
 						name="socialFacebook"
 					/>
 				</div>
 				<br/>
 				<div>
-					<label htmlFor="socialTwitter">Twitter:</label><br/>
+					<label htmlFor="socialTwitter">Twitter</label><br/>
 					https://<input
 						type="text"
 						placeholder="..."
-						value={ this.state.socialTwitter }
+						value={ socialTwitter }
 						onChange={ this.onUpdate }
 						name="socialTwitter"
 					/>
 				</div>
 				<br/>
 				<div>
-					<label htmlFor="socialLinkedin">LinkedIn:</label><br/>
+					<label htmlFor="socialLinkedin">LinkedIn</label><br/>
 					https://<input
 						type="text"
 						placeholder="..."
-						value={ this.state.socialLinkedIn }
+						value={ socialLinkedin }
 						onChange={ this.onUpdate }
 						name="socialLinkedin"
 					/>
 				</div>
 				<br/>
 				<div>
-					<label htmlFor="socialInstagram">Instagram:</label><br/>
+					<label htmlFor="socialInstagram">Instagram</label><br/>
 					https://<input
 						type="text"
 						placeholder="..."
-						value={ this.state.socialInstagram }
+						value={ socialInstagram }
 						onChange={ this.onUpdate }
 						name="socialInstagram"
 					/>
