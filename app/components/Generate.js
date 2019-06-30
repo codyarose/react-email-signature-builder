@@ -4,14 +4,13 @@ import ColorPicker from './ColorPicker'
 import Form from './Form'
 import Signature from './Signature'
 import Signature2 from './Signature2'
-import '../style.css'
 
 export default class Generate extends React.Component {
 	constructor(props) {
 		super(props)
 
 		this.state = {
-			inputGroup: 'templates',
+			inputGroup: 'info',
 			template: 'template1',
 			portrait: '',
 			logo: '',
@@ -104,42 +103,39 @@ export default class Generate extends React.Component {
 		return(
 			<main className="container">
 				<article className="container__form">
-					<form>
+					<form className="input-group-select">
 						<div className="radio">
-							<label>
-								<input
-									type="radio"
-									name="templates"
-									value="templates"
-									checked={ inputGroup === 'templates' }
-									onChange={ this.handleInputGroupChange }
-								/>
-								Templates
-							</label>
+							<input
+								type="radio"
+								name="templates"
+								value="templates"
+								checked={ inputGroup === 'templates' }
+								onChange={ this.handleInputGroupChange }
+								id="templates"
+							/>
+							<label htmlFor="templates">Templates</label>
 						</div>
 						<div className="radio">
-							<label>
-								<input
-									type="radio"
-									name="info"
-									value="info"
-									checked={ inputGroup === 'info' }
-									onChange={ this.handleInputGroupChange }
-								/>
-								Info
-							</label>
+							<input
+								type="radio"
+								name="info"
+								value="info"
+								checked={ inputGroup === 'info' }
+								onChange={ this.handleInputGroupChange }
+								id="info"
+							/>
+							<label htmlFor="info">Info</label>
 						</div>
 						<div className="radio">
-							<label>
-								<input
-									type="radio"
-									name="styles"
-									value="styles"
-									checked={ inputGroup === 'styles' }
-									onChange={ this.handleInputGroupChange }
-								/>
-								Styles
-							</label>
+							<input
+								type="radio"
+								name="styles"
+								value="styles"
+								checked={ inputGroup === 'styles' }
+								onChange={ this.handleInputGroupChange }
+								id="styles"
+							/>
+							<label htmlFor="styles">Styles</label>
 						</div>
 					</form>
 					{ inputGroup === 'templates' ?

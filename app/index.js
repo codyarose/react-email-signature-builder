@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import Generate from './components/Generate'
+import styles from './scss/main.scss'
 
 class App extends React.Component {
 	render() {

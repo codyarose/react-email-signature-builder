@@ -82,171 +82,168 @@ export default class Form extends React.Component {
 			socialInstagram,
 		} = this.state
 
-		const { children } = this.props
-
 		return(
 			<form className="input-group">
 				<div className="input-wrap">
-					<label htmlFor="portrait">Portrait image URL</label><br/>
 					<input
 						type="text"
-						placeholder="https://..."
+						required
 						value={portrait}
 						onChange={ this.onUpdate }
 						name="portrait"
 					/>
+					<label htmlFor="portrait">Portrait URL</label><br/>
 				</div>
 				<div className="input-wrap">
-					<label htmlFor="logo">Logo image URL</label><br/>
 					<input
 						type="text"
-						placeholder="https://..."
+						required
 						value={logo}
 						onChange={ this.onUpdate }
 						name="logo"
 					/>
+					<label htmlFor="logo">Logo image URL</label><br/>
 				</div>
 				<div className="input-wrap">
-					<label htmlFor="firstName">First name</label><br/>
 					<input
 						type="text"
-						placeholder="First"
+						required
 						value={firstName}
 						onChange={ this.onUpdate }
 						name="firstName"
 					/>
+					<label htmlFor="firstName">First name</label><br/>
 				</div>
 				<div className="input-wrap">
-					<label htmlFor="lastName">Last name</label><br/>
 					<input
 						type="text"
-						placeholder="Last"
+						required
 						value={ lastName }
 						onChange={ this.onUpdate }
 						name="lastName"
 					/>
+					<label htmlFor="lastName">Last name</label><br/>
 				</div>
 				<div className="input-wrap">
-					<label htmlFor="jobTitle">Job title</label><br/>
 					<input
 						type="text"
-						placeholder="Job Title"
+						required
 						value={ jobTitle }
 						onChange={ this.onUpdate }
 						name="jobTitle"
 					/>
+					<label htmlFor="jobTitle">Job title</label><br/>
 				</div>
 				<div className="input-wrap">
-					<label htmlFor="department">Department</label><br/>
 					<input
 						type="text"
-						placeholder="Department"
+						required
 						value={ department }
 						onChange={ this.onUpdate }
 						name="department"
 					/>
+					<label htmlFor="department">Department</label><br/>
 				</div>
 				<div className="input-wrap">
-					<label htmlFor="jobTitle">Company name</label><br/>
 					<input
 						type="text"
-						placeholder="Company Name"
+						required
 						value={ companyName }
 						onChange={ this.onUpdate }
 						name="companyName"
 					/>
+					<label htmlFor="jobTitle">Company name</label><br/>
 				</div>
 				<div className="input-wrap">
-					<label htmlFor="officePhone">Office phone number</label><br/>
 					<input
 						type="text"
-						placeholder="(123) 456-7890"
+						required
 						value={ officePhone }
 						onChange={ this.onUpdate }
 						name="officePhone"
 					/>
+					<label htmlFor="officePhone">Office phone number</label><br/>
 				</div>
 				<div className="input-wrap">
-					<label htmlFor="mobilePhone">Mobile phone number</label><br/>
 					<input
 						type="text"
-						placeholder="(123) 456-7890"
+						required
 						value={ mobilePhone }
 						onChange={ this.onUpdate }
 						name="mobilePhone"
 					/>
+					<label htmlFor="mobilePhone">Mobile phone number</label><br/>
 				</div>
 				<div className="input-wrap">
-					<label htmlFor="emailAddress">Email address</label><br/>
 					<input
 						type="text"
-						placeholder="name@email.com"
+						required
 						value={ emailAddress }
 						onChange={ this.onUpdate }
 						name="emailAddress"
 					/>
+					<label htmlFor="emailAddress">Email address</label><br/>
 				</div>
 				<div className="input-wrap">
-					<label htmlFor="websiteUrl">Website URL</label><br/>
 					<input
 						type="text"
-						placeholder="https://..."
+						required
 						value={ websiteUrl }
 						onChange={ this.onUpdate }
 						name="websiteUrl"
 					/>
+					<label htmlFor="websiteUrl">Website URL</label><br/>
 				</div>
 				<div className="input-wrap">
-					<label htmlFor="address">Address</label><br/>
 					<input
 						type="text"
-						placeholder="Line 1"
+						required
 						value={ address }
 						onChange={ this.onUpdate }
 						name="address"
 					/>
+					<label htmlFor="address">Address</label><br/>
 				</div>
-				<div className="https-prefixed input-wrap">
-					<label htmlFor="socialFacebook">Facebook</label><br/>
-					https://<input
+				<div className="input-wrap">
+					<input
 						type="text"
-						placeholder="..."
+						required
 						value={ socialFacebook }
 						onChange={ this.onUpdate }
 						name="socialFacebook"
 					/>
+					<label htmlFor="socialFacebook">Facebook</label><br/>
 				</div>
-				<div className="https-prefixed input-wrap">
-					<label htmlFor="socialTwitter">Twitter</label><br/>
-					https://<input
+				<div className="input-wrap">
+					<input
 						type="text"
-						placeholder="..."
+						required
 						value={ socialTwitter }
 						onChange={ this.onUpdate }
 						name="socialTwitter"
 					/>
+					<label htmlFor="socialTwitter">Twitter</label><br/>
 				</div>
-				<div className="https-prefixed input-wrap">
-					<label htmlFor="socialLinkedin">LinkedIn</label><br/>
-					https://<input
+				<div className="input-wrap">
+					<input
 						type="text"
-						placeholder="..."
+						required
 						value={ socialLinkedin }
 						onChange={ this.onUpdate }
 						name="socialLinkedin"
 					/>
+					<label htmlFor="socialLinkedin">LinkedIn</label><br/>
 				</div>
-				<div className="https-prefixed input-wrap">
-					<label htmlFor="socialInstagram">Instagram</label><br/>
-					https://<input
+				<div className="input-wrap">
+					<input
 						type="text"
-						placeholder="..."
+						required
 						value={ socialInstagram }
 						onChange={ this.onUpdate }
 						name="socialInstagram"
 					/>
+					<label htmlFor="socialInstagram">Instagram</label><br/>
 				</div>
-				{ children }
 				<div className="button-wrap">
 					<button
 						onClick={ this.clearLocalStorage }
