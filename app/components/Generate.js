@@ -10,7 +10,7 @@ export default class Generate extends React.Component {
 		super(props)
 
 		this.state = {
-			inputGroup: 'info',
+			inputGroup: 'templates',
 			template: 'template1',
 			portrait: '',
 			logo: '',
@@ -95,6 +95,7 @@ export default class Generate extends React.Component {
 		this.setState({
 			inputGroup: e.target.value
 		})
+		localStorage.setItem('inputGroup', e.target.value)
 	}
 
 	render() {
