@@ -98,11 +98,11 @@ export default class Signature extends React.Component {
 															{ this.props.socialLinkedin &&
 																<React.Fragment>
 																	<td>
-																		<a href={ `https://${ this.props.socialLinkedin }` } color="#6A78D1"
+																		<a href={ `https://${ this.props.socialLinkedin }` } color={ socialColor }
 																			style={socialAnchor}>
 																			<img
 																				src="https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/icons/linkedin-icon.png"
-																				alt="linkedin" color="#6A78D1"
+																				alt="linkedin" color={ socialColor }
 																				style={socialImage} />
 																		</a>
 																	</td>
@@ -112,11 +112,11 @@ export default class Signature extends React.Component {
 															{ this.props.socialInstagram &&
 																<React.Fragment>
 																	<td>
-																		<a href={ `https://${ this.props.socialInstagram }` } color="#6A78D1"
+																		<a href={ `https://${ this.props.socialInstagram }` } color={ socialColor }
 																			style={socialAnchor}>
 																			<img
 																				src="https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/icons/instagram-icon.png"
-																				alt="instagram" color="#6A78D1"
+																				alt="instagram" color={ socialColor }
 																				style={socialImage} />
 																		</a>
 																	</td>

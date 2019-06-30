@@ -6,6 +6,9 @@ export default class Signature2 extends React.Component {
 	}
 
 	render() {
+		const accentColor = this.props.accentColor ? this.props.accentColor : '#000'
+		const socialColor = this.props.accentColor ? this.props.accentColor : '#000'
+
 		return(
 			<table cellPadding="0" cellSpacing="0"
 				style={{verticalSpacing: '-webkit-baseline-middle', fontSize: 'medium', fontFamily: 'Arial', minWidth: '450px'}}>
@@ -48,8 +51,8 @@ export default class Signature2 extends React.Component {
 										<td height="30"></td>
 									</tr>
 									<tr>
-										<td height="1" color="#F2547D" direction="horizontal"
-											style={{width: '100%', borderBottom: '1px solid rgb(242, 84, 125)', borderLeft: 'none', display: 'block'}}>
+										<td height="1" color={ accentColor } direction="horizontal"
+											style={{width: '100%', borderBottom: `1px solid ${ accentColor }`, borderLeft: 'none', display: 'block'}}>
 										</td>
 									</tr>
 									<tr>
@@ -74,12 +77,12 @@ export default class Signature2 extends React.Component {
 																	<tr>
 																		<td style={{verticalSpacing: 'bottom'}}>
 																			<span width="11"
-																				color="#F2547D" style={{display: 'block', backgroundColor: 'rgb(242, 84, 125)'}}>
+																				color={ accentColor } style={{display: 'block', backgroundColor: accentColor}}>
 																				<img
 																					width="12"
 																					src="https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/icons/phone-icon-2x.png"
-																					color="#F2547D"
-																					style={{display: 'block', backgroundColor: 'rgb(242, 84, 125)'}} />
+																					color={ accentColor }
+																					style={{display: 'block', backgroundColor: accentColor}} />
 																			</span>
 																		</td>
 																	</tr>
@@ -105,12 +108,12 @@ export default class Signature2 extends React.Component {
 																	<tbody>
 																		<tr>
 																			<td style={{verticalSpacing: 'bottom'}}>
-																				<span width="11" color="#F2547D"
-																					style={{display: 'block', backgroundColor: 'rgb(242, 84, 125)'}}>
+																				<span width="11" color={ accentColor }
+																					style={{display: 'block', backgroundColor: accentColor}}>
 																					<img width="12"
 																						src="https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/icons/email-icon-2x.png"
-																						color="#F2547D"
-																						style={{display: 'block', backgroundColor: 'rgb(242, 84, 125)'}} />
+																						color={ accentColor }
+																						style={{display: 'block', backgroundColor: accentColor}} />
 																				</span>
 																			</td>
 																		</tr>
@@ -133,12 +136,12 @@ export default class Signature2 extends React.Component {
 																	<tbody>
 																		<tr>
 																			<td style={{verticalSpacing: 'bottom'}}>
-																				<span width="11" color="#F2547D"
-																					style={{display: 'block', backgroundColor: 'rgb(242, 84, 125)'}}>
+																				<span width="11" color={ accentColor }
+																					style={{display: 'block', backgroundColor: accentColor}}>
 																					<img width="12"
 																						src="https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/icons/link-icon-2x.png"
-																						color="#F2547D"
-																						style={{display: 'block', backgroundColor: 'rgb(242, 84, 125)'}} />
+																						color={ accentColor }
+																						style={{display: 'block', backgroundColor: accentColor}} />
 																				</span>
 																			</td>
 																		</tr>
@@ -161,12 +164,12 @@ export default class Signature2 extends React.Component {
 																	<tbody>
 																		<tr>
 																			<td style={{verticalSpacing: 'bottom'}}>
-																				<span width="11" color="#F2547D"
-																					style={{display: 'block', backgroundColor: 'rgb(242, 84, 125)'}}>
+																				<span width="11" color={ accentColor }
+																					style={{display: 'block', backgroundColor: accentColor}}>
 																					<img width="12"
 																						src="https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/icons/address-icon-2x.png"
-																						color="#F2547D"
-																						style={{display: 'block', backgroundColor: 'rgb(242, 84, 125)'}} />
+																						color={ accentColor }
+																						style={{display: 'block', backgroundColor: accentColor}} />
 																				</span>
 																			</td>
 																		</tr>
@@ -210,12 +213,12 @@ export default class Signature2 extends React.Component {
 																			{ this.props.socialFacebook &&
 																				<React.Fragment>
 																					<td>
-																						<a href={ `https://${ this.props.socialFacebook }` } color="#6A78D1"
-																							style={{display: 'inline-block', padding: '0px', backgroundColor: 'rgb(106, 120, 209)'}}>
+																						<a href={ `https://${ this.props.socialFacebook }` } color={ socialColor }
+																							style={{display: 'inline-block', padding: '0px', backgroundColor: socialColor}}>
 																							<img height="24" className="sc-csuQGl CQhxV"
 																								src="https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/icons/facebook-icon-2x.png"
-																								alt="facebook" color="#6A78D1"
-																								style={{backgroundColor: 'rgb(106, 120, 209)', maxWidth: '135px', display: 'block'}} />
+																								alt="facebook" color={ socialColor }
+																								style={{backgroundColor: socialColor, maxWidth: '135px', display: 'block'}} />
 																						</a>
 																					</td>
 																					<td width="5"></td>
@@ -224,12 +227,12 @@ export default class Signature2 extends React.Component {
 																			{ this.props.socialTwitter &&
 																				<React.Fragment>
 																					<td>
-																						<a href={ `https://${ this.props.socialTwitter }` } color="#6A78D1"
-																							style={{display: 'inline-block', padding: '0px', backgroundColor: 'rgb(106, 120, 209)'}}>
+																						<a href={ `https://${ this.props.socialTwitter }` } color={ socialColor }
+																							style={{display: 'inline-block', padding: '0px', backgroundColor: socialColor}}>
 																							<img height="24" className="sc-csuQGl CQhxV"
 																								src="https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/icons/twitter-icon-2x.png"
-																								alt="twitter" color="#6A78D1"
-																								style={{backgroundColor: 'rgb(106, 120, 209)', maxWidth: '135px', display: 'block'}} />
+																								alt="twitter" color={ socialColor }
+																								style={{backgroundColor: socialColor, maxWidth: '135px', display: 'block'}} />
 																						</a>
 																					</td>
 																					<td width="5"></td>
@@ -238,12 +241,12 @@ export default class Signature2 extends React.Component {
 																			{ this.props.socialLinkedin &&
 																				<React.Fragment>
 																					<td>
-																						<a href={ `https://${ this.props.socialLinkedin }` } color="#6A78D1"
-																							style={{display: 'inline-block', padding: '0px', backgroundColor: 'rgb(106, 120, 209)'}}>
+																						<a href={ `https://${ this.props.socialLinkedin }` } color={ socialColor }
+																							style={{display: 'inline-block', padding: '0px', backgroundColor: socialColor}}>
 																							<img height="24" className="sc-csuQGl CQhxV"
 																								src="https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/icons/linkedin-icon-2x.png"
-																								alt="linkedin" color="#6A78D1"
-																								style={{backgroundColor: 'rgb(106, 120, 209)', maxWidth: '135px', display: 'block'}} />
+																								alt="linkedin" color={ socialColor }
+																								style={{backgroundColor: socialColor, maxWidth: '135px', display: 'block'}} />
 																						</a>
 																					</td>
 																					<td width="5"></td>
@@ -252,12 +255,12 @@ export default class Signature2 extends React.Component {
 																			{ this.props.socialInstagram &&
 																				<React.Fragment>
 																					<td>
-																						<a href={ `https://${ this.props.socialInstagram }` } color="#6A78D1"
-																							style={{display: 'inline-block', padding: '0px', backgroundColor: 'rgb(106, 120, 209)'}}>
+																						<a href={ `https://${ this.props.socialInstagram }` } color={ socialColor }
+																							style={{display: 'inline-block', padding: '0px', backgroundColor: socialColor}}>
 																							<img height="24" className="sc-csuQGl CQhxV"
 																								src="https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/icons/instagram-icon-2x.png"
-																								alt="instagram" color="#6A78D1"
-																								style={{backgroundColor: 'rgb(106, 120, 209)', maxWidth: '135px', display: 'block'}} />
+																								alt="instagram" color={ socialColor }
+																								style={{backgroundColor: socialColor, maxWidth: '135px', display: 'block'}} />
 																						</a>
 																					</td>
 																					<td width="5"></td>
@@ -282,8 +285,8 @@ export default class Signature2 extends React.Component {
 										<td height="30"></td>
 									</tr>
 									<tr>
-										<td height="1" className="sc-bRBYWo ccSRck" color="#F2547D" direction="horizontal"
-											style={{width: '100%', borderBottom: '1px solid rgb(242, 84, 125)', borderLeft: 'none', display: 'block'}}>
+										<td height="1" className="sc-bRBYWo ccSRck" color={ accentColor } direction="horizontal"
+											style={{width: '100%', borderBottom: `1px solid ${ accentColor }`, borderLeft: 'none', display: 'block'}}>
 										</td>
 									</tr>
 									<tr>

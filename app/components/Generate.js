@@ -1,6 +1,6 @@
 import React from 'react'
 import { renderToStaticMarkup } from 'react-dom/server'
-import { ChromePicker } from 'react-color'
+import ColorPicker from './ColorPicker'
 import Form from './Form'
 import Signature from './Signature'
 import Signature2 from './Signature2'
@@ -125,9 +125,9 @@ export default class Generate extends React.Component {
 					<Form
 						onGetFormData={ this.getFormData }
 					>
-						<ChromePicker
-							color={ this.state.accentColor }
-							onChange={ this.getColor }
+						<ColorPicker
+							setColor={ this.state.accentColor }
+							action={ this.getColor }
 						/>
 					</Form>
 				</article>
