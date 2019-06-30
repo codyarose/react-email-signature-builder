@@ -1,6 +1,7 @@
 import React from 'react'
 import { ChromePicker } from 'react-color'
 import reactCSS from 'reactcss'
+import PropTypes from 'prop-types'
 
 export default class ColorPicker extends React.Component {
 	constructor(props) {
@@ -83,4 +84,9 @@ export default class ColorPicker extends React.Component {
 			</div>
 		)
 	}
+}
+
+ColorPicker.propTypes = {
+	action: PropTypes.func,
+	setColor: PropTypes.string
 }

@@ -1,10 +1,13 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 export default class Form extends React.Component {
 	constructor(props) {
 		super(props)
 
 		this.state = {
+			portrait: '',
+			logo: '',
 			firstName: '',
 			lastName: '',
 			jobTitle: '',
@@ -61,6 +64,8 @@ export default class Form extends React.Component {
 
 	render() {
 		const {
+			portrait,
+			logo,
 			firstName,
 			lastName,
 			jobTitle,
@@ -77,8 +82,32 @@ export default class Form extends React.Component {
 			socialInstagram,
 		} = this.state
 
+		const { children } = this.props
+
 		return(
 			<form>
+				<div>
+					<label htmlFor="portrait">Portrait image URL</label><br/>
+					<input
+						type="text"
+						placeholder="https://..."
+						value={portrait}
+						onChange={ this.onUpdate }
+						name="portrait"
+					/>
+				</div>
+				<br/>
+				<div>
+					<label htmlFor="logo">Logo image URL</label><br/>
+					<input
+						type="text"
+						placeholder="https://..."
+						value={logo}
+						onChange={ this.onUpdate }
+						name="logo"
+					/>
+				</div>
+				<br/>
 				<div>
 					<label htmlFor="firstName">First name</label><br/>
 					<input
@@ -157,17 +186,6 @@ export default class Form extends React.Component {
 				</div>
 				<br/>
 				<div>
-					<label htmlFor="websiteUrl">Website URL</label><br/>
-					<input
-						type="text"
-						placeholder="https://..."
-						value={ websiteUrl }
-						onChange={ this.onUpdate }
-						name="websiteUrl"
-					/>
-				</div>
-				<br/>
-				<div>
 					<label htmlFor="emailAddress">Email address</label><br/>
 					<input
 						type="text"
@@ -175,6 +193,17 @@ export default class Form extends React.Component {
 						value={ emailAddress }
 						onChange={ this.onUpdate }
 						name="emailAddress"
+					/>
+				</div>
+				<br/>
+				<div>
+					<label htmlFor="websiteUrl">Website URL</label><br/>
+					<input
+						type="text"
+						placeholder="https://..."
+						value={ websiteUrl }
+						onChange={ this.onUpdate }
+						name="websiteUrl"
 					/>
 				</div>
 				<br/>
@@ -233,7 +262,7 @@ export default class Form extends React.Component {
 					/>
 				</div>
 				<br/>
-				{ this.props.children }
+				{ children }
 				<br/>
 				<button
 					onClick={ this.clearLocalStorage }
@@ -243,4 +272,8 @@ export default class Form extends React.Component {
 			</form>
 		)
 	}
+}
+
+Form.propTypes = {
+	onGetFormData: PropTypes.func,
 }

@@ -6,8 +6,27 @@ export default class Signature2 extends React.Component {
 	}
 
 	render() {
-		const accentColor = this.props.accentColor ? this.props.accentColor : '#000'
-		const socialColor = this.props.accentColor ? this.props.accentColor : '#000'
+		const {
+			portrait,
+			logo,
+			firstName,
+			lastName,
+			jobTitle,
+			department,
+			companyName,
+			officePhone,
+			mobilePhone,
+			websiteUrl,
+			emailAddress,
+			address,
+			socialLinkedin,
+			socialFacebook,
+			socialTwitter,
+			socialInstagram,
+			accentColor
+		} = this.props
+
+		const socialColor = accentColor
 
 		return(
 			<table cellPadding="0" cellSpacing="0"
@@ -26,18 +45,18 @@ export default class Signature2 extends React.Component {
 					<tr style={{textAlign: 'center'}}>
 						<td>
 							<h3 color="#000000" style={{margin: '0px', fontSize: '18px', color: 'rgb(0, 0, 0)'}}>
-								<span>{ this.props.firstName }</span><span>&nbsp;</span><span>{ this.props.lastName }</span>
+								<span>{ firstName ? firstName : 'John' }</span><span>&nbsp;</span><span>{ lastName ? lastName : 'Smith' }</span>
 							</h3>
-							{ this.props.jobTitle &&
+							{ jobTitle &&
 								<p color="#000000" fontSize="medium"
 									style={{margin: '0px', color: 'rgb(0, 0, 0)', fontSize: '14px', lineHeight: '22px'}}>
-									<span>{ this.props.jobTitle }</span>
+									<span>{ jobTitle }</span>
 								</p>
 							}
-							{ (this.props.department || this.props.companyName) &&
+							{ (department || companyName) &&
 								<p color="#000000" fontSize="medium"
 									style={{margin: '0px', fontWeight: '500', color: 'rgb(0, 0, 0)', fontSize: '14px', lineHeight: '22px'}}>
-									<span>{ this.props.department }</span>{ (this.props.department && this.props.companyName) && <span>&nbsp;|&nbsp;</span> }<span>{ this.props.companyName }</span>
+									<span>{ department }</span>{ (department && companyName) && <span>&nbsp;|&nbsp;</span> }<span>{ companyName }</span>
 								</p>
 							}
 						</td>
@@ -68,7 +87,7 @@ export default class Signature2 extends React.Component {
 											<table cellPadding="0" cellSpacing="0"
 												style={{verticalSpacing: '-webkit-baseline-middle', fontSize: 'medium', fontFamily: 'Arial'}}>
 												<tbody>
-													{ (this.props.officePhone || this.props.mobilePhone) &&
+													{ (officePhone || mobilePhone) &&
 													<tr height="25" style={{verticalSpacing: 'middle'}}>
 														<td width="30" style={{verticalSpacing: 'middle'}}>
 															<table cellPadding="0" cellSpacing="0"
@@ -90,17 +109,17 @@ export default class Signature2 extends React.Component {
 															</table>
 														</td>
 														<td style={{padding: '0px', color: 'rgb(0, 0, 0)'}}>
-															<a href={ `tel:${ this.props.officePhone }` } color="#000000"
+															<a href={ `tel:${ officePhone }` } color="#000000"
 																style={{textDecoration: 'none', color: 'rgb(0, 0, 0)', fontSize: '12px'}}>
-																<span>{ this.props.officePhone }</span></a> | <a href={ `tel:${ this.props.mobilePhone }` }
+																<span>{ officePhone }</span></a> | <a href={ `tel:${ mobilePhone }` }
 																color="#000000"
 																style={{textDecoration: 'none', color: 'rgb(0, 0, 0)', fontSize: '12px'}}>
-																<span>{ this.props.mobilePhone }</span>
+																<span>{ mobilePhone }</span>
 															</a>
 														</td>
 													</tr>
 													}
-													{ this.props.emailAddress &&
+													{ emailAddress &&
 														<tr height="25" style={{verticalSpacing: 'middle'}}>
 															<td width="30" style={{verticalSpacing: 'middle'}}>
 																<table cellPadding="0" cellSpacing="0"
@@ -121,14 +140,14 @@ export default class Signature2 extends React.Component {
 																</table>
 															</td>
 															<td style={{padding: '0px'}}>
-																<a href={ `mailto:${ this.props.emailAddress }` } color="#000000"
+																<a href={ `mailto:${ emailAddress }` } color="#000000"
 																	style={{textDecoration: 'none', color: 'rgb(0, 0, 0)', fontSize: '12px'}}>
-																	<span>{ this.props.emailAddress }</span>
+																	<span>{ emailAddress }</span>
 																</a>
 															</td>
 														</tr>
 													}
-													{ this.props.websiteUrl &&
+													{ websiteUrl &&
 														<tr height="25" style={{verticalSpacing: 'middle'}}>
 															<td width="30" style={{verticalSpacing: 'middle'}}>
 																<table cellPadding="0" cellSpacing="0"
@@ -149,14 +168,14 @@ export default class Signature2 extends React.Component {
 																</table>
 															</td>
 															<td style={{padding: '0px'}}>
-																<a href={`https://${this.props.websiteUrl}`} color="#000000"
+																<a href={`https://${websiteUrl}`} color="#000000"
 																	style={{textDecoration: 'none', color: 'rgb(0, 0, 0)', fontSize: '12px'}}>
-																	<span>{ this.props.websiteUrl }</span>
+																	<span>{ websiteUrl }</span>
 																</a>
 															</td>
 														</tr>
 													}
-													{ this.props.address &&
+													{ address &&
 														<tr height="25" style={{verticalSpacing: 'middle'}}>
 															<td width="30" style={{verticalSpacing: 'middle'}}>
 																<table cellPadding="0" cellSpacing="0"
@@ -179,7 +198,7 @@ export default class Signature2 extends React.Component {
 															<td style={{padding: '0px'}}>
 																<span color="#000000"
 																	style={{fontSize: '12px', color: 'rgb(0, 0, 0)'}}>
-																	<span>{ this.props.address }</span>
+																	<span>{ address }</span>
 																</span>
 															</td>
 														</tr>
@@ -203,17 +222,17 @@ export default class Signature2 extends React.Component {
 													<tr>
 														<td height="10"></td>
 													</tr>
-													{ (this.props.socialFacebook || this.props.socialInstagram || this.props.socialLinkedin || this.props.socialTwitter) &&
+													{ (socialFacebook || socialInstagram || socialLinkedin || socialTwitter) &&
 														<tr>
 															<td>
 																<table cellPadding="0" cellSpacing="0"
 																	style={{verticalSpacing: '-webkit-baseline-middle', fontSize: 'medium', fontFamily: 'Arial', display: 'inline-block'}}>
 																	<tbody>
 																		<tr style={{textAlign: 'right'}}>
-																			{ this.props.socialFacebook &&
+																			{ socialFacebook &&
 																				<React.Fragment>
 																					<td>
-																						<a href={ `https://${ this.props.socialFacebook }` } color={ socialColor }
+																						<a href={ `https://${ socialFacebook }` } color={ socialColor }
 																							style={{display: 'inline-block', padding: '0px', backgroundColor: socialColor}}>
 																							<img height="24" className="sc-csuQGl CQhxV"
 																								src="https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/icons/facebook-icon-2x.png"
@@ -224,10 +243,10 @@ export default class Signature2 extends React.Component {
 																					<td width="5"></td>
 																				</React.Fragment>
 																			}
-																			{ this.props.socialTwitter &&
+																			{ socialTwitter &&
 																				<React.Fragment>
 																					<td>
-																						<a href={ `https://${ this.props.socialTwitter }` } color={ socialColor }
+																						<a href={ `https://${ socialTwitter }` } color={ socialColor }
 																							style={{display: 'inline-block', padding: '0px', backgroundColor: socialColor}}>
 																							<img height="24" className="sc-csuQGl CQhxV"
 																								src="https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/icons/twitter-icon-2x.png"
@@ -238,10 +257,10 @@ export default class Signature2 extends React.Component {
 																					<td width="5"></td>
 																				</React.Fragment>
 																			}
-																			{ this.props.socialLinkedin &&
+																			{ socialLinkedin &&
 																				<React.Fragment>
 																					<td>
-																						<a href={ `https://${ this.props.socialLinkedin }` } color={ socialColor }
+																						<a href={ `https://${ socialLinkedin }` } color={ socialColor }
 																							style={{display: 'inline-block', padding: '0px', backgroundColor: socialColor}}>
 																							<img height="24" className="sc-csuQGl CQhxV"
 																								src="https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/icons/linkedin-icon-2x.png"
@@ -252,10 +271,10 @@ export default class Signature2 extends React.Component {
 																					<td width="5"></td>
 																				</React.Fragment>
 																			}
-																			{ this.props.socialInstagram &&
+																			{ socialInstagram &&
 																				<React.Fragment>
 																					<td>
-																						<a href={ `https://${ this.props.socialInstagram }` } color={ socialColor }
+																						<a href={ `https://${ socialInstagram }` } color={ socialColor }
 																							style={{display: 'inline-block', padding: '0px', backgroundColor: socialColor}}>
 																							<img height="24" className="sc-csuQGl CQhxV"
 																								src="https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/icons/instagram-icon-2x.png"

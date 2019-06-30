@@ -11,7 +11,9 @@ export default class Generate extends React.Component {
 		super(props)
 
 		this.state = {
-			layout: 'option1',
+			layout: 'layout1',
+			portrait: '',
+			logo: '',
 			firstName: '',
 			lastName: '',
 			jobTitle: '',
@@ -27,7 +29,7 @@ export default class Generate extends React.Component {
 			socialTwitter: '',
 			socialInstagram: '',
 			copySuccess: '',
-			accentColor: '',
+			accentColor: '#000',
 		}
 
 		this.copySignature = this.copySignature.bind(this)
@@ -99,39 +101,42 @@ export default class Generate extends React.Component {
 							<label>
 								<input
 									type="radio"
-									name="option1"
-									value="option1"
-									checked={ layout === 'option1' }
+									name="layout1"
+									value="layout1"
+									checked={ layout === 'layout1' }
 									onChange={ this.getLayout }
 								/>
-								Option 1
+								Layout 1
 							</label>
 						</div>
 						<div className="radio">
 							<label>
 								<input
 									type="radio"
-									name="option2"
-									value="option2"
-									checked={ layout === 'option2' }
+									name="layout2"
+									value="layout2"
+									checked={ layout === 'layout2' }
 									onChange={ this.getLayout }
 								/>
-								Option 2
+								Layout 2
 							</label>
 						</div>
 					</form>
 					<Form
 						onGetFormData={ this.getFormData }
 					>
-						<ColorPicker
-							setColor={ this.state.accentColor }
-							action={ this.getColor }
-						/>
+						<React.Fragment>
+							<label>Accent color</label>
+							<ColorPicker
+								setColor={ this.state.accentColor }
+								action={ this.getColor }
+							/>
+						</React.Fragment>
 					</Form>
 				</article>
 
 				<article className="container__signature">
-					{(layout === 'option1') ?
+					{(layout === 'layout1') ?
 						<Signature
 							{...signatureState}
 						/> :
