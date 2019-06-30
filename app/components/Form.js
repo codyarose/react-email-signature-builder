@@ -85,8 +85,8 @@ export default class Form extends React.Component {
 		const { children } = this.props
 
 		return(
-			<form>
-				<div>
+			<form className="input-group">
+				<div className="input-wrap">
 					<label htmlFor="portrait">Portrait image URL</label><br/>
 					<input
 						type="text"
@@ -96,8 +96,7 @@ export default class Form extends React.Component {
 						name="portrait"
 					/>
 				</div>
-				<br/>
-				<div>
+				<div className="input-wrap">
 					<label htmlFor="logo">Logo image URL</label><br/>
 					<input
 						type="text"
@@ -107,8 +106,7 @@ export default class Form extends React.Component {
 						name="logo"
 					/>
 				</div>
-				<br/>
-				<div>
+				<div className="input-wrap">
 					<label htmlFor="firstName">First name</label><br/>
 					<input
 						type="text"
@@ -118,8 +116,7 @@ export default class Form extends React.Component {
 						name="firstName"
 					/>
 				</div>
-				<br/>
-				<div>
+				<div className="input-wrap">
 					<label htmlFor="lastName">Last name</label><br/>
 					<input
 						type="text"
@@ -129,8 +126,7 @@ export default class Form extends React.Component {
 						name="lastName"
 					/>
 				</div>
-				<br/>
-				<div>
+				<div className="input-wrap">
 					<label htmlFor="jobTitle">Job title</label><br/>
 					<input
 						type="text"
@@ -140,8 +136,7 @@ export default class Form extends React.Component {
 						name="jobTitle"
 					/>
 				</div>
-				<br/>
-				<div>
+				<div className="input-wrap">
 					<label htmlFor="department">Department</label><br/>
 					<input
 						type="text"
@@ -151,8 +146,7 @@ export default class Form extends React.Component {
 						name="department"
 					/>
 				</div>
-				<br/>
-				<div>
+				<div className="input-wrap">
 					<label htmlFor="jobTitle">Company name</label><br/>
 					<input
 						type="text"
@@ -162,8 +156,7 @@ export default class Form extends React.Component {
 						name="companyName"
 					/>
 				</div>
-				<br/>
-				<div>
+				<div className="input-wrap">
 					<label htmlFor="officePhone">Office phone number</label><br/>
 					<input
 						type="text"
@@ -173,8 +166,7 @@ export default class Form extends React.Component {
 						name="officePhone"
 					/>
 				</div>
-				<br/>
-				<div>
+				<div className="input-wrap">
 					<label htmlFor="mobilePhone">Mobile phone number</label><br/>
 					<input
 						type="text"
@@ -184,8 +176,7 @@ export default class Form extends React.Component {
 						name="mobilePhone"
 					/>
 				</div>
-				<br/>
-				<div>
+				<div className="input-wrap">
 					<label htmlFor="emailAddress">Email address</label><br/>
 					<input
 						type="text"
@@ -195,8 +186,7 @@ export default class Form extends React.Component {
 						name="emailAddress"
 					/>
 				</div>
-				<br/>
-				<div>
+				<div className="input-wrap">
 					<label htmlFor="websiteUrl">Website URL</label><br/>
 					<input
 						type="text"
@@ -206,8 +196,7 @@ export default class Form extends React.Component {
 						name="websiteUrl"
 					/>
 				</div>
-				<br/>
-				<div>
+				<div className="input-wrap">
 					<label htmlFor="address">Address</label><br/>
 					<input
 						type="text"
@@ -217,8 +206,7 @@ export default class Form extends React.Component {
 						name="address"
 					/>
 				</div>
-				<br/>
-				<div>
+				<div className="https-prefixed input-wrap">
 					<label htmlFor="socialFacebook">Facebook</label><br/>
 					https://<input
 						type="text"
@@ -228,8 +216,7 @@ export default class Form extends React.Component {
 						name="socialFacebook"
 					/>
 				</div>
-				<br/>
-				<div>
+				<div className="https-prefixed input-wrap">
 					<label htmlFor="socialTwitter">Twitter</label><br/>
 					https://<input
 						type="text"
@@ -239,8 +226,7 @@ export default class Form extends React.Component {
 						name="socialTwitter"
 					/>
 				</div>
-				<br/>
-				<div>
+				<div className="https-prefixed input-wrap">
 					<label htmlFor="socialLinkedin">LinkedIn</label><br/>
 					https://<input
 						type="text"
@@ -250,8 +236,7 @@ export default class Form extends React.Component {
 						name="socialLinkedin"
 					/>
 				</div>
-				<br/>
-				<div>
+				<div className="https-prefixed input-wrap">
 					<label htmlFor="socialInstagram">Instagram</label><br/>
 					https://<input
 						type="text"
@@ -261,14 +246,14 @@ export default class Form extends React.Component {
 						name="socialInstagram"
 					/>
 				</div>
-				<br/>
 				{ children }
-				<br/>
-				<button
-					onClick={ this.clearLocalStorage }
-				>
-					Reset All
-				</button>
+				<div className="button-wrap">
+					<button
+						onClick={ this.clearLocalStorage }
+					>
+						Reset All
+					</button>
+				</div>
 			</form>
 		)
 	}

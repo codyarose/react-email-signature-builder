@@ -125,13 +125,13 @@ export default class Generate extends React.Component {
 					<Form
 						onGetFormData={ this.getFormData }
 					>
-						<React.Fragment>
+						<div>
 							<label>Accent color</label>
 							<ColorPicker
 								setColor={ this.state.accentColor }
 								action={ this.getColor }
 							/>
-						</React.Fragment>
+						</div>
 					</Form>
 				</article>
 
