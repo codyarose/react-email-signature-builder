@@ -2,6 +2,7 @@ import React from 'react'
 import { renderToStaticMarkup } from 'react-dom/server'
 import ColorPicker from './ColorPicker'
 import Form from './Form'
+import RadioInput from './RadioInput'
 import Signature from './Signature'
 import Signature2 from './Signature2'
 
@@ -122,39 +123,24 @@ export default class Generate extends React.Component {
 			<main className="container">
 				<article className="container__form">
 					<form className="input-group-select">
-						<div className="radio">
-							<input
-								type="radio"
-								name="templates"
-								value="templates"
-								checked={ inputGroup === 'templates' }
-								onChange={ this.handleInputGroupChange }
-								id="templates"
-							/>
-							<label htmlFor="templates">Templates</label>
-						</div>
-						<div className="radio">
-							<input
-								type="radio"
-								name="info"
-								value="info"
-								checked={ inputGroup === 'info' }
-								onChange={ this.handleInputGroupChange }
-								id="info"
-							/>
-							<label htmlFor="info">Info</label>
-						</div>
-						<div className="radio">
-							<input
-								type="radio"
-								name="styles"
-								value="styles"
-								checked={ inputGroup === 'styles' }
-								onChange={ this.handleInputGroupChange }
-								id="styles"
-							/>
-							<label htmlFor="styles">Styles</label>
-						</div>
+						<RadioInput
+							label="Templates"
+							name="templates"
+							checked={ inputGroup }
+							onChange={ this.handleInputGroupChange }
+						/>
+						<RadioInput
+							label="Info"
+							name="info"
+							checked={ inputGroup }
+							onChange={ this.handleInputGroupChange }
+						/>
+						<RadioInput
+							label="Styles"
+							name="styles"
+							checked={ inputGroup }
+							onChange={ this.handleInputGroupChange }
+						/>
 					</form>
 					{ inputGroup === 'templates' ?
 						<form>

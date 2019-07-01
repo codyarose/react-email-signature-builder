@@ -3,16 +3,7 @@ import PropTypes from 'prop-types'
 import TextInput from './TextInput'
 
 export default class Form extends React.Component {
-	clearLocalStorage(e) {
-		if (window.confirm("Are you sure you want to reset all fields?")) {
-			e.preventDefault()
-			localStorage.clear()
-			location.reload()
-		}
-	}
-
 	render() {
-
 		return(
 			<form className="input-group">
 				<TextInput
@@ -111,13 +102,6 @@ export default class Form extends React.Component {
 					value={ this.props.socialInstagram }
 					onBlur={ this.props.onInputChange }
 				/>
-				<div className="button-wrap">
-					<button
-						onClick={ this.clearLocalStorage }
-					>
-						Reset All
-					</button>
-				</div>
 			</form>
 		)
 	}

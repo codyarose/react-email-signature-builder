@@ -21,7 +21,7 @@ export default class TextInput extends React.Component {
 }
 
 TextInput.propTypes = {
-	type: PropTypes.string.isRequired,
+	type: PropTypes.string,
 	value: PropTypes.string,
 	onBlur: PropTypes.func.isRequired,
 	name: PropTypes.string.isRequired,
