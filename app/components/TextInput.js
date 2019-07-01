@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 export default class TextInput extends React.Component {
 	render() {
@@ -17,4 +18,12 @@ export default class TextInput extends React.Component {
 			</div>
 		)
 	}
+}
+
+TextInput.propTypes = {
+	type: PropTypes.string.isRequired,
+	value: PropTypes.string,
+	onBlur: PropTypes.func.isRequired,
+	name: PropTypes.string.isRequired,
+	label: PropTypes.string.isRequired,
 }
