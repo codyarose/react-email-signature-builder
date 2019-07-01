@@ -144,30 +144,18 @@ export default class Generate extends React.Component {
 					</form>
 					{ inputGroup === 'templates' ?
 						<form>
-							<div className="radio">
-								<label>
-									<input
-										type="radio"
-										name="template1"
-										value="template1"
-										checked={ template === 'template1' }
-										onChange={ this.getTemplate }
-									/>
-									Template 1
-								</label>
-							</div>
-							<div className="radio">
-								<label>
-									<input
-										type="radio"
-										name="template2"
-										value="template2"
-										checked={ template === 'template2' }
-										onChange={ this.getTemplate }
-									/>
-									Template 2
-								</label>
-							</div>
+							<RadioInput
+								label="Template 1"
+								name="template1"
+								checked={ template }
+								onChange={ this.getTemplate }
+							/>
+							<RadioInput
+								label="Template 2"
+								name="template2"
+								checked={ template }
+								onChange={ this.getTemplate }
+							/>
 						</form> : inputGroup === 'info' ?
 						<Form
 							{ ...signatureState }

@@ -23,7 +23,7 @@ export default class RadioInput extends React.Component {
 
 RadioInput.propTypes = {
 	name: PropTypes.string.isRequired,
-	checked: PropTypes.func.isRequired,
+	checked: PropTypes.string.isRequired,
 	onChange: PropTypes.func.isRequired,
 	label: PropTypes.string.isRequired,
 }
