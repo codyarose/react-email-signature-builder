@@ -173,12 +173,8 @@ export default class Generate extends React.Component {
 
 				<article className="container__signature">
 					{(template === 'template1') ?
-						<Signature
-							{...signatureState}
-						/> :
-						<Signature2
-							{...signatureState}
-						/>
+						<Signature {...signatureState} /> :
+						<Signature2 {...signatureState} />
 					}
 				</article>
 
@@ -189,9 +185,7 @@ export default class Generate extends React.Component {
 						rows="10" cols="40"
 						readOnly
 						value={renderToStaticMarkup(
-							<Signature
-								{...signatureState}
-							/>
+							<Signature {...signatureState} />
 						)}
 					>
 					</textarea>

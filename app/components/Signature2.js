@@ -35,7 +35,10 @@ export default class Signature2 extends React.Component {
 					<tr>
 						<td style={{textAlign: 'center'}}>
 							<img width="130"
-								src="https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/placeholders/placeholder-image@2x.png"
+							src={ portrait ?
+									portrait :
+									'https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/placeholders/placeholder-image@2x.png'
+								}
 								role="presentation" style={{maxWidth: '130px', display: 'inline-block'}} />
 						</td>
 					</tr>
@@ -214,7 +217,10 @@ export default class Signature2 extends React.Component {
 													<tr>
 														<td>
 															<img width="130"
-																src="https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/placeholders/logo-placeholder@2x.png"
+															src={ logo ?
+																	logo :
+																	'https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/placeholders/logo-placeholder@2x.png'
+																}
 																role="presentation"
 																style={{maxWidth: '130px', display: 'inline-block'}} />
 														</td>
@@ -234,7 +240,7 @@ export default class Signature2 extends React.Component {
 																					<td>
 																						<a href={ `https://${ socialFacebook }` } color={ socialColor }
 																							style={{display: 'inline-block', padding: '0px', backgroundColor: socialColor}}>
-																							<img height="24" className="sc-csuQGl CQhxV"
+																							<img height="24"
 																								src="https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/icons/facebook-icon-2x.png"
 																								alt="facebook" color={ socialColor }
 																								style={{backgroundColor: socialColor, maxWidth: '135px', display: 'block'}} />
@@ -248,7 +254,7 @@ export default class Signature2 extends React.Component {
 																					<td>
 																						<a href={ `https://${ socialTwitter }` } color={ socialColor }
 																							style={{display: 'inline-block', padding: '0px', backgroundColor: socialColor}}>
-																							<img height="24" className="sc-csuQGl CQhxV"
+																							<img height="24"
 																								src="https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/icons/twitter-icon-2x.png"
 																								alt="twitter" color={ socialColor }
 																								style={{backgroundColor: socialColor, maxWidth: '135px', display: 'block'}} />
@@ -262,7 +268,7 @@ export default class Signature2 extends React.Component {
 																					<td>
 																						<a href={ `https://${ socialLinkedin }` } color={ socialColor }
 																							style={{display: 'inline-block', padding: '0px', backgroundColor: socialColor}}>
-																							<img height="24" className="sc-csuQGl CQhxV"
+																							<img height="24"
 																								src="https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/icons/linkedin-icon-2x.png"
 																								alt="linkedin" color={ socialColor }
 																								style={{backgroundColor: socialColor, maxWidth: '135px', display: 'block'}} />
@@ -276,7 +282,7 @@ export default class Signature2 extends React.Component {
 																					<td>
 																						<a href={ `https://${ socialInstagram }` } color={ socialColor }
 																							style={{display: 'inline-block', padding: '0px', backgroundColor: socialColor}}>
-																							<img height="24" className="sc-csuQGl CQhxV"
+																							<img height="24"
 																								src="https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/icons/instagram-icon-2x.png"
 																								alt="instagram" color={ socialColor }
 																								style={{backgroundColor: socialColor, maxWidth: '135px', display: 'block'}} />
@@ -304,7 +310,7 @@ export default class Signature2 extends React.Component {
 										<td height="30"></td>
 									</tr>
 									<tr>
-										<td height="1" className="sc-bRBYWo ccSRck" color={ accentColor } direction="horizontal"
+										<td height="1" color={ accentColor } direction="horizontal"
 											style={{width: '100%', borderBottom: `1px solid ${ accentColor }`, borderLeft: 'none', display: 'block'}}>
 										</td>
 									</tr>
