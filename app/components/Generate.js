@@ -30,29 +30,28 @@ export default class Generate extends React.Component {
 			socialInstagram: '',
 			copySuccess: '',
 			accentColor: '#000',
+			test: '',
 		}
 
 		this.copySignature = this.copySignature.bind(this)
-		this.getFormData = this.getFormData.bind(this)
 		this.hydrateStateWithLocalStorage = this.hydrateStateWithLocalStorage.bind(this)
 		this.getColor = this.getColor.bind(this)
 		this.getTemplate = this.getTemplate.bind(this)
 		this.handleInputGroupChange = this.handleInputGroupChange.bind(this)
+		this.onInputChange = this.onInputChange.bind(this)
 	}
 
-	getFormData(event) {
+	onInputChange(event) {
 		const { target: { name, value } } = event
 		this.setState({
 			[name]: value
 		})
-		localStorage.setItem([name], value)
 	}
 
 	getColor(color) {
 		this.setState({
 			accentColor: color.hex
 		})
-		localStorage.setItem('accentColor', color.hex)
 	}
 
 	getTemplate(e) {
@@ -60,7 +59,6 @@ export default class Generate extends React.Component {
 			template: e.target.value
 
 		})
-		localStorage.setItem('template', e.target.value)
 	}
 
 	copySignature() {
@@ -87,15 +85,34 @@ export default class Generate extends React.Component {
 		}
 	}
 
+	saveStateToLocalStorage() {
+		for (let key in this.state) {
+			localStorage.setItem(key, JSON.stringify(this.state[key]))
+		}
+	}
+
 	componentDidMount() {
 		this.hydrateStateWithLocalStorage()
+
+		window.addEventListener(
+			"beforeunload",
+			this.saveStateToLocalStorage.bind(this)
+		)
+	}
+
+	componentWillUnmount() {
+		window.removeEventListener(
+			"beforeunload",
+			this.saveStateToLocalStorage.bind(this)
+		)
+
+		this.saveStateToLocalStorage()
 	}
 
 	handleInputGroupChange(e) {
 		this.setState({
 			inputGroup: e.target.value
 		})
-		localStorage.setItem('inputGroup', e.target.value)
 	}
 
 	render() {
@@ -166,7 +183,10 @@ export default class Generate extends React.Component {
 								</label>
 							</div>
 						</form> : inputGroup === 'info' ?
-						<Form onGetFormData={ this.getFormData } /> : inputGroup === 'styles' ?
+						<Form
+							{ ...signatureState }
+							onInputChange={ this.onInputChange }
+						/> : inputGroup === 'styles' ?
 						<div>
 							<label>Accent color</label>
 							<ColorPicker
