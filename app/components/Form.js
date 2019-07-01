@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import TextInput from './TextInput'
+import Accordion from './Accordion'
 
 const Form = props => {
-	const inputs = [
+	const inputsDefault = [
 		{
 			label: 'Portrait URL',
 			name: 'portrait'
@@ -33,6 +34,13 @@ const Form = props => {
 			name: 'companyName'
 		},
 		{
+			label: 'Website URL',
+			name: 'websiteUrl'
+		},
+	]
+
+	const inputsContact = [
+		{
 			label: 'Office phone',
 			name: 'officePhone'
 		},
@@ -45,13 +53,12 @@ const Form = props => {
 			name: 'emailAddress'
 		},
 		{
-			label: 'Website URL',
-			name: 'websiteUrl'
-		},
-		{
 			label: 'Address',
 			name: 'address'
 		},
+	]
+
+	const inputsSocial = [
 		{
 			label: 'Facebook',
 			name: 'socialFacebook'
@@ -72,7 +79,7 @@ const Form = props => {
 
 	return(
 		<form className="input-group">
-			{ inputs.map(input => {
+			{ inputsDefault.map(input => {
 				return(
 					<TextInput
 						label={input.label}
@@ -83,6 +90,32 @@ const Form = props => {
 					/>
 				)
 			}) }
+			<Accordion title="Contact Info">
+				{ inputsContact.map(input => {
+					return(
+						<TextInput
+							label={input.label}
+							name={input.name}
+							value={props[input.name]}
+							onBlur={props.onInputChange}
+							key={input.name}
+						/>
+					)
+				}) }
+			</Accordion>
+			<Accordion title="Social Media">
+				{ inputsSocial.map(input => {
+					return(
+						<TextInput
+							label={input.label}
+							name={input.name}
+							value={props[input.name]}
+							onBlur={props.onInputChange}
+							key={input.name}
+						/>
+					)
+				}) }
+			</Accordion>
 		</form>
 	)
 }

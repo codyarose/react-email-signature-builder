@@ -1,9 +1,10 @@
 @import './colors';
+@import './accordion';
 
 body {
 	height: 100vh;
 	margin: 0;
-	font-family: 'Nunito', sans-serif;
+	font-family: 'Roboto Mono', monospace;
 }
 
 .container {
@@ -12,7 +13,7 @@ body {
 	background-color: #fff;
 	margin: 0 auto;
 	display: grid;
-	grid-template-columns: 2fr 3fr;
+	grid-template-columns: auto 3fr;
 	grid-template-rows: auto auto;
 	grid-gap: 5vw;
 	grid-template-areas:
@@ -24,15 +25,17 @@ body {
 	grid-area: form;
 	display: flex;
 	flex-direction: column;
-	padding: 2rem;
+	padding: 2rem 2.5rem 2rem 2rem;
 	color: get-color(white);
 	background-color: get-color(background);
 	overflow-y: scroll;
+	width: 100%;
+	max-width: 320px;
 }
 
 .input-group {
 	display: flex;
-	flex-wrap: wrap;
+	flex-direction: column;
 }
 
 .input-group-select {
@@ -85,22 +88,21 @@ body {
 }
 
 .input-wrap {
-	flex: 50%;
-	margin-top: 1rem;
 	position: relative;
 	& > label {
 		position: absolute;
-		top: 25%;
+		top: 1rem;
 		left: 0.5rem;
 		transition: all .2s ease-in-out;
 		pointer-events: none;
 		opacity: .5;
 	}
 	& > input {
+		width: 100%;
+		font-family: 'Roboto Mono', monospace;
 		height: 30px;
-		padding: 0.5rem;
-		margin-right: .5rem;
-		margin-bottom: 2rem;
+		padding: 0.5rem 0 0.5rem 0.5rem;
+		margin-bottom: 3rem;
 		font-size: 1.25rem;
 		background: transparent;
 		color: get-color(white);
