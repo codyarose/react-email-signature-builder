@@ -36,6 +36,9 @@ export default class ColorPicker extends React.Component {
 	}
 
 	render() {
+		const StyledColorPicker = styled.div`
+			position: relative;
+		`
 		const Swatch = styled.div`
 			width: 100%;
 			max-width: 5rem;
@@ -54,7 +57,22 @@ export default class ColorPicker extends React.Component {
 		`
 		const Popover = styled.div`
 			position: absolute;
+			top: calc(100% + 0.75rem);
+			left: 0;
+			padding: 5px;
+			background-color: #fff;
 			z-index: 2;
+			&::before {
+				content: '';
+				position: absolute;
+				top: -0.25rem;
+				left: 1rem;
+				width: 1rem;
+				height: 1rem;
+				background-color: #fff;
+				transform: rotate(45deg);
+				z-index: -1;
+			}
 		`
 		const Cover = styled.div`
 			position: fixed;
@@ -62,7 +80,7 @@ export default class ColorPicker extends React.Component {
 		`
 
 		return(
-			<React.Fragment>
+			<StyledColorPicker>
 				<Swatch onClick={ this.handleClick }>
 					<Color setColor={ this.props.setColor } />
 				</Swatch>
@@ -78,7 +96,7 @@ export default class ColorPicker extends React.Component {
 						/>
 					</Popover>
 				}
-			</React.Fragment>
+			</StyledColorPicker>
 		)
 	}
 }
