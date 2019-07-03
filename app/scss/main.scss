@@ -108,44 +108,6 @@ body {
 	}
 }
 
-.input-wrap {
-	position: relative;
-	& > label {
-		position: absolute;
-		top: 1rem;
-		left: 0.5rem;
-		transition: all .2s ease-in-out;
-		pointer-events: none;
-		opacity: .5;
-	}
-	& > input {
-		width: 100%;
-		font-family: 'Roboto Mono', monospace;
-		height: 30px;
-		padding: 0.5rem 0 0.5rem 0.5rem;
-		margin-bottom: 3rem;
-		font-size: 1.25rem;
-		background: transparent;
-		color: get-color(white);
-		border: none;
-		border-bottom: 2px solid get-color(white);
-		box-shadow: none;
-		&:focus {
-			outline: none;
-		}
-		&:focus + label,
-		&:valid + label {
-			top: -.75rem;
-			transform: scale(.8);
-			left: 0;
-		}
-	}
-}
-
-.button-wrap {
-	flex: 100%;
-}
-
 .signature-textarea {
 	width: 80%;
 	max-width: 500px;
