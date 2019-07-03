@@ -18,7 +18,6 @@ export default class Controls extends React.Component {
 		this.setState({
 			activeControl: e.target.value
 		})
-		this.props.action(e.target.value)
 	}
 
 	render() {
@@ -43,7 +42,7 @@ export default class Controls extends React.Component {
 			}
 		`
 
-		const StyledControls = styled.form`
+		const StyledControls = styled.div`
 			display: flex;
 			justify-content: space-between;
 			margin-bottom: 2rem;
@@ -114,7 +113,8 @@ export default class Controls extends React.Component {
 						onChange={ this.handleControlChange }
 					/>
 				</StyledControls>
-				<CurrentControls current={ activeControl } />
+
+				<CurrentControls current={ this.state.activeControl} />
 			</StyledControlsContainer>
 		)
 	}

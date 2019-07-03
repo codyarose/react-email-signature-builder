@@ -5,18 +5,6 @@ import styled from 'styled-components'
 export default class SignatureGenerator extends React.Component {
 	constructor(props) {
 		super(props)
-
-		this.state = {
-			activeControl: ''
-		}
-
-		this.getActiveControl = this.getActiveControl.bind(this)
-	}
-
-	getActiveControl(control) {
-		this.setState({
-			activeControl: control
-		})
 	}
 
 	render() {
@@ -36,7 +24,7 @@ export default class SignatureGenerator extends React.Component {
 
 		return(
 			<StyledMainContainer>
-				<Controls action={ this.getActiveControl } />
+				<Controls />
 			</StyledMainContainer>
 		)
 	}
