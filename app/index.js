@@ -1,14 +1,22 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { createGlobalStyle } from 'styled-components'
 import SignatureGenerator from './components-new/SignatureGenerator/SignatureGenerator'
 import styles from './scss/main.scss'
 
 class App extends React.Component {
 	render() {
+		const GlobalStyle = createGlobalStyle`
+			body {
+				margin: 0;
+				font-family: 'Roboto Mono', monospace;
+			}
+		`
 		return (
-			<div>
+			<React.Fragment>
+				<GlobalStyle />
 				<SignatureGenerator />
-			</div>
+			</React.Fragment>
 		)
 	}
 }
