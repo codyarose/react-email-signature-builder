@@ -3,10 +3,15 @@ import styled from 'styled-components'
 import Controls from './Controls/Controls'
 import Canvas from './Canvas/Canvas'
 import TemplateOne from '../Templates/Template-1'
+import TemplateTwo from '../Templates/Template-2'
 
 export default class SignatureGenerator extends React.Component {
 	constructor(props) {
 		super(props)
+
+		this.state = {
+			template: ''
+		}
 	}
 
 	render() {
@@ -28,7 +33,10 @@ export default class SignatureGenerator extends React.Component {
 			<StyledMainContainer>
 				<Controls />
 				<Canvas>
-					<TemplateOne />
+					{(this.state.template === 'templateOne') ?
+						<TemplateOne /> :
+						<TemplateTwo />
+					}
 				</Canvas>
 			</StyledMainContainer>
 		)
