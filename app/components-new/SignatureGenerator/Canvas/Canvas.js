@@ -1,5 +1,4 @@
 import React, { Fragment } from 'react'
-import styled from 'styled-components'
 import Preview from './Preview'
 import Output from './Output'
 

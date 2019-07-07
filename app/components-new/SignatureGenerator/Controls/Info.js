@@ -6,11 +6,6 @@ import Accordion from '../../Common/Accordion'
 import inputsList from '../../Common/InputList'
 
 const Info = props => {
-	const StyledInfo = styled.div`
-		display: flex;
-		flex-direction: column;
-	`
-
 	return(
 		<StyledInfo>
 			{ inputsList.default.map(input => {
@@ -55,3 +50,8 @@ const Info = props => {
 }
 
 export default Info
+
+const StyledInfo = styled.div`
+	display: flex;
+	flex-direction: column;
+`

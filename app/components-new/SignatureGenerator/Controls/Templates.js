@@ -2,7 +2,6 @@ import React from 'react'
 import InputRadio from '../../Common/InputRadio'
 
 const Templates = props => {
-
 	return(
 		<div>
 			<InputRadio
