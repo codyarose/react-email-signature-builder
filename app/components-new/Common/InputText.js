@@ -2,9 +2,9 @@ import React from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 
-const TextInput = props => {
+const InputText = props => {
 	return (
-		<StyledTextInput>
+		<StyledInputText>
 			<Input
 				type={ props.type ? props.type : 'text'}
 				required
@@ -15,13 +15,13 @@ const TextInput = props => {
 			<Label htmlFor={ props.name }>
 				{ props.label }
 			</Label>
-		</StyledTextInput>
+		</StyledInputText>
 	)
 }
 
-export default TextInput
+export default InputText
 
-const StyledTextInput = styled.div`
+const StyledInputText = styled.div`
 	position: relative;
 `
 
@@ -60,7 +60,7 @@ const Label = styled.label`
 	opacity: .5;
 `
 
-TextInput.propTypes = {
+InputText.propTypes = {
 	type: PropTypes.string,
 	value: PropTypes.string,
 	onBlur: PropTypes.func.isRequired,
