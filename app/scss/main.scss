@@ -1,24 +1,5 @@
 @import './colors';
 
-.container {
-	&__signature,
-	&__copy-signature {
-		padding: 1rem;
-	}
-	&__signature {
-		grid-area: signature;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	}
-	&__copy-signature {
-		grid-area: copy-signature;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-	}
-}
-
 .signature-textarea {
 	width: 80%;
 	max-width: 500px;

@@ -1,5 +1,6 @@
 import React from 'react'
 import Controls from './Controls/Controls'
+import Canvas from './Canvas/Canvas'
 import styled from 'styled-components'
 
 export default class SignatureGenerator extends React.Component {
@@ -25,6 +26,7 @@ export default class SignatureGenerator extends React.Component {
 		return(
 			<StyledMainContainer>
 				<Controls />
+				<Canvas />
 			</StyledMainContainer>
 		)
 	}
