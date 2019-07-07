@@ -12,7 +12,6 @@ const Preview = props => {
 
 	return(
 		<StyledPreview>
-			Preview.js
 			{ props.children }
 		</StyledPreview>
 	)
