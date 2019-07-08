@@ -1,27 +1,27 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-export default class RadioInput extends React.Component {
-	render() {
-		return (
-			<div className="radio">
-				<input
-					type="radio"
-					name={ this.props.name }
-					value={ this.props.name }
-					checked={ this.props.checked === this.props.name }
-					onChange={ this.props.onChange }
-					id={ this.props.name }
-				/>
-				<label htmlFor={ this.props.name }>
-					{ this.props.label }
-				</label>
-			</div>
-		)
-	}
+const InputRadio = props => {
+	return(
+		<div className="radio">
+			<input
+				type="radio"
+				name={ props.name }
+				value={ props.name }
+				checked={ props.checked === props.name }
+				onChange={ props.onChange }
+				id={ props.name }
+			/>
+			<label htmlFor={ props.name }>
+				{ props.label }
+			</label>
+		</div>
+	)
 }
 
-RadioInput.propTypes = {
+export default InputRadio
+
+InputRadio.propTypes = {
 	name: PropTypes.string.isRequired,
 	checked: PropTypes.string.isRequired,
 	onChange: PropTypes.func.isRequired,
