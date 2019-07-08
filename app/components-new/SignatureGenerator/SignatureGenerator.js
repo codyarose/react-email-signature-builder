@@ -71,20 +71,22 @@ export default class SignatureGenerator extends React.Component {
 				'form copy-signature';
 		`
 
+		const { activeControl, template, copySuccess, ...templateState } = this.state
+
 		return(
 			<StyledMainContainer>
 				<Controls
-					activeControl={ this.state.activeControl }
+					activeControl={ activeControl }
 					onControlChange={ this.handleControlChange }
-					template={ this.state.template }
+					template={ template }
 					onTemplateChange={ this.handleTemplateChange }
 					onInputChange={ this.handleInputChange }
 				/>
 				<Canvas>
 					{(this.state.template === 'template1') ?
-						<TemplateOne /> :
+						<TemplateOne { ...templateState } /> :
 						(this.state.template === 'template2') ?
-						<TemplateTwo /> :
+						<TemplateTwo { ...templateState } /> :
 						null
 					}
 				</Canvas>
