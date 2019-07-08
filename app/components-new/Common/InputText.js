@@ -11,6 +11,7 @@ const InputText = props => {
 				defaultValue={ props.value }
 				onBlur={ props.onBlur }
 				name={ props.name }
+				key={ props.name }
 			/>
 			<Label htmlFor={ props.name }>
 				{ props.label }
