@@ -9,9 +9,7 @@ const Output = ({ children, onCopy, copySuccess }) => {
 			<InputTextArea id="signatureMarkup">
 				{ children }
 			</InputTextArea>
-			<Button onClick={ onCopy }>
-				copy
-			</Button>
+			<Button onClick={ onCopy }>copy me</Button>
 			<span>{ copySuccess }</span>
 		</StyledOutput>
 	)
