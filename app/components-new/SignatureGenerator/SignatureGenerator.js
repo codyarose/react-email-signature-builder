@@ -35,6 +35,7 @@ export default class SignatureGenerator extends React.Component {
 		this.handleTemplateChange = this.handleTemplateChange.bind(this)
 		this.handleInputChange = this.handleInputChange.bind(this)
 		this.handleControlChange = this.handleControlChange.bind(this)
+		this.handleCopy = this.handleCopy.bind(this)
 	}
 
 	handleControlChange(e) {
@@ -53,6 +54,15 @@ export default class SignatureGenerator extends React.Component {
 		const { target: { name, value } } = e
 		this.setState({
 			[name]: value
+		})
+	}
+
+	handleCopy() {
+		const signatureMarkup = document.getElementById('signatureMarkup')
+		signatureMarkup.select()
+		document.execCommand('copy')
+		this.setState({
+			copySuccess: 'Copied!'
 		})
 	}
 
@@ -82,7 +92,7 @@ export default class SignatureGenerator extends React.Component {
 					onTemplateChange={ this.handleTemplateChange }
 					onInputChange={ this.handleInputChange }
 				/>
-				<Canvas>
+				<Canvas onCopy={ this.handleCopy } copySuccess={ copySuccess }>
 					{(this.state.template === 'template1') ?
 						<TemplateOne { ...templateState } /> :
 						(this.state.template === 'template2') ?
