@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import InputText from '../../Common/InputText'
 import Accordion from '../../Common/Accordion'

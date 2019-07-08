@@ -10,8 +10,50 @@ export default class SignatureGenerator extends React.Component {
 		super(props)
 
 		this.state = {
-			template: ''
+			activeControl: 'templates',
+			template: 'template1',
+			portrait: '',
+			logo: '',
+			firstName: '',
+			lastName: '',
+			jobTitle: '',
+			department: '',
+			companyName: '',
+			officePhone: '',
+			mobilePhone: '',
+			websiteUrl: '',
+			emailAddress: '',
+			address: '',
+			socialLinkedin: '',
+			socialFacebook: '',
+			socialTwitter: '',
+			socialInstagram: '',
+			copySuccess: '',
+			accentColor: '#000',
 		}
+
+		this.handleTemplateChange = this.handleTemplateChange.bind(this)
+		this.handleInputChange = this.handleInputChange.bind(this)
+		this.handleControlChange = this.handleControlChange.bind(this)
+	}
+
+	handleControlChange(e) {
+		this.setState({
+			activeControl: e.target.value
+		})
+	}
+
+	handleTemplateChange(e) {
+		this.setState({
+			template: e.target.value
+		})
+	}
+
+	handleInputChange(e) {
+		const { target: { name, value } } = e
+		this.setState({
+			[name]: value
+		})
 	}
 
 	render() {
@@ -31,11 +73,19 @@ export default class SignatureGenerator extends React.Component {
 
 		return(
 			<StyledMainContainer>
-				<Controls />
+				<Controls
+					activeControl={ this.state.activeControl }
+					onControlChange={ this.handleControlChange }
+					template={ this.state.template }
+					onTemplateChange={ this.handleTemplateChange }
+					onInputChange={ this.handleInputChange }
+				/>
 				<Canvas>
-					{(this.state.template === 'templateOne') ?
+					{(this.state.template === 'template1') ?
 						<TemplateOne /> :
-						<TemplateTwo />
+						(this.state.template === 'template2') ?
+						<TemplateTwo /> :
+						null
 					}
 				</Canvas>
 			</StyledMainContainer>

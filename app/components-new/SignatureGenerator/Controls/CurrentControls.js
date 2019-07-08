@@ -3,12 +3,12 @@ import Templates from './Templates'
 import Info from './Info'
 import Styles from './Styles'
 
-const CurrentControls = ({ current }) => {
+const CurrentControls = ({ current, template, onTemplateChange, onInputChange }) => {
 	return(
 		<React.Fragment>
 			{
-				current === 'templates' ? <Templates /> :
-				current === 'info' ? <Info /> :
+				current === 'templates' ? <Templates checked={ template } onChange={ onTemplateChange } /> :
+				current === 'info' ? <Info onInputChange={ onInputChange } /> :
 				current === 'styles' ? <Styles /> :
 				null
 			}
