@@ -1,9 +1,0 @@
-$color-palette: (
-	white: #E8E8E8,
-	black: #000,
-	background: #504A65,
-);
-
-@function get-color($color) {
-	@return map-get($color-palette, $color)
-}
