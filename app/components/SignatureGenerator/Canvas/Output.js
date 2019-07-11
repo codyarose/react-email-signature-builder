@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import InputTextArea from '../../Common/InputTextArea'
 import Button from '../../Common/Button'
 
-const Output = ({ children, onCopy, copySuccess }) => {
+const Output = ({ children, onCopy, copySuccess, onSaveToCollection }) => {
 	return(
 		<StyledOutput>
 			<InputTextArea id="signatureMarkup">
@@ -11,6 +11,7 @@ const Output = ({ children, onCopy, copySuccess }) => {
 			</InputTextArea>
 			<Button onClick={ onCopy }>copy me</Button>
 			<span>{ copySuccess }</span>
+			<Button onClick={ onSaveToCollection }>save to collection</Button>
 		</StyledOutput>
 	)
 }

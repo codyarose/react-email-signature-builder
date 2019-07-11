@@ -30,6 +30,7 @@ export default class SignatureGenerator extends React.Component {
 			socialInstagram: '',
 			copySuccess: '',
 			accentColor: '#000',
+			collection: [],
 		}
 
 		this.handleTemplateChange = this.handleTemplateChange.bind(this)
@@ -37,6 +38,7 @@ export default class SignatureGenerator extends React.Component {
 		this.handleControlChange = this.handleControlChange.bind(this)
 		this.handleCopy = this.handleCopy.bind(this)
 		this.hydrateStateWithLocalStorage = this.hydrateStateWithLocalStorage.bind(this)
+		this.handleSaveToCollection = this.handleSaveToCollection.bind(this)
 	}
 
 	componentDidMount() {
@@ -106,6 +108,14 @@ export default class SignatureGenerator extends React.Component {
 		}
 	}
 
+	handleSaveToCollection() {
+		const collectionItem = document.getElementById('signatureMarkup').firstChild.textContent
+		this.setState({
+			collection: [...this.state.collection, collectionItem]
+		})
+		console.log(this.state.collection)
+	}
+
 	render() {
 		const StyledMainContainer = styled.main`
 			width: 100%;
@@ -132,7 +142,11 @@ export default class SignatureGenerator extends React.Component {
 					onTemplateChange={ this.handleTemplateChange }
 					onInputChange={ this.handleInputChange }
 				/>
-				<Canvas onCopy={ this.handleCopy } copySuccess={ copySuccess }>
+				<Canvas
+					onCopy={ this.handleCopy }
+					copySuccess={ copySuccess }
+					onSaveToCollection={ this.handleSaveToCollection }
+				>
 					{(this.state.template === 'template1') ?
 						<TemplateOne { ...templateState } /> :
 						(this.state.template === 'template2') ?
