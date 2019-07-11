@@ -40,6 +40,8 @@ const Controls = props => {
 				onTemplateChange={ props.onTemplateChange }
 				onInputChange={ props.onInputChange }
 				onCopyCollectionItem={ props.onCopyCollectionItem }
+				onColorPickerChange={ props.onColorPickerChange }
+				accentColor={ props.accentColor }
 			/>
 		</StyledControlsContainer>
 	)

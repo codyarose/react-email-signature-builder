@@ -41,6 +41,7 @@ export default class SignatureGenerator extends React.Component {
 		this.hydrateStateWithLocalStorage = this.hydrateStateWithLocalStorage.bind(this)
 		this.handleSaveToCollection = this.handleSaveToCollection.bind(this)
 		this.handleCollectionItemCopy = this.handleCollectionItemCopy.bind(this)
+		this.handleColorPickerChange = this.handleColorPickerChange.bind(this)
 	}
 
 	componentDidMount() {
@@ -77,6 +78,12 @@ export default class SignatureGenerator extends React.Component {
 		const { target: { name, value } } = e
 		this.setState({
 			[name]: value
+		})
+	}
+
+	handleColorPickerChange(color) {
+		this.setState({
+			accentColor: color
 		})
 	}
 
@@ -160,6 +167,8 @@ export default class SignatureGenerator extends React.Component {
 					onInputChange={ this.handleInputChange }
 					collectionList={ this.state.collection }
 					onCopyCollectionItem={ this.handleCollectionItemCopy }
+					onColorPickerChange={ this.handleColorPickerChange }
+					accentColor={ this.state.accentColor }
 				/>
 				<Canvas
 					onCopy={ this.handleCopy }

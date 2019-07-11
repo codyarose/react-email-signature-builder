@@ -9,7 +9,6 @@ export default class ColorPicker extends React.Component {
 
 		this.state = {
 			displayColorPicker: false,
-			color: ''
 		}
 
 		this.handleChange = this.handleChange.bind(this)
@@ -18,10 +17,7 @@ export default class ColorPicker extends React.Component {
 	}
 
 	handleChange(color) {
-		this.setState({
-			color: color.hex
-		})
-		this.props.action(color)
+		this.props.onColorPickerChange(color.hex)
 	}
 	handleClick() {
 		this.setState({
@@ -84,7 +80,7 @@ export default class ColorPicker extends React.Component {
 					<label>{ this.props.title }</label>
 				}
 				<Swatch onClick={ this.handleClick }>
-					<Color setColor={ this.props.setColor } />
+					<Color setColor={ this.props.accentColor } />
 				</Swatch>
 				{ this.state.displayColorPicker &&
 					<Popover style={ styles.popover }>
@@ -93,7 +89,7 @@ export default class ColorPicker extends React.Component {
 							onClick={ this.handleClose }
 						/>
 						<ChromePicker
-							color={ this.props.setColor }
+							color={ this.props.accentColor }
 							onChange={ this.handleChange }
 						/>
 					</Popover>
