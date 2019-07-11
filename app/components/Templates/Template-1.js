@@ -46,11 +46,11 @@ const TemplateOne = props => {
 														{ props.socialFacebook &&
 															<React.Fragment>
 																<td>
-																	<a href={ `https://${ props.socialFacebook }` } color={ props.socialColor }
-																		style={{display: 'inline-block', padding: '0px', backgroundColor: props.socialColor}}>
+																	<a href={ `https://${ props.socialFacebook }` } color={ props.accentColor }
+																		style={{display: 'inline-block', padding: '0px', backgroundColor: props.accentColor}}>
 																		<img
 																			src="https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/icons/facebook-icon.png"
-																			alt="facebook" color={ props.socialColor }
+																			alt="facebook" color={ props.accentColor }
 																			style={{backgroundColor: props.socialAnchor, maxWidth: '135px', display: 'block'}} />
 																	</a>
 																</td>
@@ -60,11 +60,11 @@ const TemplateOne = props => {
 														{ props.socialTwitter &&
 															<React.Fragment>
 																<td>
-																	<a href={ `https://${ props.socialTwitter }` } color={ props.socialColor }
-																		style={{display: 'inline-block', padding: '0px', backgroundColor: props.socialColor}}>
+																	<a href={ `https://${ props.socialTwitter }` } color={ props.accentColor }
+																		style={{display: 'inline-block', padding: '0px', backgroundColor: props.accentColor}}>
 																		<img
 																			src="https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/icons/twitter-icon.png"
-																			alt="twitter" color={ props.socialColor }
+																			alt="twitter" color={ props.accentColor }
 																			style={{backgroundColor: props.socialAnchor, maxWidth: '135px', display: 'block'}} />
 																	</a>
 																</td>
@@ -74,11 +74,11 @@ const TemplateOne = props => {
 														{ props.socialLinkedin &&
 															<React.Fragment>
 																<td>
-																	<a href={ `https://${ props.socialLinkedin }` } color={ props.socialColor }
-																		style={{display: 'inline-block', padding: '0px', backgroundColor: props.socialColor}}>
+																	<a href={ `https://${ props.socialLinkedin }` } color={ props.accentColor }
+																		style={{display: 'inline-block', padding: '0px', backgroundColor: props.accentColor}}>
 																		<img
 																			src="https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/icons/linkedin-icon.png"
-																			alt="linkedin" color={ props.socialColor }
+																			alt="linkedin" color={ props.accentColor }
 																			style={{backgroundColor: props.socialAnchor, maxWidth: '135px', display: 'block'}} />
 																	</a>
 																</td>
@@ -88,11 +88,11 @@ const TemplateOne = props => {
 														{ props.socialInstagram &&
 															<React.Fragment>
 																<td>
-																	<a href={ `https://${ props.socialInstagram }` } color={ props.socialColor }
-																		style={{display: 'inline-block', padding: '0px', backgroundColor: props.socialColor}}>
+																	<a href={ `https://${ props.socialInstagram }` } color={ props.accentColor }
+																		style={{display: 'inline-block', padding: '0px', backgroundColor: props.accentColor}}>
 																		<img
 																			src="https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/icons/instagram-icon.png"
-																			alt="instagram" color={ props.socialColor }
+																			alt="instagram" color={ props.accentColor }
 																			style={{backgroundColor: props.socialAnchor, maxWidth: '135px', display: 'block'}} />
 																	</a>
 																</td>
@@ -169,7 +169,7 @@ const TemplateOne = props => {
 											<td style={{padding: '0px', color: 'rgb(0, 0, 0)'}}>
 												<a href={ `tel:${ props.officePhone }` } color="#000000"
 													style={{textDecoration: 'none', color: 'rgb(0, 0, 0)', fontSize: '12px'}}>
-												<span>{ props.officePhone }</span></a>{ officePhone && ( mobilePhone && <span>&nbsp;|&nbsp;</span> ) }<a href={ `tel:${ props.mobilePhone }` } color="#000000"
+												<span>{ props.officePhone }</span></a>{ props.officePhone && ( props.mobilePhone && <span>&nbsp;|&nbsp;</span> ) }<a href={ `tel:${ props.mobilePhone }` } color="#000000"
 													style={{textDecoration: 'none', color: 'rgb(0, 0, 0)', fontSize: '12px'}}>
 												<span>{ props.mobilePhone }</span>
 												</a>
