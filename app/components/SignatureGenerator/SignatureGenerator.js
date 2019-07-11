@@ -36,6 +36,25 @@ export default class SignatureGenerator extends React.Component {
 		this.handleInputChange = this.handleInputChange.bind(this)
 		this.handleControlChange = this.handleControlChange.bind(this)
 		this.handleCopy = this.handleCopy.bind(this)
+		this.hydrateStateWithLocalStorage = this.hydrateStateWithLocalStorage.bind(this)
+	}
+
+	componentDidMount() {
+		this.hydrateStateWithLocalStorage()
+
+		window.addEventListener(
+			"beforeunload",
+			this.handleSaveToLocalStorage.bind(this)
+		)
+	}
+
+	componentWillUnmount() {
+		window.addEventListener(
+			"beforeunload",
+			this.handleSaveToLocalStorage.bind(this)
+		)
+
+		this.handleSaveToLocalStorage()
 	}
 
 	handleControlChange(e) {
@@ -64,6 +83,27 @@ export default class SignatureGenerator extends React.Component {
 		this.setState({
 			copySuccess: 'Copied!'
 		})
+	}
+
+	handleSaveToLocalStorage() {
+		for (let key in this.state) {
+			localStorage.setItem(key, JSON.stringify(this.state[key]))
+		}
+	}
+
+	hydrateStateWithLocalStorage() {
+		for (let key in this.state) {
+			if (localStorage.hasOwnProperty(key)) {
+				let value = localStorage.getItem(key)
+
+				try {
+					value = JSON.parse(value)
+					this.setState({ [key]: value })
+				} catch (e) {
+					this.setState({ [key]: value })
+				}
+			}
+		}
 	}
 
 	render() {
