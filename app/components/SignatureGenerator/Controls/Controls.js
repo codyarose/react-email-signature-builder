@@ -25,13 +25,21 @@ const Controls = props => {
 					checked={ props.activeControl }
 					onChange={ props.onControlChange }
 				/>
+				<InputRadio
+					label="Collection"
+					name="collection"
+					checked={ props.activeControl }
+					onChange={ props.onControlChange }
+				/>
 			</StyledControls>
 
 			<CurrentControls
 				current={ props.activeControl}
 				template={ props.template }
+				collectionList={ props.collectionList }
 				onTemplateChange={ props.onTemplateChange }
 				onInputChange={ props.onInputChange }
+				onCopyCollectionItem={ props.onCopyCollectionItem }
 			/>
 		</StyledControlsContainer>
 	)
@@ -47,9 +55,6 @@ const StyledControlsContainer = styled.article`
 	color: #E8E8E8;
 	background-color: #504A65;
 	overflow-y: scroll;
-	width: 100%;
-	max-width: 320px;
-	height: 100vh;
 	scrollbar-width: none;
 	-ms-overflow-style: none;
 	&::-webkit-scrollbar {

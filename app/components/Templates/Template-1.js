@@ -2,7 +2,7 @@ import React from 'react'
 
 const TemplateOne = props => {
 	return(
-		<table id="signature" cellPadding="0" cellSpacing="0"
+		<table cellPadding="0" cellSpacing="0"
 			style={{verticalAlign: '-webkit-baseline-middle', fontSize: 'medium', fontFamily: 'Arial'}}>
 			<tbody>
 				<tr>

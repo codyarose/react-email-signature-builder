@@ -18,6 +18,7 @@ const StyledButton = styled.button`
 	color: #fff;
 	font-family: inherit;
 	padding: .5rem 1rem;
+	margin-bottom: 1rem;
 	cursor: pointer;
 	transition: background-color .1s ease-out;
 	&:hover {

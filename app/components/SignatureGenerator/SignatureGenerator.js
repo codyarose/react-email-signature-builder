@@ -1,4 +1,5 @@
 import React from 'react'
+import { renderToStaticMarkup } from 'react-dom/server'
 import styled from 'styled-components'
 import Controls from './Controls/Controls'
 import Canvas from './Canvas/Canvas'
@@ -39,6 +40,7 @@ export default class SignatureGenerator extends React.Component {
 		this.handleCopy = this.handleCopy.bind(this)
 		this.hydrateStateWithLocalStorage = this.hydrateStateWithLocalStorage.bind(this)
 		this.handleSaveToCollection = this.handleSaveToCollection.bind(this)
+		this.handleCollectionItemCopy = this.handleCollectionItemCopy.bind(this)
 	}
 
 	componentDidMount() {
@@ -113,7 +115,22 @@ export default class SignatureGenerator extends React.Component {
 		this.setState({
 			collection: [...this.state.collection, collectionItem]
 		})
-		console.log(this.state.collection)
+	}
+
+	handleCollectionItemCopy(e) {
+		const itemPreview = e.currentTarget.children[0]
+		const itemMarkup = e.currentTarget.children[1]
+		itemPreview.addEventListener('mouseleave', e => {
+			setTimeout(() => {
+				itemPreview.dataset.copy='copy'
+			}, 200)
+		})
+		itemPreview.dataset.copy = 'copied!'
+		itemPreview.style=''
+		void itemPreview.offsetWidth
+		itemPreview.style.animation='copied 1s forwards'
+		itemMarkup.select()
+		document.execCommand('copy')
 	}
 
 	render() {
@@ -123,7 +140,7 @@ export default class SignatureGenerator extends React.Component {
 			background-color: #fff;
 			margin: 0 auto;
 			display: grid;
-			grid-template-columns: minmax(200px,400px) 3fr;
+			grid-template-columns: auto 3fr;
 			grid-template-rows: 1fr 1fr;
 			grid-gap: 1vw;
 			grid-template-areas:
@@ -141,6 +158,8 @@ export default class SignatureGenerator extends React.Component {
 					template={ template }
 					onTemplateChange={ this.handleTemplateChange }
 					onInputChange={ this.handleInputChange }
+					collectionList={ this.state.collection }
+					onCopyCollectionItem={ this.handleCollectionItemCopy }
 				/>
 				<Canvas
 					onCopy={ this.handleCopy }
