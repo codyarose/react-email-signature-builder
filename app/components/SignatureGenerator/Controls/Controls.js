@@ -3,45 +3,46 @@ import styled from 'styled-components'
 import InputRadio from '../../Common/InputRadio'
 import CurrentControls from './CurrentControls'
 
-const Controls = props => {
+const Controls = ({ activeControl, onControlChange,template, collectionList, onTemplateChange, onInputChange, onCopyCollectionItem, onColorPickerChange, ...props }) => {
 	return(
 		<StyledControlsContainer>
 			<StyledControls>
 				<InputRadio
 					label="Templates"
 					name="templates"
-					checked={ props.activeControl }
-					onChange={ props.onControlChange }
+					checked={ activeControl }
+					onChange={ onControlChange }
 				/>
 				<InputRadio
 					label="Info"
 					name="info"
-					checked={ props.activeControl }
-					onChange={ props.onControlChange }
+					checked={ activeControl }
+					onChange={ onControlChange }
 				/>
 				<InputRadio
 					label="Styles"
 					name="styles"
-					checked={ props.activeControl }
-					onChange={ props.onControlChange }
+					checked={ activeControl }
+					onChange={ onControlChange }
 				/>
 				<InputRadio
 					label="Collection"
 					name="collection"
-					checked={ props.activeControl }
-					onChange={ props.onControlChange }
+					checked={ activeControl }
+					onChange={ onControlChange }
 				/>
 			</StyledControls>
 
 			<CurrentControls
-				current={ props.activeControl}
-				template={ props.template }
-				collectionList={ props.collectionList }
-				onTemplateChange={ props.onTemplateChange }
-				onInputChange={ props.onInputChange }
-				onCopyCollectionItem={ props.onCopyCollectionItem }
-				onColorPickerChange={ props.onColorPickerChange }
+				current={ activeControl}
+				template={ template }
+				collectionList={ collectionList }
+				onTemplateChange={ onTemplateChange }
+				onInputChange={ onInputChange }
+				onCopyCollectionItem={ onCopyCollectionItem }
+				onColorPickerChange={ onColorPickerChange }
 				accentColor={ props.accentColor }
+				{ ...props }
 			/>
 		</StyledControlsContainer>
 	)

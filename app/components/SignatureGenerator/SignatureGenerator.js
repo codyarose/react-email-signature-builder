@@ -141,21 +141,7 @@ export default class SignatureGenerator extends React.Component {
 	}
 
 	render() {
-		const StyledMainContainer = styled.main`
-			width: 100%;
-			height: 100vh;
-			background-color: #fff;
-			margin: 0 auto;
-			display: grid;
-			grid-template-columns: auto 3fr;
-			grid-template-rows: 1fr 1fr;
-			grid-gap: 1vw;
-			grid-template-areas:
-				'form signature'
-				'form copy-signature';
-		`
-
-		const { activeControl, template, copySuccess, ...templateState } = this.state
+	const { activeControl, template, copySuccess, ...templateState } = this.state
 
 		return(
 			<StyledMainContainer>
@@ -169,6 +155,7 @@ export default class SignatureGenerator extends React.Component {
 					onCopyCollectionItem={ this.handleCollectionItemCopy }
 					onColorPickerChange={ this.handleColorPickerChange }
 					accentColor={ this.state.accentColor }
+					{...templateState }
 				/>
 				<Canvas
 					onCopy={ this.handleCopy }
@@ -186,3 +173,18 @@ export default class SignatureGenerator extends React.Component {
 		)
 	}
 }
+
+const StyledMainContainer = styled.main`
+		width: 100%;
+		height: 100vh;
+		background-color: #fff;
+		margin: 0 auto;
+		display: grid;
+		grid-template-columns: auto 3fr;
+		grid-template-rows: 1fr 1fr;
+		grid-gap: 1vw;
+		grid-template-areas:
+			'form signature'
+			'form copy-signature';
+	`
+
