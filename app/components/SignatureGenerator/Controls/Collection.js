@@ -58,7 +58,7 @@ const StyledCollectionItem = styled.div`
 		margin: 0 auto;
 	}
 	& + textarea {
-		visibility: hidden;
+		opacity: 0;
 		height: 0;
 	}
 	@keyframes copied {
