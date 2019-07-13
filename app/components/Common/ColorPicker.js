@@ -1,60 +1,39 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { ChromePicker } from 'react-color'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-export default class ColorPicker extends React.Component {
-	constructor(props) {
-		super(props)
+const ColorPicker = (props) => {
+	const [displayColorPicker, setDisplayColorPicker] = useState(false)
+	const handleClick = () => setDisplayColorPicker(!displayColorPicker)
+	const handleClose = () => setDisplayColorPicker(false)
+	const handleChange = (color) => props.onColorPickerChange(color.hex)
 
-		this.state = {
-			displayColorPicker: false,
-		}
-
-		this.handleChange = this.handleChange.bind(this)
-		this.handleClick = this.handleClick.bind(this)
-		this.handleClose = this.handleClose.bind(this)
-	}
-
-	handleChange(color) {
-		this.props.onColorPickerChange(color.hex)
-	}
-	handleClick() {
-		this.setState({
-			displayColorPicker: !this.state.displayColorPicker
-		})
-	}
-	handleClose() {
-		this.setState({
-			displayColorPicker: false
-		})
-	}
-
-	render() {
-		return(
-			<StyledColorPicker>
-				{ this.props.title &&
-					<label>{ this.props.title }</label>
-				}
-				<Swatch onClick={ this.handleClick }>
-					<Color setColor={ this.props.accentColor } />
-				</Swatch>
-				{ this.state.displayColorPicker &&
-					<Popover style={ styles.popover }>
-						<Cover
-							style={ styles.cover }
-							onClick={ this.handleClose }
-						/>
-						<ChromePicker
-							color={ this.props.accentColor }
-							onChange={ this.handleChange }
-						/>
-					</Popover>
-				}
-			</StyledColorPicker>
-		)
-	}
+	return(
+		<StyledColorPicker>
+			{ props.title &&
+				<label>{ props.title }</label>
+			}
+			<Swatch onClick={ handleClick }>
+				<Color setColor={ props.accentColor } />
+			</Swatch>
+			{ displayColorPicker &&
+				<Popover style={ styles.popover }>
+					<Cover
+						style={ styles.cover }
+						onClick={ handleClose }
+					/>
+					<ChromePicker
+						color={ props.accentColor }
+						onChange={ handleChange }
+					/>
+				</Popover>
+			}
+		</StyledColorPicker>
+	)
 }
+
+export default ColorPicker
 
 ColorPicker.propTypes = {
 	action: PropTypes.func,
