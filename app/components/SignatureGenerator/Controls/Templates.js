@@ -1,25 +1,27 @@
 import React from 'react'
+import { useStateValue } from '../../Contexts/StateContext'
 import InputRadio from '../../Common/InputRadio'
 
-const Templates = props => {
-	return(
+export const Templates = () => {
+	const [{ template }, dispatch] = useStateValue()
+	const templateType = ['template1', 'template2']
+
+	return (
 		<form>
-			<InputRadio
-				label="Template 1"
-				name="template1"
-				checked={ props.checked }
-				onChange={ props.onChange }
-				id="template1"
-			/>
-			<InputRadio
-				label="Template 2"
-				name="template2"
-				checked={ props.checked }
-				onChange={ props.onChange }
-				id="template2"
-			/>
+			{templateType.map(templateName => (
+				<InputRadio
+					label={templateName}
+					name={templateName}
+					checked={template}
+					onChange={e =>
+						dispatch({
+							type: 'changeTemplate',
+							newTemplate: e.target.value,
+						})
+					}
+					key={templateName}
+				/>
+			))}
 		</form>
 	)
 }
-
-export default Templates

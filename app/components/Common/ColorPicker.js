@@ -3,32 +3,24 @@ import { ChromePicker } from 'react-color'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-const ColorPicker = (props) => {
+const ColorPicker = ({ title, onChange, accentColor }) => {
 	const [displayColorPicker, setDisplayColorPicker] = useState(false)
 	const handleClick = () => setDisplayColorPicker(!displayColorPicker)
 	const handleClose = () => setDisplayColorPicker(false)
-	const handleChange = (color) => props.onColorPickerChange(color.hex)
+	const handleChange = color => onChange(color.hex)
 
-	return(
+	return (
 		<StyledColorPicker>
-			{ props.title &&
-				<label>{ props.title }</label>
-			}
-			<Swatch onClick={ handleClick }>
-				<Color setColor={ props.accentColor } />
+			{title && <label htmlFor={title}>{title}</label>}
+			<Swatch onClick={handleClick}>
+				<Color setColor={accentColor} />
 			</Swatch>
-			{ displayColorPicker &&
-				<Popover style={ styles.popover }>
-					<Cover
-						style={ styles.cover }
-						onClick={ handleClose }
-					/>
-					<ChromePicker
-						color={ props.accentColor }
-						onChange={ handleChange }
-					/>
+			{displayColorPicker && (
+				<Popover>
+					<Cover onClick={handleClose} />
+					<ChromePicker color={accentColor} onChange={handleChange} />
 				</Popover>
-			}
+			)}
 		</StyledColorPicker>
 	)
 }
@@ -36,11 +28,12 @@ const ColorPicker = (props) => {
 export default ColorPicker
 
 ColorPicker.propTypes = {
-	action: PropTypes.func,
-	setColor: PropTypes.string
+	title: PropTypes.string,
+	onChange: PropTypes.func,
+	accentColor: PropTypes.string,
 }
 
-const StyledColorPicker = styled.div`
+const StyledColorPicker = styled.form`
 	position: relative;
 `
 const Swatch = styled.div`
@@ -50,14 +43,14 @@ const Swatch = styled.div`
 	margin-top: 1rem;
 	background: #fff;
 	border-radius: 1px;
-	box-shadow: 0 0 0 1px rgba(0,0,0,0.1);
+	box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
 	cursor: pointer;
 `
 const Color = styled.div`
 	width: 100%;
 	height: 2rem;
 	border-radius: 2px;
-	background: ${ props => props.setColor };
+	background: ${props => props.setColor};
 `
 const Popover = styled.div`
 	position: absolute;

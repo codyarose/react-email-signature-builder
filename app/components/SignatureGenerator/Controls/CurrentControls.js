@@ -1,21 +1,21 @@
 import React from 'react'
-import Templates from './Templates'
-import Info from './Info'
-import Styles from './Styles'
-import Collection from './Collection'
+import { useStateValue } from '../../Contexts/StateContext'
+import { Templates } from './Templates'
+import { Info } from './Info'
+import { Styles } from './Styles'
+import { Collection } from './Collection'
 
-const CurrentControls = ({ current, template, onTemplateChange, onInputChange, collectionList, onCopyCollectionItem, onColorPickerChange, accentColor, ...props }) => {
-	return(
-		<React.Fragment>
-			{
-				current === 'templates' ? <Templates checked={ template } onChange={ onTemplateChange } /> :
-				current === 'info' ? <Info onInputChange={ onInputChange } { ...props } /> :
-				current === 'styles' ? <Styles onColorPickerChange={ onColorPickerChange } accentColor={ accentColor } /> :
-				current === 'collection' ? <Collection collectionList={ collectionList } onCopyCollectionItem={ onCopyCollectionItem } /> :
-				null
-			}
-		</React.Fragment>
-	)
+export const CurrentControls = () => {
+	const [{ control }] = useStateValue()
+	let currentControl
+	if (control === 'templates') {
+		currentControl = <Templates />
+	} else if (control === 'info') {
+		currentControl = <Info />
+	} else if (control === 'styles') {
+		currentControl = <Styles />
+	} else if (control === 'collection') {
+		currentControl = <Collection />
+	}
+	return currentControl
 }
-
-export default CurrentControls

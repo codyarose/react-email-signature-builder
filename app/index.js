@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { createGlobalStyle } from 'styled-components'
-import SignatureGenerator from './components/SignatureGenerator/SignatureGenerator'
+import { SignatureGenerator } from './components/SignatureGenerator/SignatureGenerator'
 
 const App = () => {
 	const GlobalStyle = createGlobalStyle`

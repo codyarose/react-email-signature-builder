@@ -1,26 +1,27 @@
 import React from 'react'
-import styled from 'styled-components'
 import PropTypes from 'prop-types'
+import styled from 'styled-components'
 
-const InputText = props => {
-	return (
-		<StyledInputText>
-			<Input
-				type={ props.type ? props.type : 'text'}
-				required
-				defaultValue={ props.value }
-				onBlur={ props.onBlur }
-				name={ props.name }
-				key={ props.name }
-			/>
-			<Label htmlFor={ props.name }>
-				{ props.label }
-			</Label>
-		</StyledInputText>
-	)
+export const InputText = ({ value, onBlur, name, label }) => (
+	<StyledInputText>
+		<Input
+			type="text"
+			required
+			defaultValue={value}
+			onBlur={onBlur}
+			name={name}
+			key={name}
+		/>
+		<Label htmlFor={name}>{label}</Label>
+	</StyledInputText>
+)
+
+InputText.propTypes = {
+	value: PropTypes.string,
+	onBlur: PropTypes.func.isRequired,
+	name: PropTypes.string.isRequired,
+	label: PropTypes.string.isRequired,
 }
-
-export default InputText
 
 const StyledInputText = styled.div`
 	position: relative;
@@ -34,9 +35,9 @@ const Input = styled.input`
 	margin-bottom: 3rem;
 	font-size: 1.25rem;
 	background: transparent;
-	color: #E8E8E8;
+	color: #e8e8e8;
 	border: none;
-	border-bottom: 2px solid #E8E8E8;
+	border-bottom: 2px solid #e8e8e8;
 	box-shadow: none;
 	&:focus {
 		outline: none;
@@ -46,8 +47,8 @@ const Input = styled.input`
 	}
 	&:focus + label,
 	&:valid + label {
-		top: -.75rem;
-		transform: scale(.8);
+		top: -0.75rem;
+		transform: scale(0.8);
 		left: 0;
 	}
 `
@@ -56,15 +57,7 @@ const Label = styled.label`
 	position: absolute;
 	top: 1rem;
 	left: 0.5rem;
-	transition: all .2s ease-in-out;
+	transition: all 0.2s ease-in-out;
 	pointer-events: none;
-	opacity: .5;
+	opacity: 0.5;
 `
-
-InputText.propTypes = {
-	type: PropTypes.string,
-	value: PropTypes.string,
-	onBlur: PropTypes.func.isRequired,
-	name: PropTypes.string.isRequired,
-	label: PropTypes.string.isRequired,
-}

@@ -1,34 +1,38 @@
 {
-	"name": "signature-generator",
-	"version": "1.0.0",
-	"description": "",
-	"main": "index.js",
-	"scripts": {
-		"start": "webpack-dev-server"
-	},
-	"babel": {
-		"presets": [
-			"@babel/preset-env",
-			"@babel/preset-react"
-		]
-	},
-	"author": "",
-	"license": "ISC",
-	"devDependencies": {
-		"@babel/core": "^7.4.5",
-		"@babel/preset-env": "^7.4.5",
-		"@babel/preset-react": "^7.0.0",
-		"babel-loader": "^8.0.6",
-		"html-webpack-plugin": "^3.2.0",
-		"webpack": "^4.35.0",
-		"webpack-cli": "^3.3.4",
-		"webpack-dev-server": "^3.7.2"
-	},
-	"dependencies": {
-		"prop-types": "^15.7.2",
-		"react": "^16.8.6",
-		"react-color": "^2.17.3",
-		"react-dom": "^16.8.6",
-		"styled-components": "^4.3.2"
-	}
+  "name": "signature-generator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ],
+    "plugins": [
+      "@babel/plugin-proposal-class-properties"
+    ]
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/plugin-proposal-class-properties": "^7.5.0",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.6",
+    "html-webpack-plugin": "^3.2.0",
+    "webpack": "^4.35.0",
+    "webpack-cli": "^3.3.4",
+    "webpack-dev-server": "^3.7.2"
+  },
+  "dependencies": {
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
+    "react-color": "^2.17.3",
+    "react-dom": "^16.8.6",
+    "styled-components": "^4.3.2"
+  }
 }

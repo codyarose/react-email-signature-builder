@@ -1,23 +1,19 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const InputRadio = props => {
-	return(
-		<div className="radio">
-			<input
-				type="radio"
-				name={ props.name }
-				value={ props.name }
-				checked={ props.checked === props.name }
-				onChange={ props.onChange }
-				id={ props.name }
-			/>
-			<label htmlFor={ props.name }>
-				{ props.label }
-			</label>
-		</div>
-	)
-}
+const InputRadio = ({ name, checked, onChange, label }) => (
+	<div className="radio">
+		<input
+			type="radio"
+			name={name}
+			value={name}
+			checked={checked === name}
+			onChange={onChange}
+			id={name}
+		/>
+		<label htmlFor={name}>{label}</label>
+	</div>
+)
 
 export default InputRadio
 
