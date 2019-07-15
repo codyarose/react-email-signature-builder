@@ -14,5 +14,5 @@ export const useStateValue = () => useContext(StateContext)
 StateProvider.propTypes = {
 	reducer: PropTypes.func,
 	initialState: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
-	children: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
+	children: PropTypes.node,
 }

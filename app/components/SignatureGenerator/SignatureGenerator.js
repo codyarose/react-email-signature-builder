@@ -1,7 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Controls } from './Controls/Controls'
 import { StateProvider } from '../Contexts/StateContext'
+import { InfoProvider } from '../Contexts/InfoContext'
+import { Controls } from './Controls/Controls'
+import { Canvas } from './Canvas/Canvas'
 
 const SignatureGenerator = () => {
 	const initialState = {
@@ -34,7 +36,10 @@ const SignatureGenerator = () => {
 	return (
 		<StyledMainContainer>
 			<StateProvider initialState={initialState} reducer={reducer}>
-				<Controls />
+				<InfoProvider>
+					<Controls />
+					<Canvas />
+				</InfoProvider>
 			</StateProvider>
 		</StyledMainContainer>
 	)

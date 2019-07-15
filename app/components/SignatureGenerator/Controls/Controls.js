@@ -28,11 +28,9 @@ export const Controls = () => {
 					/>
 				))}
 			</StyledControls>
-			<InfoProvider>
-				<CollectionProvider>
-					<CurrentControls />
-				</CollectionProvider>
-			</InfoProvider>
+			<CollectionProvider>
+				<CurrentControls />
+			</CollectionProvider>
 		</StyledControlsContainer>
 	)
 }
