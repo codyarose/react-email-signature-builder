@@ -50,5 +50,5 @@ export const InfoProvider = ({ children }) => {
 export const useInfoValue = () => useContext(InfoContext)
 
 InfoProvider.propTypes = {
-	children: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
+	children: PropTypes.node,
 }

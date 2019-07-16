@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import styled from 'styled-components'
 import { useStateValue } from '../../Contexts/StateContext'
 import { TemplateOne } from '../../Templates/Template-1'
 import { TemplateTwo } from '../../Templates/Template-2'
+import { InputTextArea } from '../../Common/InputTextArea'
 
 export const Preview = () => {
 	const [{ template }] = useStateValue()
@@ -18,7 +19,12 @@ export const Preview = () => {
 		}
 	}
 
-	return <StyledPreview>{currentTemplate()}</StyledPreview>
+	return (
+		<Fragment>
+			<StyledPreview>{currentTemplate()}</StyledPreview>
+			<InputTextArea>{currentTemplate()}</InputTextArea>
+		</Fragment>
+	)
 }
 
 const StyledPreview = styled.article`

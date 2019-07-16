@@ -9,7 +9,7 @@ export const InputTextArea = ({ id, children }) => (
 		cols="40"
 		rows="10"
 		readOnly
-		value={renderToStaticMarkup(children)}
+		defaultValue={renderToStaticMarkup(children)}
 	/>
 )
 
