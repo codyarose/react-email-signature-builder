@@ -22,7 +22,7 @@ export const Output = () => {
 
 	return (
 		<StyledOutput>
-			<InputTextArea id="signatureMarkup">{currentTemplate()}</InputTextArea>
+			<InputTextArea id="signatureMarkupCopy">test</InputTextArea>
 		</StyledOutput>
 	)
 }
