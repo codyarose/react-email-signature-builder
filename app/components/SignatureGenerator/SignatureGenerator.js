@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { StateProvider } from '../Contexts/StateContext'
 import { InfoProvider } from '../Contexts/InfoContext'
+import { CollectionProvider } from '../Contexts/CollectionContext'
 import { Controls } from './Controls/Controls'
 import { Canvas } from './Canvas/Canvas'
 
@@ -9,6 +10,7 @@ const SignatureGenerator = () => {
 	const initialState = {
 		control: 'templates',
 		template: 'template1',
+		copySuccess: '',
 		collection: [],
 	}
 	const reducer = (state, action) => {
@@ -23,10 +25,10 @@ const SignatureGenerator = () => {
 					...state,
 					template: action.newTemplate,
 				}
-			case 'copyCollectionItem':
+			case 'saveToCollection':
 				return {
 					...state,
-					collection: action.copyItem,
+					collection: [...state.collection, action.saveToCollection]
 				}
 			default:
 				return state
@@ -37,8 +39,10 @@ const SignatureGenerator = () => {
 		<StyledMainContainer>
 			<StateProvider initialState={initialState} reducer={reducer}>
 				<InfoProvider>
-					<Controls />
-					<Canvas />
+					<CollectionProvider>
+						<Controls />
+						<Canvas />
+					</CollectionProvider>
 				</InfoProvider>
 			</StateProvider>
 		</StyledMainContainer>
