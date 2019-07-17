@@ -15,12 +15,10 @@ const ColorPicker = ({ title, onChange, accentColor }) => {
 			<Swatch onClick={handleClick}>
 				<Color setColor={accentColor} />
 			</Swatch>
-			{displayColorPicker && (
-				<Popover>
+				<Popover show={displayColorPicker}>
 					<Cover onClick={handleClose} />
 					<ChromePicker color={accentColor} onChange={handleChange} />
 				</Popover>
-			)}
 		</StyledColorPicker>
 	)
 }
@@ -59,6 +57,9 @@ const Popover = styled.div`
 	padding: 5px;
 	background-color: #fff;
 	z-index: 2;
+	opacity: ${props => props.show ? '1' : '0'};
+	visibility: ${props => props.show ? 'visible' : 'hidden'};
+	transition: opacity 0.1s ease-out;
 	&::before {
 		content: '';
 		position: absolute;
