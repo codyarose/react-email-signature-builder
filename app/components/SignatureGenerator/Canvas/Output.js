@@ -1,28 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
-import { useStateValue } from '../../Contexts/StateContext'
-import { InputTextArea } from '../../Common/InputTextArea'
 import { Button } from '../../Common/Button'
-import { TemplateOne } from '../../Templates/Template-1'
-import { TemplateTwo } from '../../Templates/Template-2'
+import { copyToClipboard } from '../../Common/CopyToClipboard'
 
 export const Output = () => {
-	const [{ template }] = useStateValue()
-
-	const currentTemplate = () => {
-		switch (template) {
-			case 'template1':
-				return <TemplateOne />
-			case 'template2':
-				return <TemplateTwo />
-			default:
-				return <TemplateOne />
-		}
-	}
-
 	return (
 		<StyledOutput>
-			<InputTextArea id="signatureMarkupCopy">test</InputTextArea>
+			<Button onClick={() => copyToClipboard('signatureMarkup')}>
+				Copy HTML
+			</Button>
 		</StyledOutput>
 	)
 }
