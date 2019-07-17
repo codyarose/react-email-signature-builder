@@ -23,29 +23,7 @@ Accordion.propTypes = {
 const StyledAccordion = styled.article`
 	width: 100%;
 	position: relative;
-	animation: flipdown 0.5s ease both;
 	margin-bottom: 1.5rem;
-
-	@keyframes flipdown {
-		0% {
-			opacity: 0;
-			transform-origin: top center;
-			transform: rotateX(-90deg);
-		}
-		5% {
-			opacity: 1;
-		}
-		80% {
-			transform: rotateX(8deg);
-		}
-		83% {
-			transform: rotateX(6deg);
-		}
-		100% {
-			transform-origin: top center;
-			transform: rotateX(0deg);
-		}
-	}
 `
 
 const Input = styled.input`

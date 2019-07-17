@@ -31,6 +31,7 @@ export const Collection = () => {
 const StyledCollectionContainer = styled.div`
 	display: flex;
 	flex-direction: column;
+	animation: flipdown 0.2s ease both;
 `
 
 const StyledCollectionItem = styled.button`

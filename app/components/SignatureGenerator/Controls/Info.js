@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import { useInfoValue } from '../../Contexts/InfoContext'
 import { InputText } from '../../Common/InputText'
@@ -7,6 +7,7 @@ import { inputList } from '../../Common/InputList'
 
 export const Info = () => {
 	const { data, updateInfo } = useInfoValue()
+
 	return (
 		<StyledInfo>
 			{inputList.default.map(input => (
@@ -47,4 +48,5 @@ export const Info = () => {
 const StyledInfo = styled.div`
 	display: flex;
 	flex-direction: column;
+	animation: flipdown 0.2s ease both;
 `

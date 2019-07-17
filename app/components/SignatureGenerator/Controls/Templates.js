@@ -1,10 +1,10 @@
 import React from 'react'
+import styled from 'styled-components'
 import { useStateValue } from '../../Contexts/StateContext'
 import InputRadio from '../../Common/InputRadio'
 
 export const Templates = () => {
 	const [{ template }, dispatch] = useStateValue()
-	// const templateType = ['Template One', 'Template Two']
 	const templateTypes = [
 		{
 			label: 'Template One',
@@ -17,7 +17,7 @@ export const Templates = () => {
 	]
 
 	return (
-		<form>
+		<StyledForm>
 			{templateTypes.map(templateType => (
 				<InputRadio
 					label={templateType.label}
@@ -32,6 +32,10 @@ export const Templates = () => {
 					key={templateType.name}
 				/>
 			))}
-		</form>
+		</StyledForm>
 	)
 }
+
+const StyledForm = styled.form`
+	animation: flipdown 0.2s ease both;
+`
