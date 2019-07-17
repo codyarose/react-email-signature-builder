@@ -21,7 +21,6 @@ export const InfoProvider = ({ children }) => {
 		socialFacebook: '',
 		socialTwitter: '',
 		socialInstagram: '',
-		copySuccess: '',
 		accentColor: '#000',
 	})
 	return (
