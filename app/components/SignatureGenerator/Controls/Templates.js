@@ -4,14 +4,24 @@ import InputRadio from '../../Common/InputRadio'
 
 export const Templates = () => {
 	const [{ template }, dispatch] = useStateValue()
-	const templateType = ['template1', 'template2']
+	// const templateType = ['Template One', 'Template Two']
+	const templateTypes = [
+		{
+			label: 'Template One',
+			name: 'template1'
+		},
+		{
+			label: 'Template Two',
+			name: 'template2'
+		},
+	]
 
 	return (
 		<form>
-			{templateType.map(templateName => (
+			{templateTypes.map(templateType => (
 				<InputRadio
-					label={templateName}
-					name={templateName}
+					label={templateType.label}
+					name={templateType.name}
 					checked={template}
 					onChange={e =>
 						dispatch({
@@ -19,7 +29,7 @@ export const Templates = () => {
 							newTemplate: e.target.value,
 						})
 					}
-					key={templateName}
+					key={templateType.name}
 				/>
 			))}
 		</form>
