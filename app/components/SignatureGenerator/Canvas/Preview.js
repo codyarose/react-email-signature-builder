@@ -20,7 +20,7 @@ export const Preview = () => {
 
 	return (
 		<Fragment>
-			<StyledPreview>{currentTemplate()}</StyledPreview>
+			<StyledPreview id="signatureMarkup">{currentTemplate()}</StyledPreview>
 		</Fragment>
 	)
 }
