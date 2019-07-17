@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { useStateValue } from '../../Contexts/StateContext'
-import InputRadio from '../../Common/InputRadio'
+import { InputRadio } from '../../Common/InputRadio'
 
 export const Templates = () => {
 	const [{ template }, dispatch] = useStateValue()

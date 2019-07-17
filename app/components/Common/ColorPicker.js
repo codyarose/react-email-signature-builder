@@ -3,7 +3,7 @@ import { ChromePicker } from 'react-color'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-const ColorPicker = ({ title, onChange, accentColor }) => {
+export const ColorPicker = ({ title, onChange, currentColor }) => {
 	const [displayColorPicker, setDisplayColorPicker] = useState(false)
 	const handleClick = () => setDisplayColorPicker(!displayColorPicker)
 	const handleClose = () => setDisplayColorPicker(false)
@@ -13,26 +13,25 @@ const ColorPicker = ({ title, onChange, accentColor }) => {
 		<StyledColorPicker>
 			{title && <label htmlFor={title}>{title}</label>}
 			<Swatch onClick={handleClick}>
-				<Color setColor={accentColor} />
+				<Color setColor={currentColor} />
 			</Swatch>
 				<Popover show={displayColorPicker}>
 					<Cover onClick={handleClose} />
-					<ChromePicker color={accentColor} onChange={handleChange} />
+					<ChromePicker color={currentColor} onChange={handleChange} />
 				</Popover>
 		</StyledColorPicker>
 	)
 }
 
-export default ColorPicker
-
 ColorPicker.propTypes = {
 	title: PropTypes.string,
 	onChange: PropTypes.func,
-	accentColor: PropTypes.string,
+	currentColor: PropTypes.string,
 }
 
-const StyledColorPicker = styled.form`
+const StyledColorPicker = styled.div`
 	position: relative;
+	margin-bottom: 2rem;
 `
 const Swatch = styled.div`
 	width: 100%;

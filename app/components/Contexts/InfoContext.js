@@ -22,6 +22,7 @@ export const InfoProvider = ({ children }) => {
 		socialTwitter: '',
 		socialInstagram: '',
 		accentColor: '#000',
+		socialColor: ''
 	})
 	return (
 		<InfoContext.Provider
@@ -33,10 +34,16 @@ export const InfoProvider = ({ children }) => {
 						[e.target.name]: e.target.value,
 					})
 				},
-				updateColor: color => {
+				updateAccentColor: color => {
 					setState({
 						...state,
 						accentColor: color,
+					})
+				},
+				updateSocialColor: color => {
+					setState({
+						...state,
+						socialColor: color,
 					})
 				},
 			}}

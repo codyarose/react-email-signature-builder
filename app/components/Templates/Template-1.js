@@ -86,17 +86,17 @@ export const TemplateOne = () => {
 																<td>
 																	<a
 																		href={`https://${data.socialFacebook}`}
-																		color={data.accentColor}
+																		color={data.socialColor}
 																		style={{
 																			display: 'inline-block',
 																			padding: '0px',
-																			backgroundColor: data.accentColor,
+																			backgroundColor: data.socialColor,
 																		}}
 																	>
 																		<img
 																			src="https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/icons/facebook-icon.png"
 																			alt="facebook"
-																			color={data.accentColor}
+																			color={data.socialColor}
 																			style={{
 																				backgroundColor: data.socialAnchor,
 																				maxWidth: '135px',
@@ -113,17 +113,17 @@ export const TemplateOne = () => {
 																<td>
 																	<a
 																		href={`https://${data.socialTwitter}`}
-																		color={data.accentColor}
+																		color={data.socialColor}
 																		style={{
 																			display: 'inline-block',
 																			padding: '0px',
-																			backgroundColor: data.accentColor,
+																			backgroundColor: data.socialColor,
 																		}}
 																	>
 																		<img
 																			src="https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/icons/twitter-icon.png"
 																			alt="twitter"
-																			color={data.accentColor}
+																			color={data.socialColor}
 																			style={{
 																				backgroundColor: data.socialAnchor,
 																				maxWidth: '135px',
@@ -140,17 +140,17 @@ export const TemplateOne = () => {
 																<td>
 																	<a
 																		href={`https://${data.socialLinkedin}`}
-																		color={data.accentColor}
+																		color={data.socialColor}
 																		style={{
 																			display: 'inline-block',
 																			padding: '0px',
-																			backgroundColor: data.accentColor,
+																			backgroundColor: data.socialColor,
 																		}}
 																	>
 																		<img
 																			src="https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/icons/linkedin-icon.png"
 																			alt="linkedin"
-																			color={data.accentColor}
+																			color={data.socialColor}
 																			style={{
 																				backgroundColor: data.socialAnchor,
 																				maxWidth: '135px',
@@ -167,17 +167,17 @@ export const TemplateOne = () => {
 																<td>
 																	<a
 																		href={`https://${data.socialInstagram}`}
-																		color={data.accentColor}
+																		color={data.socialColor}
 																		style={{
 																			display: 'inline-block',
 																			padding: '0px',
-																			backgroundColor: data.accentColor,
+																			backgroundColor: data.socialColor,
 																		}}
 																	>
 																		<img
 																			src="https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/icons/instagram-icon.png"
 																			alt="instagram"
-																			color={data.accentColor}
+																			color={data.socialColor}
 																			style={{
 																				backgroundColor: data.socialAnchor,
 																				maxWidth: '135px',

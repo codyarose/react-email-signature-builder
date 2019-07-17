@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const InputRadio = ({ name, checked, onChange, label }) => (
+export const InputRadio = ({ name, checked, onChange, label, value }) => (
 	<div className="radio">
 		<input
 			type="radio"
@@ -14,8 +14,6 @@ const InputRadio = ({ name, checked, onChange, label }) => (
 		<label htmlFor={name}>{label}</label>
 	</div>
 )
-
-export default InputRadio
 
 InputRadio.propTypes = {
 	name: PropTypes.string.isRequired,

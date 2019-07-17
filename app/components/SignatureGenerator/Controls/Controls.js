@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { useStateValue } from '../../Contexts/StateContext'
 import { CurrentControls } from './CurrentControls'
-import InputRadio from '../../Common/InputRadio'
+import { InputRadio } from '../../Common/InputRadio'
 import { InfoProvider } from '../../Contexts/InfoContext'
 import { CollectionProvider } from '../../Contexts/CollectionContext'
 
@@ -28,9 +28,7 @@ export const Controls = () => {
 					/>
 				))}
 			</StyledControls>
-			<CollectionProvider>
-				<CurrentControls />
-			</CollectionProvider>
+			<CurrentControls />
 		</StyledControlsContainer>
 	)
 }
