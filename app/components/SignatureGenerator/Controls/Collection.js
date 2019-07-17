@@ -1,33 +1,42 @@
 import React, { Fragment } from 'react'
 import styled from 'styled-components'
 import { useCollectionValue } from '../../Contexts/CollectionContext'
+import { ButtonSecondary } from '../../Common/Button'
 
 export const Collection = () => {
-	const { data, copyFromCollection } = useCollectionValue()
+	const { data, saveToCollection, copyItem } = useCollectionValue()
 	return (
 		<Fragment>
-			{data.collection.map((item, index) => (
-				<div onKeyPress={copyFromCollection} key={index} role="presentation">
+			<ButtonSecondary
+			secondary
+				onClick={() => saveToCollection(document.getElementById('signatureMarkup').innerHTML)}
+			>
+				Add current signature
+			</ButtonSecondary>
+			<StyledCollectionContainer>
+				{data.collection.map((item, index) => (
 					<StyledCollectionItem
-						dangerouslySetInnerHTML={{ __html: item }}
-						data-copy="copy"
-					/>
-					<textarea
 						id={`collectionItem${index}`}
-						value={item}
-						readOnly
-						cols="0"
-						rows="0"
+						onClick={e => copyItem(e.currentTarget)}
+						dangerouslySetInnerHTML={{__html: item}}
+						data-copy="copy html"
+						key={index}
 					/>
-				</div>
-			))}
+				))}
+			</StyledCollectionContainer>
 		</Fragment>
 	)
 }
 
-const StyledCollectionItem = styled.div`
+const StyledCollectionContainer = styled.div`
+	display: flex;
+	flex-direction: column;
+`
+
+const StyledCollectionItem = styled.button`
 	position: relative;
 	cursor: pointer;
+	width: 100%;
 	background-color: #fff;
 	padding: 1rem;
 	margin-bottom: 0.5rem;
@@ -49,6 +58,7 @@ const StyledCollectionItem = styled.div`
 		background-color: rgba(255, 255, 255, 0.75);
 		opacity: 0;
 		transition: opacity 0.2s ease-out;
+		pointer-events: none;
 	}
 	&:hover::before {
 		opacity: 1;
