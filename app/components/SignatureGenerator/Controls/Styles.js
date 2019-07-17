@@ -15,7 +15,7 @@ export const Styles = () => {
 			<ColorPicker
 				title="Social Icons Color"
 				onChange={updateSocialColor}
-				currentColor={data.socialColor ? data.socialColor : data.accentColor}
+				currentColor={data.socialColor}
 			/>
 		</StyledStylesContainer>
 	)

@@ -22,7 +22,7 @@ export const InfoProvider = ({ children }) => {
 		socialTwitter: '',
 		socialInstagram: '',
 		accentColor: '#000',
-		socialColor: ''
+		socialColor: '#000'
 	})
 	return (
 		<InfoContext.Provider

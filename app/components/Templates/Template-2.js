@@ -436,21 +436,21 @@ export const TemplateTwo = () => {
 																				<td>
 																					<a
 																						href={`https://${data.socialFacebook}`}
-																						color={data.accentColor}
+																						color={data.socialColor}
 																						style={{
 																							display: 'inline-block',
 																							padding: '0px',
-																							backgroundColor: data.accentColor,
+																							backgroundColor: data.socialColor,
 																						}}
 																					>
 																						<img
 																							height="24"
 																							src="https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/icons/facebook-icon-2x.png"
 																							alt="facebook"
-																							color={data.accentColor}
+																							color={data.socialColor}
 																							style={{
 																								backgroundColor:
-																									data.accentColor,
+																									data.socialColor,
 																								maxWidth: '135px',
 																								display: 'block',
 																							}}
@@ -465,21 +465,21 @@ export const TemplateTwo = () => {
 																				<td>
 																					<a
 																						href={`https://${data.socialTwitter}`}
-																						color={data.accentColor}
+																						color={data.socialColor}
 																						style={{
 																							display: 'inline-block',
 																							padding: '0px',
-																							backgroundColor: data.accentColor,
+																							backgroundColor: data.socialColor,
 																						}}
 																					>
 																						<img
 																							height="24"
 																							src="https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/icons/twitter-icon-2x.png"
 																							alt="twitter"
-																							color={data.accentColor}
+																							color={data.socialColor}
 																							style={{
 																								backgroundColor:
-																									data.accentColor,
+																									data.socialColor,
 																								maxWidth: '135px',
 																								display: 'block',
 																							}}
@@ -494,21 +494,21 @@ export const TemplateTwo = () => {
 																				<td>
 																					<a
 																						href={`https://${data.socialLinkedin}`}
-																						color={data.accentColor}
+																						color={data.socialColor}
 																						style={{
 																							display: 'inline-block',
 																							padding: '0px',
-																							backgroundColor: data.accentColor,
+																							backgroundColor: data.socialColor,
 																						}}
 																					>
 																						<img
 																							height="24"
 																							src="https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/icons/linkedin-icon-2x.png"
 																							alt="linkedin"
-																							color={data.accentColor}
+																							color={data.socialColor}
 																							style={{
 																								backgroundColor:
-																									data.accentColor,
+																									data.socialColor,
 																								maxWidth: '135px',
 																								display: 'block',
 																							}}
@@ -523,21 +523,21 @@ export const TemplateTwo = () => {
 																				<td>
 																					<a
 																						href={`https://${data.socialInstagram}`}
-																						color={data.accentColor}
+																						color={data.socialColor}
 																						style={{
 																							display: 'inline-block',
 																							padding: '0px',
-																							backgroundColor: data.accentColor,
+																							backgroundColor: data.socialColor,
 																						}}
 																					>
 																						<img
 																							height="24"
 																							src="https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/icons/instagram-icon-2x.png"
 																							alt="instagram"
-																							color={data.accentColor}
+																							color={data.socialColor}
 																							style={{
 																								backgroundColor:
-																									data.accentColor,
+																									data.socialColor,
 																								maxWidth: '135px',
 																								display: 'block',
 																							}}
