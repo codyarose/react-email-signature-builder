@@ -2,7 +2,8 @@ import React from 'react'
 import { useInfoValue } from '../Contexts/InfoContext'
 
 export const TemplateTwo = () => {
-	const { ...data } = useInfoValue()
+	const { data } = useInfoValue()
+
 	return (
 		<table
 			cellPadding="0"
