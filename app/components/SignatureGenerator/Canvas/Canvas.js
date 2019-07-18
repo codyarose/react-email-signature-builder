@@ -11,7 +11,7 @@ export const Canvas = () => (
 )
 
 const StyledCanvas = styled.article`
-	padding: 1rem;
+	padding: 1rem 3rem;
 	grid-area: canvas;
 	display: flex;
 	flex-direction: column;

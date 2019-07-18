@@ -50,12 +50,18 @@ const StyledCollectionContainer = styled.div`
 const StyledCollectionItem = styled.button`
 	position: relative;
 	cursor: pointer;
+	display: flex;
+	justify-content: center;
 	width: 100%;
 	background-color: #fff;
 	padding: 1rem;
 	margin-bottom: 0.5rem;
 	border-radius: 5px;
 	overflow: hidden;
+	& > * {
+		text-align: left;
+		transform: scale(.75);
+	}
 	&::before {
 		position: absolute;
 		content: attr(data-copy);
@@ -73,12 +79,10 @@ const StyledCollectionItem = styled.button`
 		opacity: 0;
 		transition: opacity 0.2s ease-out;
 		pointer-events: none;
+		z-index: 1;
 	}
 	&:hover::before {
 		opacity: 1;
-	}
-	table {
-		margin: 0 auto;
 	}
 	& + textarea {
 		opacity: 0;
