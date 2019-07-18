@@ -5,6 +5,22 @@ import { ButtonSecondary } from '../../Common/Button'
 
 export const Collection = () => {
 	const { data, saveToCollection, copyItem } = useCollectionValue()
+	const collectionDisplay = () => {
+		if (data.collection.length < 1) {
+			return <span>you haven't added any items yet!</span>
+		}
+		return(
+			data.collection.map((item, index) => (
+				<StyledCollectionItem
+					id={`collectionItem${index}`}
+					onClick={e => copyItem(e.currentTarget)}
+					dangerouslySetInnerHTML={{ __html: item }}
+					data-copy="copy html"
+					key={index}
+				/>
+			))
+		)
+	}
 	return (
 		<Fragment>
 			<ButtonSecondary
@@ -16,15 +32,7 @@ export const Collection = () => {
 				Add current signature
 			</ButtonSecondary>
 			<StyledCollectionContainer>
-				{data.collection.map((item, index) => (
-					<StyledCollectionItem
-						id={`collectionItem${index}`}
-						onClick={e => copyItem(e.currentTarget)}
-						dangerouslySetInnerHTML={{ __html: item }}
-						data-copy="copy html"
-						key={index}
-					/>
-				))}
+				{collectionDisplay()}
 			</StyledCollectionContainer>
 		</Fragment>
 	)
@@ -33,6 +41,7 @@ export const Collection = () => {
 const StyledCollectionContainer = styled.div`
 	display: flex;
 	flex-direction: column;
+	align-items: center;
 	animation: flipdown 0.2s ease both;
 `
 
