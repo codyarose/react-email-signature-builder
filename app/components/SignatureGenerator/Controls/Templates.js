@@ -1,25 +1,38 @@
 import React from 'react'
-import InputRadio from '../../Common/InputRadio'
+import styled from 'styled-components'
+import { useControlValue } from '../../Contexts/ControlContext'
+import { InputRadio } from '../../Common/InputRadio'
+import { Description } from '../../Common/Description'
 
-const Templates = props => {
-	return(
-		<form>
-			<InputRadio
-				label="Template 1"
-				name="template1"
-				checked={ props.checked }
-				onChange={ props.onChange }
-				id="template1"
-			/>
-			<InputRadio
-				label="Template 2"
-				name="template2"
-				checked={ props.checked }
-				onChange={ props.onChange }
-				id="template2"
-			/>
-		</form>
+export const Templates = () => {
+	const { data, changeTemplate } = useControlValue()
+	const templateTypes = [
+		{
+			label: 'Template One',
+			name: 'template1',
+		},
+		{
+			label: 'Template Two',
+			name: 'template2',
+		},
+	]
+
+	return (
+		<StyledForm>
+			<Description>Pick a template</Description>
+			{templateTypes.map(templateType => (
+				<InputRadio
+					label={templateType.label}
+					name={templateType.name}
+					checked={data.template}
+					onChange={changeTemplate}
+					key={templateType.name}
+				/>
+			))}
+		</StyledForm>
 	)
 }
 
-export default Templates
+const StyledForm = styled.form`
+	animation: flipdown 0.2s ease both;
+`

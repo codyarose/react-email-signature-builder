@@ -1,68 +1,39 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { ChromePicker } from 'react-color'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-export default class ColorPicker extends React.Component {
-	constructor(props) {
-		super(props)
+export const ColorPicker = ({ title, onChange, currentColor }) => {
+	const [displayColorPicker, setDisplayColorPicker] = useState(false)
+	const handleClick = () => setDisplayColorPicker(!displayColorPicker)
+	const handleClose = () => setDisplayColorPicker(false)
+	const handleChange = color => onChange(color.hex)
 
-		this.state = {
-			displayColorPicker: false,
-		}
-
-		this.handleChange = this.handleChange.bind(this)
-		this.handleClick = this.handleClick.bind(this)
-		this.handleClose = this.handleClose.bind(this)
-	}
-
-	handleChange(color) {
-		this.props.onColorPickerChange(color.hex)
-	}
-	handleClick() {
-		this.setState({
-			displayColorPicker: !this.state.displayColorPicker
-		})
-	}
-	handleClose() {
-		this.setState({
-			displayColorPicker: false
-		})
-	}
-
-	render() {
-		return(
-			<StyledColorPicker>
-				{ this.props.title &&
-					<label>{ this.props.title }</label>
-				}
-				<Swatch onClick={ this.handleClick }>
-					<Color setColor={ this.props.accentColor } />
-				</Swatch>
-				{ this.state.displayColorPicker &&
-					<Popover style={ styles.popover }>
-						<Cover
-							style={ styles.cover }
-							onClick={ this.handleClose }
-						/>
-						<ChromePicker
-							color={ this.props.accentColor }
-							onChange={ this.handleChange }
-						/>
-					</Popover>
-				}
-			</StyledColorPicker>
-		)
-	}
+	return (
+		<StyledColorPicker>
+			{title && <label htmlFor={title}>{title}</label>}
+			<Swatch onClick={handleClick}>
+				<Color setColor={currentColor}>
+					{displayColorPicker && 'close'}
+				</Color>
+			</Swatch>
+			<Popover show={displayColorPicker}>
+				<Cover onClick={handleClose} />
+				<ChromePicker color={currentColor} onChange={handleChange} />
+			</Popover>
+		</StyledColorPicker>
+	)
 }
 
 ColorPicker.propTypes = {
-	action: PropTypes.func,
-	setColor: PropTypes.string
+	title: PropTypes.string,
+	onChange: PropTypes.func,
+	currentColor: PropTypes.string,
 }
 
 const StyledColorPicker = styled.div`
 	position: relative;
+	margin-bottom: 1rem;
 `
 const Swatch = styled.div`
 	width: 100%;
@@ -71,33 +42,30 @@ const Swatch = styled.div`
 	margin-top: 1rem;
 	background: #fff;
 	border-radius: 1px;
-	box-shadow: 0 0 0 1px rgba(0,0,0,0.1);
+	box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
 	cursor: pointer;
 `
 const Color = styled.div`
+	pointer-events: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 0.75rem;
 	width: 100%;
 	height: 2rem;
 	border-radius: 2px;
-	background: ${ props => props.setColor };
+	background: ${props => props.setColor};
 `
 const Popover = styled.div`
-	position: absolute;
-	top: calc(100% + 0.75rem);
-	left: 0;
-	padding: 5px;
-	background-color: #fff;
+	padding: 0.5rem 0;
 	z-index: 2;
-	&::before {
-		content: '';
-		position: absolute;
-		top: -0.25rem;
-		left: 1rem;
-		width: 1rem;
-		height: 1rem;
-		background-color: #fff;
-		transform: rotate(45deg);
-		z-index: -1;
-	}
+	opacity: ${props => (props.show ? '1' : '0')};
+	visibility: ${props => (props.show ? 'visible' : 'hidden')};
+	transition: all 0.2s ease-in-out;
+	max-height: 0;
+	${props => props.show && `
+		max-height: 1000px;
+	`}
 `
 const Cover = styled.div`
 	position: fixed;

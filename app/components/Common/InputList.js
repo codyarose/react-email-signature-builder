@@ -1,74 +1,72 @@
-export const inputsList =  {
+export const inputList = {
 	default: [
 		{
 			label: 'Portrait URL',
-			name: 'portrait'
+			name: 'portrait',
 		},
 		{
 			label: 'Logo URL',
-			name: 'logo'
+			name: 'logo',
 		},
 		{
 			label: 'First name',
-			name: 'firstName'
+			name: 'firstName',
 		},
 		{
 			label: 'Last name',
-			name: 'lastName'
+			name: 'lastName',
 		},
 		{
 			label: 'Job title',
-			name: 'jobTitle'
+			name: 'jobTitle',
 		},
 		{
 			label: 'Department',
-			name: 'department'
+			name: 'department',
 		},
 		{
 			label: 'Company name',
-			name: 'companyName'
+			name: 'companyName',
 		},
 		{
 			label: 'Website URL',
-			name: 'websiteUrl'
+			name: 'websiteUrl',
 		},
 	],
 	contact: [
 		{
 			label: 'Office phone',
-			name: 'officePhone'
+			name: 'officePhone',
 		},
 		{
 			label: 'Mobile phone',
-			name: 'mobilePhone'
+			name: 'mobilePhone',
 		},
 		{
 			label: 'Email address',
-			name: 'emailAddress'
+			name: 'emailAddress',
 		},
 		{
 			label: 'Address',
-			name: 'address'
+			name: 'address',
 		},
 	],
 	social: [
 		{
 			label: 'Facebook',
-			name: 'socialFacebook'
+			name: 'socialFacebook',
 		},
 		{
 			label: 'Twitter',
-			name: 'socialTwitter'
+			name: 'socialTwitter',
 		},
 		{
 			label: 'LinkedIn',
-			name: 'socialLinkedin'
+			name: 'socialLinkedin',
 		},
 		{
 			label: 'Instagram',
-			name: 'socialInstagram'
+			name: 'socialInstagram',
 		},
 	],
 }
-
-export default inputsList

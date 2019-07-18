@@ -1,22 +1,19 @@
-import React, { Fragment } from 'react'
-import Preview from './Preview'
-import Output from './Output'
+import React from 'react'
+import styled from 'styled-components'
+import { Header } from './Header'
+import { Preview } from './Preview'
 
-const Canvas = ({ children, onCopy, copySuccess, onSaveToCollection }) => {
-	return(
-		<Fragment>
-			<Preview>
-				{ children }
-			</Preview>
-			<Output
-				onCopy={ onCopy }
-				copySuccess={ copySuccess }
-				onSaveToCollection={ onSaveToCollection }
-			>
-				{ children }
-			</Output>
-		</Fragment>
-	)
-}
+export const Canvas = () => (
+	<StyledCanvas>
+		<Header />
+		<Preview />
+	</StyledCanvas>
+)
 
-export default Canvas
+const StyledCanvas = styled.article`
+	padding: 1rem 3rem;
+	grid-area: canvas;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+`

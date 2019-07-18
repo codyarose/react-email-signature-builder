@@ -1,25 +1,20 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import styled from 'styled-components'
 
-const InputRadio = props => {
-	return(
-		<div className="radio">
-			<input
-				type="radio"
-				name={ props.name }
-				value={ props.name }
-				checked={ props.checked === props.name }
-				onChange={ props.onChange }
-				id={ props.name }
-			/>
-			<label htmlFor={ props.name }>
-				{ props.label }
-			</label>
-		</div>
-	)
-}
-
-export default InputRadio
+export const InputRadio = ({ name, checked, onChange, label }) => (
+	<StyledRadio>
+		<input
+			type="radio"
+			name={name}
+			value={name}
+			checked={checked === name}
+			onChange={onChange}
+			id={name}
+		/>
+		<label htmlFor={name}>{label}</label>
+	</StyledRadio>
+)
 
 InputRadio.propTypes = {
 	name: PropTypes.string.isRequired,
@@ -27,3 +22,11 @@ InputRadio.propTypes = {
 	onChange: PropTypes.func.isRequired,
 	label: PropTypes.string.isRequired,
 }
+
+const StyledRadio = styled.div`
+	display: flex;
+	margin-bottom: 0.5rem;
+	& > input {
+		margin-right: 0.5rem;
+	}
+`

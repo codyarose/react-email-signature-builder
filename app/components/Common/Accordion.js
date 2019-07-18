@@ -1,45 +1,29 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-const Accordion = props => {
-	return(
-		<StyledAccordion>
-			<Input type="checkbox" defaultChecked />
-			<Arrows />
-			<Title>{ props.title }</Title>
-			<Content>{ props.children }</Content>
-		</StyledAccordion>
-	)
-}
+export const Accordion = ({ title, children }) => (
+	<StyledAccordion>
+		<Input type="checkbox" defaultChecked />
+		<Arrows />
+		<Title>{title}</Title>
+		<Content>{children}</Content>
+	</StyledAccordion>
+)
 
-export default Accordion
+Accordion.propTypes = {
+	title: PropTypes.string,
+	children: PropTypes.oneOfType([
+		PropTypes.string,
+		PropTypes.element,
+		PropTypes.array,
+	]),
+}
 
 const StyledAccordion = styled.article`
 	width: 100%;
 	position: relative;
-	animation: flipdown .5s ease both;
 	margin-bottom: 1.5rem;
-
-	@keyframes flipdown {
-	0% {
-		opacity: 0;
-		transform-origin: top center;
-		transform: rotateX(-90deg);
-	}
-	5% {
-		opacity: 1;
-	}
-	80% {
-		transform: rotateX(8deg);
-	}
-	83% {
-		transform: rotateX(6deg);
-	}
-	100% {
-		transform-origin: top center;
-		transform: rotateX(0deg);
-	}
-}
 `
 
 const Input = styled.input`
@@ -79,13 +63,13 @@ const Arrows = styled.span`
 		background-color: #fff;
 		width: 2px;
 		height: 7px;
-		transition: transform .1s ease-out;
+		transition: transform 0.1s ease-out;
 	}
 	&::before {
-		transform: translate(-100%, 0) rotate(45deg)
+		transform: translate(-100%, 0) rotate(45deg);
 	}
 	&::after {
-		transform: translate(100%, 0) rotate(-45deg)
+		transform: translate(100%, 0) rotate(-45deg);
 	}
 `
 
@@ -99,7 +83,7 @@ const Content = styled.section`
 	position: relative;
 	overflow: hidden;
 	opacity: 1;
-	transition: all .3s ease-in-out;
+	transition: all 0.3s ease-in-out;
 	transform: translate(0, 0);
 	padding-top: 1rem;
 	z-index: 2;

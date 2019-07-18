@@ -1,20 +1,35 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import styled from 'styled-components'
+import { useControlValue } from '../../Contexts/ControlContext'
+import { Button } from '../../Common/Button'
+import { TemplateOne } from '../../Templates/Template-1'
+import { TemplateTwo } from '../../Templates/Template-2'
+import { copyToClipboard } from '../../Common/CopyToClipboard'
 
-const Preview = props => {
-	return(
-		<StyledPreview>
-			{ props.children }
-		</StyledPreview>
+export const Preview = () => {
+	const { data } = useControlValue()
+
+	const currentTemplate = () => {
+		switch (data.template) {
+			case 'template1':
+				return <TemplateOne />
+			case 'template2':
+				return <TemplateTwo />
+			default:
+				return <TemplateOne />
+		}
+	}
+
+	return (
+		<Fragment>
+			<StyledPreview id="signatureMarkup">{currentTemplate()}</StyledPreview>
+			<Button onClick={() => copyToClipboard('signatureMarkup')}>
+				Copy HTML
+			</Button>
+		</Fragment>
 	)
 }
 
-export default Preview
-
 const StyledPreview = styled.article`
-	padding: 1rem;
-	grid-area: signature;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	margin-bottom: 3rem;
 `

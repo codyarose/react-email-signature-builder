@@ -1,16 +1,28 @@
 import React from 'react'
-import ColorPicker from '../../Common/ColorPicker'
+import styled from 'styled-components'
+import { useInfoValue } from '../../Contexts/InfoContext'
+import { ColorPicker } from '../../Common/ColorPicker'
+import { Description } from '../../Common/Description'
 
-const Styles = props => {
-	return(
-		<React.Fragment>
+export const Styles = () => {
+	const { updateAccentColor, updateSocialColor, data } = useInfoValue()
+	return (
+		<StyledStylesContainer>
+			<Description>Use the color pickers to match your branding</Description>
 			<ColorPicker
 				title="Accent Color"
-				onColorPickerChange={ props.onColorPickerChange}
-				accentColor={ props.accentColor }
+				onChange={updateAccentColor}
+				currentColor={data.accentColor}
 			/>
-		</React.Fragment>
+			<ColorPicker
+				title="Social Icons Color"
+				onChange={updateSocialColor}
+				currentColor={data.socialColor}
+			/>
+		</StyledStylesContainer>
 	)
 }
 
-export default Styles
+const StyledStylesContainer = styled.form`
+	animation: flipdown 0.2s ease both;
+`
