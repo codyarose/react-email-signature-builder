@@ -1,11 +1,12 @@
 import React, { Fragment } from 'react'
 import styled from 'styled-components'
-import { useCollectionValue } from '../../Contexts/CollectionContext'
+import { useControlValue } from '../../Contexts/ControlContext'
 import { ButtonSecondary } from '../../Common/Button'
 import { Description } from '../../Common/Description'
 
 export const Collection = () => {
-	const { data, saveToCollection, copyItem } = useCollectionValue()
+	const { data, saveToCollection, copyItem } = useControlValue()
+
 	const collectionDisplay = () => {
 		if (data.collection.length < 1) {
 			return <span>you haven't added any items yet!</span>
@@ -22,6 +23,7 @@ export const Collection = () => {
 			))
 		)
 	}
+
 	return (
 		<Fragment>
 			<Description>You can add multiple versions of the signature you've created to the collection below</Description>

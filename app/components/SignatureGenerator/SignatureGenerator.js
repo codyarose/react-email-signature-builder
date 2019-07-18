@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import { ControlProvider } from '../Contexts/ControlContext'
 import { InfoProvider } from '../Contexts/InfoContext'
-import { CollectionProvider } from '../Contexts/CollectionContext'
 import { Controls } from './Controls/Controls'
 import { Canvas } from './Canvas/Canvas'
 
@@ -11,9 +10,7 @@ const SignatureGenerator = () => {
 		<StyledMainContainer>
 			<InfoProvider>
 				<ControlProvider>
-					<CollectionProvider>
-						<Controls />
-					</CollectionProvider>
+					<Controls />
 					<Canvas />
 				</ControlProvider>
 			</InfoProvider>
