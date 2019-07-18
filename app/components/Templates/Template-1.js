@@ -56,7 +56,7 @@ export const TemplateOne = () => {
 											src={
 												data.logo
 													? data.logo
-													: 'https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/placeholders/logo-placeholder@2x.png'
+													: 'https://via.placeholder.com/130x33/504A65/FFFFFF/?text=Logo!'
 											}
 											alt="Logo"
 											role="presentation"
