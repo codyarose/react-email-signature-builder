@@ -1,20 +1,20 @@
 import React from 'react'
-import { useStateValue } from '../../Contexts/StateContext'
+import { useControlValue } from '../../Contexts/ControlContext'
 import { Templates } from './Templates'
 import { Info } from './Info'
 import { Styles } from './Styles'
 import { Collection } from './Collection'
 
 export const CurrentControls = () => {
-	const [{ control }] = useStateValue()
+	const { data } = useControlValue()
 	let currentControl
-	if (control === 'templates') {
+	if (data.control === 'templates') {
 		currentControl = <Templates />
-	} else if (control === 'info') {
+	} else if (data.control === 'info') {
 		currentControl = <Info />
-	} else if (control === 'styles') {
+	} else if (data.control === 'styles') {
 		currentControl = <Styles />
-	} else if (control === 'collection') {
+	} else if (data.control === 'collection') {
 		currentControl = <Collection />
 	}
 	return currentControl

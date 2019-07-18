@@ -1,16 +1,16 @@
 import React, { Fragment } from 'react'
 import styled from 'styled-components'
-import { useStateValue } from '../../Contexts/StateContext'
+import { useControlValue } from '../../Contexts/ControlContext'
 import { Button } from '../../Common/Button'
 import { TemplateOne } from '../../Templates/Template-1'
 import { TemplateTwo } from '../../Templates/Template-2'
 import { copyToClipboard } from '../../Common/CopyToClipboard'
 
 export const Preview = () => {
-	const [{ template }] = useStateValue()
+	const { data } = useControlValue()
 
 	const currentTemplate = () => {
-		switch (template) {
+		switch (data.template) {
 			case 'template1':
 				return <TemplateOne />
 			case 'template2':

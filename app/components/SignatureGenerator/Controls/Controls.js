@@ -1,11 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
-import { useStateValue } from '../../Contexts/StateContext'
+import { useControlValue } from '../../Contexts/ControlContext'
 import { CurrentControls } from './CurrentControls'
 import { InputRadio } from '../../Common/InputRadio'
 
 export const Controls = () => {
-	const [{ control }, dispatch] = useStateValue()
+	const { data, changeControl } = useControlValue()
 	const controlTypes = ['templates', 'info', 'styles', 'collection']
 
 	return (
@@ -15,13 +15,8 @@ export const Controls = () => {
 					<InputRadio
 						label={controlName}
 						name={controlName}
-						checked={control}
-						onChange={e =>
-							dispatch({
-								type: 'changeControl',
-								newControl: e.target.value,
-							})
-						}
+						checked={data.control}
+						onChange={changeControl}
 						key={controlName}
 					/>
 				))}

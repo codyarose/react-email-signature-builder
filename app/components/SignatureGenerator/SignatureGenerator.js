@@ -1,43 +1,22 @@
 import React from 'react'
 import styled from 'styled-components'
-import { StateProvider } from '../Contexts/StateContext'
+import { ControlProvider } from '../Contexts/ControlContext'
 import { InfoProvider } from '../Contexts/InfoContext'
 import { CollectionProvider } from '../Contexts/CollectionContext'
 import { Controls } from './Controls/Controls'
 import { Canvas } from './Canvas/Canvas'
 
 const SignatureGenerator = () => {
-	const initialState = {
-		control: 'templates',
-		template: 'template1',
-	}
-	const reducer = (state, action) => {
-		switch (action.type) {
-			case 'changeControl':
-				return {
-					...state,
-					control: action.newControl,
-				}
-			case 'changeTemplate':
-				return {
-					...state,
-					template: action.newTemplate,
-				}
-			default:
-				return state
-		}
-	}
-
 	return (
 		<StyledMainContainer>
-			<StateProvider initialState={initialState} reducer={reducer}>
-				<InfoProvider>
+			<InfoProvider>
+				<ControlProvider>
 					<CollectionProvider>
 						<Controls />
-						<Canvas />
 					</CollectionProvider>
-				</InfoProvider>
-			</StateProvider>
+					<Canvas />
+				</ControlProvider>
+			</InfoProvider>
 		</StyledMainContainer>
 	)
 }
