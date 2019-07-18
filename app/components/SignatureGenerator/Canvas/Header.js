@@ -16,6 +16,6 @@ const StyledHeader = styled.div`
 	font-size: 14px;
 	h1 {
 		font-size: 45px;
-		margin-bottom: 0;
+		margin: 1rem 0 0;
 	}
 `

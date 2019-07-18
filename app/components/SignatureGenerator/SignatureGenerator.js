@@ -10,8 +10,6 @@ const SignatureGenerator = () => {
 	const initialState = {
 		control: 'templates',
 		template: 'template1',
-		copySuccess: '',
-		collection: [],
 	}
 	const reducer = (state, action) => {
 		switch (action.type) {
@@ -24,11 +22,6 @@ const SignatureGenerator = () => {
 				return {
 					...state,
 					template: action.newTemplate,
-				}
-			case 'saveToCollection':
-				return {
-					...state,
-					collection: [...state.collection, action.saveToCollection],
 				}
 			default:
 				return state
