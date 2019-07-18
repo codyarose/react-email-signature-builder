@@ -4,6 +4,10 @@ import { useInfoValue } from '../Contexts/InfoContext'
 export const TemplateOne = () => {
 	const { data } = useInfoValue()
 
+	const randomNum = (min,max) => {
+		return Math.floor(Math.random()*(max - min + 1) + min)
+	}
+
 	return (
 		<table
 			cellPadding="0"
@@ -34,7 +38,7 @@ export const TemplateOne = () => {
 											src={
 												data.portrait
 													? data.portrait
-													: 'https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/placeholders/placeholder-image@2x.png'
+													: `https://api.adorable.io/avatars/130/${randomNum(1,100)}`
 											}
 											alt="Portrait"
 											role="presentation"
