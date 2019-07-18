@@ -4,10 +4,6 @@ import { useInfoValue } from '../Contexts/InfoContext'
 export const TemplateTwo = () => {
 	const { data } = useInfoValue()
 
-	const randomNum = (min,max) => {
-		return Math.floor(Math.random()*(max - min + 1) + min)
-	}
-
 	return (
 		<table
 			cellPadding="0"
@@ -27,7 +23,7 @@ export const TemplateTwo = () => {
 							src={
 								data.portrait
 									? data.portrait
-									: `https://api.adorable.io/avatars/130/${randomNum(1,100)}`
+									: 'https://api.adorable.io/avatars/face/eyes1/nose5/mouth6/504A65'
 							}
 							alt="Potrait"
 							role="presentation"

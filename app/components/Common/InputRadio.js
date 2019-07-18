@@ -1,8 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import styled from 'styled-components'
 
 export const InputRadio = ({ name, checked, onChange, label }) => (
-	<div className="radio">
+	<StyledRadio>
 		<input
 			type="radio"
 			name={name}
@@ -12,7 +13,7 @@ export const InputRadio = ({ name, checked, onChange, label }) => (
 			id={name}
 		/>
 		<label htmlFor={name}>{label}</label>
-	</div>
+	</StyledRadio>
 )
 
 InputRadio.propTypes = {
@@ -21,3 +22,11 @@ InputRadio.propTypes = {
 	onChange: PropTypes.func.isRequired,
 	label: PropTypes.string.isRequired,
 }
+
+const StyledRadio = styled.div`
+	display: flex;
+	margin-bottom: 0.5rem;
+	& > input {
+		margin-right: 0.5rem;
+	}
+`
