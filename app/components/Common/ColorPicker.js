@@ -13,7 +13,9 @@ export const ColorPicker = ({ title, onChange, currentColor }) => {
 		<StyledColorPicker>
 			{title && <label htmlFor={title}>{title}</label>}
 			<Swatch onClick={handleClick}>
-				<Color setColor={currentColor} />
+				<Color setColor={currentColor}>
+					{displayColorPicker && 'close'}
+				</Color>
 			</Swatch>
 			<Popover show={displayColorPicker}>
 				<Cover onClick={handleClose} />
@@ -31,7 +33,7 @@ ColorPicker.propTypes = {
 
 const StyledColorPicker = styled.div`
 	position: relative;
-	margin-bottom: 2rem;
+	margin-bottom: 1rem;
 `
 const Swatch = styled.div`
 	width: 100%;
@@ -44,32 +46,26 @@ const Swatch = styled.div`
 	cursor: pointer;
 `
 const Color = styled.div`
+	pointer-events: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 0.75rem;
 	width: 100%;
 	height: 2rem;
 	border-radius: 2px;
 	background: ${props => props.setColor};
 `
 const Popover = styled.div`
-	position: absolute;
-	top: calc(100% + 0.75rem);
-	left: 0;
-	padding: 5px;
-	background-color: #fff;
+	padding: 0.5rem 0;
 	z-index: 2;
 	opacity: ${props => (props.show ? '1' : '0')};
 	visibility: ${props => (props.show ? 'visible' : 'hidden')};
-	transition: opacity 0.1s ease-out;
-	&::before {
-		content: '';
-		position: absolute;
-		top: -0.25rem;
-		left: 1rem;
-		width: 1rem;
-		height: 1rem;
-		background-color: #fff;
-		transform: rotate(45deg);
-		z-index: -1;
-	}
+	transition: all 0.2s ease-in-out;
+	max-height: 0;
+	${props => props.show && `
+		max-height: 1000px;
+	`}
 `
 const Cover = styled.div`
 	position: fixed;
