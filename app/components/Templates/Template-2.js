@@ -399,7 +399,7 @@ export const TemplateTwo = () => {
 															src={
 																data.logo
 																	? data.logo
-																	: 'https://placeholder.com/wp-content/uploads/2018/10/placeholder.com-logo2.png'
+																	: 'https://pngimage.net/wp-content/uploads/2018/06/logo-placeholder-png-3.png'
 															}
 															alt="Logo"
 															role="presentation"
