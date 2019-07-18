@@ -52,7 +52,7 @@ export const TemplateOne = () => {
 											src={
 												data.logo
 													? data.logo
-													: 'http://www.gifpng.com/130x33/FFFFFF?border-width=3&border-type=rectangle&border-color=504A65&font-size=16&text=Logo'
+													: 'https://placeholder.com/wp-content/uploads/2018/10/placeholder.com-logo2.png'
 											}
 											alt="Logo"
 											role="presentation"
