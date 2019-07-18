@@ -63,48 +63,48 @@ export default class SignatureGenerator extends React.Component {
 		this.handleSaveToLocalStorage()
 	}
 
-	handleCollectionItemCopy = e => {
-		const itemPreview = e.currentTarget.children[0]
-		const itemMarkup = e.currentTarget.children[1]
-		itemPreview.addEventListener('mouseleave', () => {
-			setTimeout(() => {
-				itemPreview.dataset.copy = 'copy'
-			}, 200)
-		})
-		itemPreview.dataset.copy = 'copied!'
-		itemPreview.style = ''
-		// eslint-disable-next-line no-void
-		void itemPreview.offsetWidth
-		itemPreview.style.animation = 'copied 1s forwards'
-		itemMarkup.select()
-		document.execCommand('copy')
-	}
+	// handleCollectionItemCopy = e => {
+	// 	const itemPreview = e.currentTarget.children[0]
+	// 	const itemMarkup = e.currentTarget.children[1]
+	// 	itemPreview.addEventListener('mouseleave', () => {
+	// 		setTimeout(() => {
+	// 			itemPreview.dataset.copy = 'copy'
+	// 		}, 200)
+	// 	})
+	// 	itemPreview.dataset.copy = 'copied!'
+	// 	itemPreview.style = ''
+	// 	// eslint-disable-next-line no-void
+	// 	void itemPreview.offsetWidth
+	// 	itemPreview.style.animation = 'copied 1s forwards'
+	// 	itemMarkup.select()
+	// 	document.execCommand('copy')
+	// }
 
-	handleControlChange(e) {
-		this.setState({ activeControl: e.target.value })
-	}
+	// handleControlChange(e) {
+	// 	this.setState({ activeControl: e.target.value })
+	// }
 
-	handleTemplateChange(e) {
-		this.setState({ template: e.target.value })
-	}
+	// handleTemplateChange(e) {
+	// 	this.setState({ template: e.target.value })
+	// }
 
-	handleInputChange(e) {
-		const {
-			target: { name, value },
-		} = e
-		this.setState({ [name]: value })
-	}
+	// handleInputChange(e) {
+	// 	const {
+	// 		target: { name, value },
+	// 	} = e
+	// 	this.setState({ [name]: value })
+	// }
 
-	handleColorPickerChange(color) {
-		this.setState({ accentColor: color })
-	}
+	// handleColorPickerChange(color) {
+	// 	this.setState({ accentColor: color })
+	// }
 
-	handleCopy() {
-		const signatureMarkup = document.getElementById('signatureMarkup')
-		signatureMarkup.select()
-		document.execCommand('copy')
-		this.setState({ copySuccess: 'Copied!' })
-	}
+	// handleCopy() {
+	// 	const signatureMarkup = document.getElementById('signatureMarkup')
+	// 	signatureMarkup.select()
+	// 	document.execCommand('copy')
+	// 	this.setState({ copySuccess: 'Copied!' })
+	// }
 
 	handleSaveToLocalStorage() {
 		const { state } = this.state
@@ -130,12 +130,12 @@ export default class SignatureGenerator extends React.Component {
 		})
 	}
 
-	handleSaveToCollection() {
-		const { state } = this.state
-		const collectionItem = document.getElementById('signatureMarkup').firstChild
-			.textContent
-		this.setState({ collection: [...state.collection, collectionItem] })
-	}
+	// handleSaveToCollection() {
+	// 	const { state } = this.state
+	// 	const collectionItem = document.getElementById('signatureMarkup').firstChild
+	// 		.textContent
+	// 	this.setState({ collection: [...state.collection, collectionItem] })
+	// }
 
 	render() {
 		const {

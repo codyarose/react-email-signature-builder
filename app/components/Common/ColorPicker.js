@@ -15,10 +15,10 @@ export const ColorPicker = ({ title, onChange, currentColor }) => {
 			<Swatch onClick={handleClick}>
 				<Color setColor={currentColor} />
 			</Swatch>
-				<Popover show={displayColorPicker}>
-					<Cover onClick={handleClose} />
-					<ChromePicker color={currentColor} onChange={handleChange} />
-				</Popover>
+			<Popover show={displayColorPicker}>
+				<Cover onClick={handleClose} />
+				<ChromePicker color={currentColor} onChange={handleChange} />
+			</Popover>
 		</StyledColorPicker>
 	)
 }
@@ -56,8 +56,8 @@ const Popover = styled.div`
 	padding: 5px;
 	background-color: #fff;
 	z-index: 2;
-	opacity: ${props => props.show ? '1' : '0'};
-	visibility: ${props => props.show ? 'visible' : 'hidden'};
+	opacity: ${props => (props.show ? '1' : '0')};
+	visibility: ${props => (props.show ? 'visible' : 'hidden')};
 	transition: opacity 0.1s ease-out;
 	&::before {
 		content: '';

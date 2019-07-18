@@ -3,8 +3,6 @@ import styled from 'styled-components'
 import { useStateValue } from '../../Contexts/StateContext'
 import { CurrentControls } from './CurrentControls'
 import { InputRadio } from '../../Common/InputRadio'
-import { InfoProvider } from '../../Contexts/InfoContext'
-import { CollectionProvider } from '../../Contexts/CollectionContext'
 
 export const Controls = () => {
 	const [{ control }, dispatch] = useStateValue()

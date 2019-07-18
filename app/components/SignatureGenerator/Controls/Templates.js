@@ -8,11 +8,11 @@ export const Templates = () => {
 	const templateTypes = [
 		{
 			label: 'Template One',
-			name: 'template1'
+			name: 'template1',
 		},
 		{
 			label: 'Template Two',
-			name: 'template2'
+			name: 'template2',
 		},
 	]
 

@@ -28,7 +28,7 @@ const SignatureGenerator = () => {
 			case 'saveToCollection':
 				return {
 					...state,
-					collection: [...state.collection, action.saveToCollection]
+					collection: [...state.collection, action.saveToCollection],
 				}
 			default:
 				return state

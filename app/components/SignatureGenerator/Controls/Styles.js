@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import { useInfoValue } from '../../Contexts/InfoContext'
 import { ColorPicker } from '../../Common/ColorPicker'

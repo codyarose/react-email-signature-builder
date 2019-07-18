@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-export const InputRadio = ({ name, checked, onChange, label, value }) => (
+export const InputRadio = ({ name, checked, onChange, label }) => (
 	<div className="radio">
 		<input
 			type="radio"

@@ -8,8 +8,10 @@ export const Collection = () => {
 	return (
 		<Fragment>
 			<ButtonSecondary
-			secondary
-				onClick={() => saveToCollection(document.getElementById('signatureMarkup').innerHTML)}
+				secondary
+				onClick={() =>
+					saveToCollection(document.getElementById('signatureMarkup').innerHTML)
+				}
 			>
 				Add current signature
 			</ButtonSecondary>
@@ -18,7 +20,7 @@ export const Collection = () => {
 					<StyledCollectionItem
 						id={`collectionItem${index}`}
 						onClick={e => copyItem(e.currentTarget)}
-						dangerouslySetInnerHTML={{__html: item}}
+						dangerouslySetInnerHTML={{ __html: item }}
 						data-copy="copy html"
 						key={index}
 					/>

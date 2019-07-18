@@ -6,7 +6,7 @@ export const CollectionContext = createContext()
 
 export const CollectionProvider = ({ children }) => {
 	const [state, setState] = useState({
-		collection: []
+		collection: [],
 	})
 	return (
 		<CollectionContext.Provider
@@ -15,7 +15,7 @@ export const CollectionProvider = ({ children }) => {
 				saveToCollection: collectionItem => {
 					setState({
 						...state,
-						collection: [...state.collection, collectionItem]
+						collection: [...state.collection, collectionItem],
 					})
 				},
 				copyItem: item => {
@@ -30,7 +30,7 @@ export const CollectionProvider = ({ children }) => {
 					// eslint-disable-next-line no-void
 					void item.offsetWidth
 					item.style.animation = 'copied 1s forwards'
-				}
+				},
 			}}
 		>
 			{children}

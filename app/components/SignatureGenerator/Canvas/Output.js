@@ -3,15 +3,13 @@ import styled from 'styled-components'
 import { Button } from '../../Common/Button'
 import { copyToClipboard } from '../../Common/CopyToClipboard'
 
-export const Output = () => {
-	return (
-		<StyledOutput>
-			<Button onClick={() => copyToClipboard('signatureMarkup')}>
-				Copy HTML
-			</Button>
-		</StyledOutput>
-	)
-}
+export const Output = () => (
+	<StyledOutput>
+		<Button onClick={() => copyToClipboard('signatureMarkup')}>
+			Copy HTML
+		</Button>
+	</StyledOutput>
+)
 
 const StyledOutput = styled.article`
 	padding: 1rem;
