@@ -1,6 +1,5 @@
 import React from 'react'
 import { ChromePicker } from 'react-color'
-import reactCSS from 'reactcss'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
@@ -85,11 +84,8 @@ export default class ColorPicker extends React.Component {
 					<Color setColor={ this.props.setColor } />
 				</Swatch>
 				{ this.state.displayColorPicker &&
-					<Popover style={ styles.popover }>
-						<Cover
-							style={ styles.cover }
-							onClick={ this.handleClose }
-						/>
+					<Popover>
+						<Cover onClick={ this.handleClose } />
 						<ChromePicker
 							color={ this.props.setColor }
 							onChange={ this.handleChange }

@@ -28,39 +28,17 @@ export default class Signature extends React.Component {
 
 		const socialColor = accentColor
 
-		const tableStyles = {
-			verticalAlign: '-webkit-baseline-middle',
-			fontSize: 'medium',
-			fontFamily: 'Arial'
-		}
-
-		const textCenter = {
-			textAlign: 'center'
-		}
-
-		const socialAnchor = {
-			display: 'inline-block',
-			padding: '0px',
-			backgroundColor: socialColor
-		}
-
-		const socialImage = {
-			backgroundColor: socialAnchor,
-			maxWidth: '135px',
-			display: 'block'
-		}
-
 		return (
 			<table id="signature" cellPadding="0" cellSpacing="0"
-				style={tableStyles}>
+				style={{verticalAlign: '-webkit-baseline-middle', fontSize: 'medium', fontFamily: 'Arial'}}>
 				<tbody>
 					<tr>
 						<td style={{verticalAlign: 'top'}}>
 							<table cellPadding="0" cellSpacing="0"
-								style={tableStyles}>
+								style={{verticalAlign: '-webkit-baseline-middle', fontSize: 'medium', fontFamily: 'Arial'}}>
 								<tbody>
 									<tr>
-										<td style={textCenter}>
+										<td style={{textAlign: 'center'}}>
 											<img width="130"
 												src={ portrait ?
 														portrait :
@@ -73,7 +51,7 @@ export default class Signature extends React.Component {
 										<td height="24"></td>
 									</tr>
 									<tr>
-										<td style={textCenter}>
+										<td style={{textAlign: 'center'}}>
 											<img width="130"
 												src={ logo ?
 														logo :
@@ -87,20 +65,20 @@ export default class Signature extends React.Component {
 									</tr>
 									{ (socialFacebook || socialInstagram || socialLinkedin || socialTwitter) &&
 										<tr>
-											<td style={textCenter}>
+											<td style={{textAlign: 'center'}}>
 												<table cellPadding="0" cellSpacing="0"
 													style={{verticalAlign: '-webkit-baseline-middle', fontSize: 'medium', fontFamily: 'Arial', display: 'inline-block'}}>
 													<tbody>
-														<tr style={textCenter}>
+														<tr style={{textAlign: 'center'}}>
 															{ socialFacebook &&
 																<React.Fragment>
 																	<td>
 																		<a href={ `https://${ socialFacebook }` } color={ socialColor }
-																			style={socialAnchor}>
+																			style={{display: 'inline-block', padding: '0px', backgroundColor: socialColor}}>
 																			<img
 																				src="https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/icons/facebook-icon.png"
 																				alt="facebook" color={ socialColor }
-																				style={socialImage} />
+																				style={{backgroundColor: socialAnchor, maxWidth: '135px', display: 'block'}} />
 																		</a>
 																	</td>
 																	<td width="5"></td>
@@ -110,11 +88,11 @@ export default class Signature extends React.Component {
 																<React.Fragment>
 																	<td>
 																		<a href={ `https://${ socialTwitter }` } color={ socialColor }
-																			style={socialAnchor}>
+																			style={{display: 'inline-block', padding: '0px', backgroundColor: socialColor}}>
 																			<img
 																				src="https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/icons/twitter-icon.png"
 																				alt="twitter" color={ socialColor }
-																				style={socialImage} />
+																				style={{backgroundColor: socialAnchor, maxWidth: '135px', display: 'block'}} />
 																		</a>
 																	</td>
 																	<td width="5"></td>
@@ -124,11 +102,11 @@ export default class Signature extends React.Component {
 																<React.Fragment>
 																	<td>
 																		<a href={ `https://${ socialLinkedin }` } color={ socialColor }
-																			style={socialAnchor}>
+																			style={{display: 'inline-block', padding: '0px', backgroundColor: socialColor}}>
 																			<img
 																				src="https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/icons/linkedin-icon.png"
 																				alt="linkedin" color={ socialColor }
-																				style={socialImage} />
+																				style={{backgroundColor: socialAnchor, maxWidth: '135px', display: 'block'}} />
 																		</a>
 																	</td>
 																	<td width="5"></td>
@@ -138,11 +116,11 @@ export default class Signature extends React.Component {
 																<React.Fragment>
 																	<td>
 																		<a href={ `https://${ socialInstagram }` } color={ socialColor }
-																			style={socialAnchor}>
+																			style={{display: 'inline-block', padding: '0px', backgroundColor: socialColor}}>
 																			<img
 																				src="https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/icons/instagram-icon.png"
 																				alt="instagram" color={ socialColor }
-																				style={socialImage} />
+																				style={{backgroundColor: socialAnchor, maxWidth: '135px', display: 'block'}} />
 																		</a>
 																	</td>
 																	<td width="5"></td>
@@ -192,13 +170,13 @@ export default class Signature extends React.Component {
 							</table>
 							{ (officePhone || mobilePhone || emailAddress || websiteUrl || address) &&
 								<table cellPadding="0" cellSpacing="0"
-									style={tableStyles}>
+									style={{verticalAlign: '-webkit-baseline-middle', fontSize: 'medium', fontFamily: 'Arial'}}>
 									<tbody>
 										{ (officePhone || mobilePhone) &&
 											<tr height="25" style={{verticalAlign: 'middle'}}>
 												<td width="30" style={{verticalAlign: 'middle'}}>
 													<table cellPadding="0" cellSpacing="0"
-														style={tableStyles}>
+														style={{verticalAlign: '-webkit-baseline-middle', fontSize: 'medium', fontFamily: 'Arial'}}>
 														<tbody>
 															<tr>
 																<td style={{verticalAlign: 'bottom'}}>
@@ -229,7 +207,7 @@ export default class Signature extends React.Component {
 											<tr height="25" style={{verticalAlign: 'middle'}}>
 												<td width="30" style={{verticalAlign: 'middle'}}>
 													<table cellPadding="0" cellSpacing="0"
-														style={tableStyles}>
+														style={{verticalAlign: '-webkit-baseline-middle', fontSize: 'medium', fontFamily: 'Arial'}}>
 														<tbody>
 															<tr>
 																<td style={{verticalAlign: 'bottom'}}>
@@ -258,7 +236,7 @@ export default class Signature extends React.Component {
 											<tr height="25" style={{verticalAlign: 'middle'}}>
 												<td width="30" style={{verticalAlign: 'middle'}}>
 													<table cellPadding="0" cellSpacing="0"
-														style={tableStyles}>
+														style={{verticalAlign: '-webkit-baseline-middle', fontSize: 'medium', fontFamily: 'Arial'}}>
 														<tbody>
 															<tr>
 																<td style={{verticalAlign: 'bottom'}}>
@@ -287,7 +265,7 @@ export default class Signature extends React.Component {
 											<tr height="25" style={{verticalAlign: 'middle'}}>
 												<td width="30" style={{verticalAlign: 'middle'}}>
 													<table cellPadding="0" cellSpacing="0"
-														style={tableStyles}>
+														style={{verticalAlign: '-webkit-baseline-middle', fontSize: 'medium', fontFamily: 'Arial'}}>
 														<tbody>
 															<tr>
 																<td style={{verticalAlign: 'bottom'}}>
@@ -318,7 +296,7 @@ export default class Signature extends React.Component {
 								</table>
 							}
 							<table cellPadding="0" cellSpacing="0"
-								style={tableStyles}>
+								style={{verticalAlign: '-webkit-baseline-middle', fontSize: 'medium', fontFamily: 'Arial'}}>
 								<tbody>
 									<tr>
 										<td height="16"></td>
@@ -326,7 +304,7 @@ export default class Signature extends React.Component {
 								</tbody>
 							</table>
 							<table cellPadding="0" cellSpacing="0"
-								style={tableStyles}>
+								style={{verticalAlign: '-webkit-baseline-middle', fontSize: 'medium', fontFamily: 'Arial'}}>
 								<tbody>
 									<tr>
 										<td height="24"></td>
