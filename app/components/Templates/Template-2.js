@@ -211,12 +211,12 @@ const TemplateTwo = props => {
 																		{ props.socialFacebook &&
 																			<React.Fragment>
 																				<td>
-																					<a href={ `https://${ props.socialFacebook }` } color={ props.socialColor }
-																						style={{display: 'inline-block', padding: '0px', backgroundColor: props.socialColor}}>
+																					<a href={ `https://${ props.socialFacebook }` } color={ props.accentColor }
+																						style={{display: 'inline-block', padding: '0px', backgroundColor: props.accentColor}}>
 																						<img height="24"
 																							src="https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/icons/facebook-icon-2x.png"
-																							alt="facebook" color={ props.socialColor }
-																							style={{backgroundColor: props.socialColor, maxWidth: '135px', display: 'block'}} />
+																							alt="facebook" color={ props.accentColor }
+																							style={{backgroundColor: props.accentColor, maxWidth: '135px', display: 'block'}} />
 																					</a>
 																				</td>
 																				<td width="5"></td>
@@ -225,12 +225,12 @@ const TemplateTwo = props => {
 																		{ props.socialTwitter &&
 																			<React.Fragment>
 																				<td>
-																					<a href={ `https://${ props.socialTwitter }` } color={ props.socialColor }
-																						style={{display: 'inline-block', padding: '0px', backgroundColor: props.socialColor}}>
+																					<a href={ `https://${ props.socialTwitter }` } color={ props.accentColor }
+																						style={{display: 'inline-block', padding: '0px', backgroundColor: props.accentColor}}>
 																						<img height="24"
 																							src="https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/icons/twitter-icon-2x.png"
-																							alt="twitter" color={ props.socialColor }
-																							style={{backgroundColor: props.socialColor, maxWidth: '135px', display: 'block'}} />
+																							alt="twitter" color={ props.accentColor }
+																							style={{backgroundColor: props.accentColor, maxWidth: '135px', display: 'block'}} />
 																					</a>
 																				</td>
 																				<td width="5"></td>
@@ -239,12 +239,12 @@ const TemplateTwo = props => {
 																		{ props.socialLinkedin &&
 																			<React.Fragment>
 																				<td>
-																					<a href={ `https://${ props.socialLinkedin }` } color={ props.socialColor }
-																						style={{display: 'inline-block', padding: '0px', backgroundColor: props.socialColor}}>
+																					<a href={ `https://${ props.socialLinkedin }` } color={ props.accentColor }
+																						style={{display: 'inline-block', padding: '0px', backgroundColor: props.accentColor}}>
 																						<img height="24"
 																							src="https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/icons/linkedin-icon-2x.png"
-																							alt="linkedin" color={ props.socialColor }
-																							style={{backgroundColor: props.socialColor, maxWidth: '135px', display: 'block'}} />
+																							alt="linkedin" color={ props.accentColor }
+																							style={{backgroundColor: props.accentColor, maxWidth: '135px', display: 'block'}} />
 																					</a>
 																				</td>
 																				<td width="5"></td>
@@ -253,12 +253,12 @@ const TemplateTwo = props => {
 																		{ props.socialInstagram &&
 																			<React.Fragment>
 																				<td>
-																					<a href={ `https://${ props.socialInstagram }` } color={ props.socialColor }
-																						style={{display: 'inline-block', padding: '0px', backgroundColor: props.socialColor}}>
+																					<a href={ `https://${ props.socialInstagram }` } color={ props.accentColor }
+																						style={{display: 'inline-block', padding: '0px', backgroundColor: props.accentColor}}>
 																						<img height="24"
 																							src="https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/icons/instagram-icon-2x.png"
-																							alt="instagram" color={ props.socialColor }
-																							style={{backgroundColor: props.socialColor, maxWidth: '135px', display: 'block'}} />
+																							alt="instagram" color={ props.accentColor }
+																							style={{backgroundColor: props.accentColor, maxWidth: '135px', display: 'block'}} />
 																					</a>
 																				</td>
 																				<td width="5"></td>

@@ -3,35 +3,46 @@ import styled from 'styled-components'
 import InputRadio from '../../Common/InputRadio'
 import CurrentControls from './CurrentControls'
 
-const Controls = props => {
+const Controls = ({ activeControl, onControlChange,template, collectionList, onTemplateChange, onInputChange, onCopyCollectionItem, onColorPickerChange, ...props }) => {
 	return(
 		<StyledControlsContainer>
 			<StyledControls>
 				<InputRadio
 					label="Templates"
 					name="templates"
-					checked={ props.activeControl }
-					onChange={ props.onControlChange }
+					checked={ activeControl }
+					onChange={ onControlChange }
 				/>
 				<InputRadio
 					label="Info"
 					name="info"
-					checked={ props.activeControl }
-					onChange={ props.onControlChange }
+					checked={ activeControl }
+					onChange={ onControlChange }
 				/>
 				<InputRadio
 					label="Styles"
 					name="styles"
-					checked={ props.activeControl }
-					onChange={ props.onControlChange }
+					checked={ activeControl }
+					onChange={ onControlChange }
+				/>
+				<InputRadio
+					label="Collection"
+					name="collection"
+					checked={ activeControl }
+					onChange={ onControlChange }
 				/>
 			</StyledControls>
 
 			<CurrentControls
-				current={ props.activeControl}
-				template={ props.template }
-				onTemplateChange={ props.onTemplateChange }
-				onInputChange={ props.onInputChange }
+				current={ activeControl}
+				template={ template }
+				collectionList={ collectionList }
+				onTemplateChange={ onTemplateChange }
+				onInputChange={ onInputChange }
+				onCopyCollectionItem={ onCopyCollectionItem }
+				onColorPickerChange={ onColorPickerChange }
+				accentColor={ props.accentColor }
+				{ ...props }
 			/>
 		</StyledControlsContainer>
 	)
@@ -47,9 +58,6 @@ const StyledControlsContainer = styled.article`
 	color: #E8E8E8;
 	background-color: #504A65;
 	overflow-y: scroll;
-	width: 100%;
-	max-width: 320px;
-	height: 100vh;
 	scrollbar-width: none;
 	-ms-overflow-style: none;
 	&::-webkit-scrollbar {
