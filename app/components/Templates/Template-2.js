@@ -403,7 +403,7 @@ export const TemplateTwo = () => {
 															src={
 																data.logo
 																	? data.logo
-																	: 'https://via.placeholder.com/130x33/504A65/FFFFFF/?text=Logo!'
+																	: 'http://www.gifpng.com/130x33/FFFFFF?border-width=3&border-type=rectangle&border-color=504A65&font-size=16&text=Logo'
 															}
 															alt="Logo"
 															role="presentation"

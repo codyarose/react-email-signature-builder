@@ -1,10 +1,18 @@
-import React, { Fragment } from 'react'
+import React from 'react'
+import styled from 'styled-components'
 import { Preview } from './Preview'
-import { Output } from './Output'
 
 export const Canvas = () => (
-	<Fragment>
+	<StyledCanvas>
 		<Preview />
-		<Output />
-	</Fragment>
+	</StyledCanvas>
 )
+
+const StyledCanvas = styled.article`
+	padding: 1rem;
+	grid-area: canvas;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+`

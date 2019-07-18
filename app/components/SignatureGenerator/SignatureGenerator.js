@@ -56,11 +56,10 @@ const StyledMainContainer = styled.main`
 	margin: 0 auto;
 	display: grid;
 	grid-template-columns: auto 3fr;
-	grid-template-rows: 1fr 1fr;
+	grid-template-rows: 1fr;
 	grid-gap: 1vw;
 	grid-template-areas:
-		'form signature'
-		'form copy-signature';
+		'form canvas'
 `
 
 export { SignatureGenerator }
