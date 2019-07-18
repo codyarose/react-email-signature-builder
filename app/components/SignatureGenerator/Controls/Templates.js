@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { useStateValue } from '../../Contexts/StateContext'
 import { InputRadio } from '../../Common/InputRadio'
+import { Description } from '../../Common/Description'
 
 export const Templates = () => {
 	const [{ template }, dispatch] = useStateValue()
@@ -18,6 +19,7 @@ export const Templates = () => {
 
 	return (
 		<StyledForm>
+			<Description>Pick a template</Description>
 			{templateTypes.map(templateType => (
 				<InputRadio
 					label={templateType.label}

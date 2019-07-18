@@ -55,7 +55,7 @@ const StyledMainContainer = styled.main`
 	background-color: #fff;
 	margin: 0 auto;
 	display: grid;
-	grid-template-columns: auto 3fr;
+	grid-template-columns: 415px 3fr;
 	grid-template-rows: 1fr;
 	grid-gap: 1vw;
 	grid-template-areas:

@@ -50,7 +50,7 @@ const StyledControlsContainer = styled.article`
 const StyledControls = styled.div`
 	display: flex;
 	justify-content: space-between;
-	margin-bottom: 2rem;
+	margin-bottom: 1rem;
 	& > div {
 		position: relative;
 		flex: 1;

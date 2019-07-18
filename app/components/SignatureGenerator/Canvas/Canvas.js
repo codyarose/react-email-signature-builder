@@ -15,6 +15,5 @@ const StyledCanvas = styled.article`
 	grid-area: canvas;
 	display: flex;
 	flex-direction: column;
-	/* justify-content: center; */
 	align-items: center;
 `

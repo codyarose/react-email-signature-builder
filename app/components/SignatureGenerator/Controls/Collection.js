@@ -2,6 +2,7 @@ import React, { Fragment } from 'react'
 import styled from 'styled-components'
 import { useCollectionValue } from '../../Contexts/CollectionContext'
 import { ButtonSecondary } from '../../Common/Button'
+import { Description } from '../../Common/Description'
 
 export const Collection = () => {
 	const { data, saveToCollection, copyItem } = useCollectionValue()
@@ -23,6 +24,7 @@ export const Collection = () => {
 	}
 	return (
 		<Fragment>
+			<Description>You can add multiple versions of the signature you've created to the collection below</Description>
 			<ButtonSecondary
 				secondary
 				onClick={() =>

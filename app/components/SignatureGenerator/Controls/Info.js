@@ -4,12 +4,14 @@ import { useInfoValue } from '../../Contexts/InfoContext'
 import { InputText } from '../../Common/InputText'
 import { Accordion } from '../../Common/Accordion'
 import { inputList } from '../../Common/InputList'
+import { Description } from '../../Common/Description'
 
 export const Info = () => {
 	const { data, updateInfo } = useInfoValue()
 
 	return (
 		<StyledInfo>
+			<Description>Enter the info you'd like to be displayed in your signature</Description>
 			{inputList.default.map(input => (
 				<InputText
 					label={input.label}
