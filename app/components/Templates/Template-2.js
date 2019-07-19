@@ -392,27 +392,31 @@ export const TemplateTwo = () => {
 											}}
 										>
 											<tbody>
-												<tr>
-													<td>
-														<img
-															width="130"
-															src={
-																data.logo
-																	? data.logo
-																	: 'https://pngimage.net/wp-content/uploads/2018/06/logo-placeholder-png-3.png'
-															}
-															alt="Logo"
-															role="presentation"
-															style={{
-																maxWidth: '130px',
-																display: 'inline-block',
-															}}
-														/>
-													</td>
-												</tr>
-												<tr>
-													<td height="10"></td>
-												</tr>
+												{data.logo && (
+													<React.Fragment>
+														<tr>
+															<td>
+																<img
+																	width="130"
+																	src={
+																		data.logo
+																			? data.logo
+																			: 'https://pngimage.net/wp-content/uploads/2018/06/logo-placeholder-png-3.png'
+																	}
+																	alt="Logo"
+																	role="presentation"
+																	style={{
+																		maxWidth: '130px',
+																		display: 'inline-block',
+																	}}
+																/>
+															</td>
+														</tr>
+														<tr>
+															<td height="10"></td>
+														</tr>
+													</React.Fragment>
+												)}
 												{(data.socialFacebook ||
 													data.socialInstagram ||
 													data.socialLinkedin ||
