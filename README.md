@@ -19,7 +19,6 @@ cd react-email-signature-generator
 npm i
 npm start
 ```
-Open browser to `http://localhost:8080/`
 
 ## TODO
 + Connect to Firebase
