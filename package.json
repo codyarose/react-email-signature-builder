@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "homepage": "https://codyarose.github.io/react-email-signature-builder",
+  "homepage": "https://codyrose.co/react-email-signature-builder",
   "scripts": {
     "start": "react-scripts start",
     "predeploy": "npm run build",
