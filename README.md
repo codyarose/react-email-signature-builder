@@ -25,7 +25,6 @@ cd react-email-signature-builder
 npm i
 npm start
 ```
-Open browser to `http://localhost:8080/`
 
 ## Example
 [Signature example](http://htmlpreview.github.io/?https://raw.githubusercontent.com/codyarose/react-email-signature-builder/master/example.html)
