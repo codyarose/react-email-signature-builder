@@ -28,7 +28,7 @@ npm start
 Open browser to `http://localhost:8080/`
 
 ## Example
-[Signature example](example.html)
+[Signature example](http://htmlpreview.github.io/?https://raw.githubusercontent.com/codyarose/react-email-signature-generator/master/example.html)
 
 ## TODO
 + Connect to Firebase
