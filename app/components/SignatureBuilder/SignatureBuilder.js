@@ -5,7 +5,7 @@ import { InfoProvider } from '../Contexts/InfoContext'
 import { Controls } from './Controls/Controls'
 import { Canvas } from './Canvas/Canvas'
 
-const SignatureGenerator = () => {
+const SignatureBuilder = () => {
 	return (
 		<StyledMainContainer>
 			<InfoProvider>
@@ -30,4 +30,4 @@ const StyledMainContainer = styled.main`
 		'form canvas'
 `
 
-export { SignatureGenerator }
+export { SignatureBuilder }
