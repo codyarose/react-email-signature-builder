@@ -42,24 +42,28 @@ export const TemplateOne = () => {
 										/>
 									</td>
 								</tr>
-								<tr>
-									<td height="24"></td>
-								</tr>
-								<tr>
-									<td style={{ textAlign: 'center' }}>
-										<img
-											width="130"
-											src={
-												data.logo
-													? data.logo
-													: 'https://pngimage.net/wp-content/uploads/2018/06/logo-placeholder-png-3.png'
-											}
-											alt="Logo"
-											role="presentation"
-											style={{ maxWidth: '130px', display: 'block' }}
-										/>
-									</td>
-								</tr>
+								{ data.logo && (
+									<React.Fragment>
+										<tr>
+											<td height="24"></td>
+										</tr>
+										<tr>
+											<td style={{ textAlign: 'center' }}>
+												<img
+													width="130"
+													src={
+														data.logo
+															? data.logo
+															: 'https://pngimage.net/wp-content/uploads/2018/06/logo-placeholder-png-3.png'
+													}
+													alt="Logo"
+													role="presentation"
+													style={{ maxWidth: '130px', display: 'block' }}
+												/>
+											</td>
+										</tr>
+									</React.Fragment>
+								)}
 								<tr>
 									<td height="24"></td>
 								</tr>
