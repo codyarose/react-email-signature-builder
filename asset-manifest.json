@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.js": "/react-email-signature-builder/static/js/main.c9cbfa4c.chunk.js",
-    "main.js.map": "/react-email-signature-builder/static/js/main.c9cbfa4c.chunk.js.map",
+    "main.js": "/react-email-signature-builder/static/js/main.cf5a65e0.chunk.js",
+    "main.js.map": "/react-email-signature-builder/static/js/main.cf5a65e0.chunk.js.map",
     "runtime~main.js": "/react-email-signature-builder/static/js/runtime~main.5dcda161.js",
     "runtime~main.js.map": "/react-email-signature-builder/static/js/runtime~main.5dcda161.js.map",
     "static/js/2.9fcac327.chunk.js": "/react-email-signature-builder/static/js/2.9fcac327.chunk.js",
     "static/js/2.9fcac327.chunk.js.map": "/react-email-signature-builder/static/js/2.9fcac327.chunk.js.map",
     "index.html": "/react-email-signature-builder/index.html",
-    "precache-manifest.84982dea0c0e1fb561660133b780a7f2.js": "/react-email-signature-builder/precache-manifest.84982dea0c0e1fb561660133b780a7f2.js",
+    "precache-manifest.9230dddb8eafea6ebaab2ad0027e59af.js": "/react-email-signature-builder/precache-manifest.9230dddb8eafea6ebaab2ad0027e59af.js",
     "service-worker.js": "/react-email-signature-builder/service-worker.js"
   }
 }

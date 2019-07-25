@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/react-email-signature-builder/precache-manifest.84982dea0c0e1fb561660133b780a7f2.js"
+  "/react-email-signature-builder/precache-manifest.9230dddb8eafea6ebaab2ad0027e59af.js"
 );
 
 self.addEventListener('message', (event) => {

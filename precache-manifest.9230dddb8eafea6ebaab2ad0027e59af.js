@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "df93e866c29c8ca27aa956cec7ec8b8e",
+    "revision": "7c301ce145261ec3a644f3925d194c43",
     "url": "/react-email-signature-builder/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/react-email-signature-builder/static/js/2.9fcac327.chunk.js"
   },
   {
-    "revision": "f8de8578a2b2719a6a76",
-    "url": "/react-email-signature-builder/static/js/main.c9cbfa4c.chunk.js"
+    "revision": "a39396956d2f7318746b",
+    "url": "/react-email-signature-builder/static/js/main.cf5a65e0.chunk.js"
   },
   {
     "revision": "2b836f3b042f909077e7",
