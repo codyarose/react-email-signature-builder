@@ -4,7 +4,7 @@ import styled from 'styled-components'
 
 export const Accordion = ({ title, children }) => (
 	<StyledAccordion>
-		<Input type="checkbox" defaultChecked />
+		<Input type="checkbox" defaultChecked tabIndex="-1" />
 		<Arrows />
 		<Title>{title}</Title>
 		<Content>{children}</Content>
@@ -24,6 +24,21 @@ const StyledAccordion = styled.article`
 	width: 100%;
 	position: relative;
 	margin-bottom: 1.5rem;
+	&:focus-within {
+		& > section {
+			opacity: 1;
+			transform: translate(0, 0);
+			max-height: 1000px;
+		}
+		& > span {
+			&::before {
+				transform: translate(-100%, 0) rotate(45deg);
+			}
+			&::after {
+				transform: translate(100%, 0) rotate(-45deg);
+			}
+		}
+	}
 `
 
 const Input = styled.input`
@@ -36,18 +51,18 @@ const Input = styled.input`
 	margin: 0;
 	&:checked {
 		& ~ section {
-			margin-top: 0;
+			/* margin-top: 0;
 			max-height: 0;
 			opacity: 0;
-			transform: translate(0, 50%);
+			transform: translate(0, 50%); */
 		}
 		& ~ span {
-			&::before {
+			/* &::before {
 				transform: translate(100%, 0) rotate(45deg);
 			}
 			&::after {
 				transform: translate(-100%, 0) rotate(-45deg);
-			}
+			} */
 		}
 	}
 `
@@ -66,10 +81,10 @@ const Arrows = styled.span`
 		transition: transform 0.1s ease-out;
 	}
 	&::before {
-		transform: translate(-100%, 0) rotate(45deg);
+		transform: translate(100%, 0) rotate(45deg);
 	}
 	&::after {
-		transform: translate(100%, 0) rotate(-45deg);
+		transform: translate(-100%, 0) rotate(-45deg);
 	}
 `
 
@@ -82,10 +97,11 @@ const Title = styled.h3`
 const Content = styled.section`
 	position: relative;
 	overflow: hidden;
-	opacity: 1;
-	transition: all 0.3s ease-in-out;
-	transform: translate(0, 0);
 	padding-top: 1rem;
+	margin-top: 0;
+	max-height: 0;
+	opacity: 0;
+	transform: translate(0, 50%);
+	transition: all 0.3s ease-in-out;
 	z-index: 2;
-	max-height: 1000px;
 `
