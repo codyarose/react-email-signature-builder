@@ -1,10 +1,10 @@
-import React, { FormEvent } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 
 export interface InputRadioProps {
 	name: string,
 	checked: string,
-	onChange: (e: FormEvent) => void,
+	onChange: any,
 	label: string,
 }
 
