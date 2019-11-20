@@ -1,11 +1,25 @@
-import React, { useState, createContext, useContext } from 'react'
+import React, { useState, createContext, useContext, ReactNode, FormEvent } from 'react'
 import PropTypes from 'prop-types'
 import { copyToClipboard } from '../Common/CopyToClipboard'
 
-export const ControlContext = createContext()
+interface ControlContextProps {
+	//
+}
 
-export const ControlProvider = ({ children }) => {
-	const [state, setState] = useState({
+interface ControlProviderProps {
+	children: ReactNode,
+}
+
+interface InitialState {
+	control: string,
+	template: string,
+	collection: string[],
+}
+
+export const ControlContext = createContext<Partial<ControlContextProps>>({})
+
+export const ControlProvider = ({ children }: ControlProviderProps) => {
+	const [state, setState] = useState<InitialState>({
 		control: 'templates',
 		template: 'template1',
 		collection: [],
@@ -14,25 +28,25 @@ export const ControlProvider = ({ children }) => {
 		<ControlContext.Provider
 			value={{
 				data: state,
-				changeControl: e => {
+				changeControl: (e: FormEvent<HTMLInputElement>) => {
 					setState({
 						...state,
-						control: e.target.value
+						control: e.currentTarget.value
 					})
 				},
-				changeTemplate: e => {
+				changeTemplate: (e: FormEvent<HTMLInputElement>) => {
 					setState({
 						...state,
-						template: e.target.value
+						template: e.currentTarget.value
 					})
 				},
-				saveToCollection: collectionItem => {
+				saveToCollection: (collectionItem: any) => {
 					setState({
 						...state,
 						collection: [...state.collection, collectionItem],
 					})
 				},
-				copyItem: item => {
+				copyItem: (item: any) => {
 					copyToClipboard(item.id)
 					item.addEventListener('mouseleave', () => {
 						setTimeout(() => {

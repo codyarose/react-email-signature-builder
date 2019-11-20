@@ -1,11 +1,6 @@
-export interface copyToClipboardProps {
-	id: string,
-}
-
-export function copyToClipboard(Props: copyToClipboardProps) {
-	const targetId = document.getElementById(Props.id)
+export function copyToClipboard(id: string) {
+	const targetId = document.getElementById(id)
 	if (targetId !== null) {
-
 		const markup = targetId.innerHTML
 		const tempInput = document.createElement('input')
 		const body = document.getElementsByTagName('body')[0]
