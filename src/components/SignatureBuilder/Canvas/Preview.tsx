@@ -6,6 +6,10 @@ import { TemplateOne } from '../../Templates/Template-1'
 import { TemplateTwo } from '../../Templates/Template-2'
 import { copyToClipboard } from '../../Common/CopyToClipboard'
 
+interface PreviewProps {
+
+}
+
 export const Preview = () => {
 	const { data } = useControlValue()
 

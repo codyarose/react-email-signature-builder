@@ -1,13 +1,26 @@
-import React, { useState } from 'react'
+import React, { useState, FormEvent } from 'react'
 import { ChromePicker } from 'react-color'
-import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-export const ColorPicker = ({ title, onChange, currentColor }) => {
+export interface ColorPickerProps {
+	title: string,
+	onChange: (e: FormEvent) => void,
+	currentColor: string,
+}
+
+export interface ColorProps {
+	setColor: string,
+}
+
+export interface PopoverProps {
+	show: boolean,
+}
+
+export const ColorPicker = ({ title, onChange, currentColor }: ColorPickerProps) => {
 	const [displayColorPicker, setDisplayColorPicker] = useState(false)
 	const handleClick = () => setDisplayColorPicker(!displayColorPicker)
 	const handleClose = () => setDisplayColorPicker(false)
-	const handleChange = color => onChange(color.hex)
+	const handleChange = (color: any) => onChange(color.hex)
 
 	return (
 		<StyledColorPicker>
@@ -25,12 +38,6 @@ export const ColorPicker = ({ title, onChange, currentColor }) => {
 	)
 }
 
-ColorPicker.propTypes = {
-	title: PropTypes.string,
-	onChange: PropTypes.func,
-	currentColor: PropTypes.string,
-}
-
 const StyledColorPicker = styled.div`
 	position: relative;
 	margin-bottom: 1rem;
@@ -45,7 +52,7 @@ const Swatch = styled.div`
 	box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
 	cursor: pointer;
 `
-const Color = styled.div`
+const Color = styled.div<ColorProps>`
 	pointer-events: none;
 	display: flex;
 	justify-content: center;
@@ -56,7 +63,7 @@ const Color = styled.div`
 	border-radius: 2px;
 	background: ${props => props.setColor};
 `
-const Popover = styled.div`
+const Popover = styled.div<PopoverProps>`
 	padding: 0.5rem 0;
 	z-index: 2;
 	opacity: ${props => (props.show ? '1' : '0')};

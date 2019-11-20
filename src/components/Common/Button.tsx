@@ -1,27 +1,23 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React, { ReactNode, MouseEvent } from 'react'
 import styled from 'styled-components'
 
-export const Button = ({ onClick, children }) => (
+export interface ButtonProps {
+	onClick: (e: MouseEvent) => void,
+	children: ReactNode,
+	secondary?: boolean,
+}
+
+export const Button = ({ onClick, children }: ButtonProps) => (
 	<StyledButton onClick={onClick}>{children}</StyledButton>
 )
 
-export const ButtonSecondary = ({ onClick, children }) => (
+export const ButtonSecondary = ({ onClick, children }: ButtonProps) => (
 	<StyledButton secondary onClick={onClick}>
 		{children}
 	</StyledButton>
 )
 
-Button.propTypes = {
-	onClick: PropTypes.func,
-	children: PropTypes.string,
-}
-ButtonSecondary.propTypes = {
-	onClick: PropTypes.func,
-	children: PropTypes.string,
-}
-
-const StyledButton = styled.button`
+const StyledButton = styled.button<ButtonProps>`
 	outline: none;
 	border: 1px solid transparent;
 	background-color: ${props => (props.secondary ? '#fff' : '#504a65')};

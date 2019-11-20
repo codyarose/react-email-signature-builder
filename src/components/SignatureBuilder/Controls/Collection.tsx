@@ -1,8 +1,12 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, ReactNode } from 'react'
 import styled from 'styled-components'
 import { useControlValue } from '../../Contexts/ControlContext'
 import { ButtonSecondary } from '../../Common/Button'
 import { Description } from '../../Common/Description'
+
+interface CollectionItemProps {
+	dangerouslySetInnerHTML: any,
+}
 
 export const Collection = () => {
 	const { data, saveToCollection, copyItem } = useControlValue()
@@ -11,8 +15,8 @@ export const Collection = () => {
 		if (data.collection.length < 1) {
 			return <span>you haven't added any items yet!</span>
 		}
-		return(
-			data.collection.map((item, index) => (
+		return (
+			data.collection.map((item: ReactNode, index: number) => (
 				<StyledCollectionItem
 					id={`collectionItem${index}`}
 					onClick={e => copyItem(e.currentTarget)}
@@ -30,7 +34,7 @@ export const Collection = () => {
 			<ButtonSecondary
 				secondary
 				onClick={() =>
-					saveToCollection(document.getElementById('signatureMarkup').innerHTML)
+					saveToCollection(document.getElementById('signatureMarkup'))
 				}
 			>
 				Add current signature
@@ -49,7 +53,7 @@ const StyledCollectionContainer = styled.div`
 	animation: flipdown 0.2s ease both;
 `
 
-const StyledCollectionItem = styled.button`
+const StyledCollectionItem = styled.button<CollectionItemProps>`
 	position: relative;
 	cursor: pointer;
 	display: flex;

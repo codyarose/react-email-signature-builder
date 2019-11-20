@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { ReactElement } from 'react'
 import { useControlValue } from '../../Contexts/ControlContext'
 import { Templates } from './Templates'
 import { Info } from './Info'
@@ -7,7 +7,7 @@ import { Collection } from './Collection'
 
 export const CurrentControls = () => {
 	const { data } = useControlValue()
-	let currentControl
+	let currentControl: ReactElement
 	if (data.control === 'templates') {
 		currentControl = <Templates />
 	} else if (data.control === 'info') {
@@ -17,5 +17,5 @@ export const CurrentControls = () => {
 	} else if (data.control === 'collection') {
 		currentControl = <Collection />
 	}
-	return currentControl
+	return currentControl!
 }

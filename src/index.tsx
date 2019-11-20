@@ -25,10 +25,10 @@ const App = () => {
 		}
 	`
 	return (
-		<React.Fragment>
+		<>
 			<GlobalStyle />
 			<SignatureBuilder />
-		</React.Fragment>
+		</>
 	)
 }
 

@@ -1,24 +1,19 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React, { ReactNode } from 'react'
 import styled from 'styled-components'
 
-export const Accordion = ({ title, children }) => (
+type AccordionProps = {
+	title: string,
+	children: ReactNode,
+}
+
+export const Accordion = ({ title, children }: AccordionProps) => (
 	<StyledAccordion>
-		<Input type="checkbox" defaultChecked tabIndex="-1" />
+		<Input type="checkbox" defaultChecked tabIndex={-1} />
 		<Arrows />
 		<Title>{title}</Title>
 		<Content>{children}</Content>
 	</StyledAccordion>
 )
-
-Accordion.propTypes = {
-	title: PropTypes.string,
-	children: PropTypes.oneOfType([
-		PropTypes.string,
-		PropTypes.element,
-		PropTypes.array,
-	]),
-}
 
 const StyledAccordion = styled.article`
 	width: 100%;

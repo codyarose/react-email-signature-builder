@@ -1,8 +1,15 @@
-import React from 'react'
+import React, { FormEvent } from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-export const InputText = ({ value, onBlur, name, label }) => (
+export interface InputTextProps {
+	value: string,
+	onBlur: (e: FormEvent) => void,
+	name: string,
+	label: string,
+}
+
+export const InputText = ({ value, onBlur, name, label }: InputTextProps) => (
 	<StyledInputText>
 		<Input
 			type="text"

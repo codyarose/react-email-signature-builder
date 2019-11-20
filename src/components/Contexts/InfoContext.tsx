@@ -1,9 +1,20 @@
-import React, { useState, createContext, useContext } from 'react'
+import React, { useState, createContext, useContext, ReactNode, FormEvent } from 'react'
 import PropTypes from 'prop-types'
 
-export const InfoContext = createContext()
+interface InfoContextProps {
+	data: any,
+	updateInfo: any,
+	updateAccentColor: any,
+	updateSocialColor: any,
+}
 
-export const InfoProvider = ({ children }) => {
+interface InfoProviderProps {
+	children: ReactNode,
+}
+
+export const InfoContext = createContext<Partial<InfoContextProps>>({})
+
+export const InfoProvider = ({ children }: InfoProviderProps) => {
 	const [state, setState] = useState({
 		portrait: '',
 		logo: '',
@@ -28,19 +39,19 @@ export const InfoProvider = ({ children }) => {
 		<InfoContext.Provider
 			value={{
 				data: state,
-				updateInfo: e => {
+				updateInfo: (e: FormEvent<HTMLInputElement>) => {
 					setState({
 						...state,
-						[e.target.name]: e.target.value,
+						[e.currentTarget.name]: e.currentTarget.value,
 					})
 				},
-				updateAccentColor: color => {
+				updateAccentColor: (color: string) => {
 					setState({
 						...state,
 						accentColor: color,
 					})
 				},
-				updateSocialColor: color => {
+				updateSocialColor: (color: string) => {
 					setState({
 						...state,
 						socialColor: color,
