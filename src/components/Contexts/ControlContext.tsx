@@ -3,14 +3,18 @@ import PropTypes from 'prop-types'
 import { copyToClipboard } from '../Common/CopyToClipboard'
 
 interface ControlContextProps {
-	//
+	data: any,
+	changeControl: unknown,
+	changeTemplate: unknown,
+	saveToCollection: unknown,
+	copyItem: unknown,
 }
 
 interface ControlProviderProps {
 	children: ReactNode,
 }
 
-interface InitialState {
+interface InitialStateProps {
 	control: string,
 	template: string,
 	collection: string[],
@@ -19,7 +23,7 @@ interface InitialState {
 export const ControlContext = createContext<Partial<ControlContextProps>>({})
 
 export const ControlProvider = ({ children }: ControlProviderProps) => {
-	const [state, setState] = useState<InitialState>({
+	const [state, setState] = useState<InitialStateProps>({
 		control: 'templates',
 		template: 'template1',
 		collection: [],
@@ -27,7 +31,7 @@ export const ControlProvider = ({ children }: ControlProviderProps) => {
 	return (
 		<ControlContext.Provider
 			value={{
-				data: state,
+				data: state!,
 				changeControl: (e: FormEvent<HTMLInputElement>) => {
 					setState({
 						...state,
@@ -66,7 +70,7 @@ export const ControlProvider = ({ children }: ControlProviderProps) => {
 	)
 }
 
-export const useControlValue = () => useContext(ControlContext)
+export const useControlValue = () => useContext<Partial<ControlContextProps>>(ControlContext)
 
 ControlProvider.propTypes = {
 	children: PropTypes.node,
