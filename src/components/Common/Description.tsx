@@ -1,17 +1,16 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 import styled from 'styled-components'
-import PropTypes from 'prop-types'
 
-export const Description = ({ children }) => {
-	return(
+export interface DescriptionProps {
+	children: ReactNode
+}
+
+export const Description = ({ children }: DescriptionProps) => {
+	return (
 		<StyledDescription>
 			{children}
 		</StyledDescription>
 	)
-}
-
-Description.propTypes = {
-	children: PropTypes.string
 }
 
 const StyledDescription = styled.p`
