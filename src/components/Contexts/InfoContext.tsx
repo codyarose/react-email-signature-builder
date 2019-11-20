@@ -2,7 +2,10 @@ import React, { useState, createContext, useContext, ReactNode, FormEvent } from
 import PropTypes from 'prop-types'
 
 interface InfoContextProps {
-	//
+	data: any,
+	updateInfo: any,
+	updateAccentColor: any,
+	updateSocialColor: any,
 }
 
 interface InfoProviderProps {
