@@ -6,8 +6,8 @@ interface ControlContextProps {
 	data: any,
 	changeControl: unknown,
 	changeTemplate: unknown,
-	saveToCollection: unknown,
-	copyItem: unknown,
+	saveToCollection: any,
+	copyItem: any,
 }
 
 interface ControlProviderProps {
@@ -47,7 +47,7 @@ export const ControlProvider = ({ children }: ControlProviderProps) => {
 				saveToCollection: (collectionItem: any) => {
 					setState({
 						...state,
-						collection: [...state.collection, collectionItem],
+						collection: [...state.collection, collectionItem.innerHTML],
 					})
 				},
 				copyItem: (item: any) => {
