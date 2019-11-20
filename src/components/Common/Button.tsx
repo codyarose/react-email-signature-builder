@@ -1,5 +1,4 @@
 import React, { ReactNode, MouseEvent } from 'react'
-import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 export interface ButtonProps {
@@ -17,15 +16,6 @@ export const ButtonSecondary = ({ onClick, children }: ButtonProps) => (
 		{children}
 	</StyledButton>
 )
-
-Button.propTypes = {
-	onClick: PropTypes.func,
-	children: PropTypes.string,
-}
-ButtonSecondary.propTypes = {
-	onClick: PropTypes.func,
-	children: PropTypes.string,
-}
 
 const StyledButton = styled.button<ButtonProps>`
 	outline: none;

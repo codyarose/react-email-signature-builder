@@ -1,6 +1,5 @@
 import React, { useState, FormEvent } from 'react'
 import { ChromePicker } from 'react-color'
-import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 export interface ColorPickerProps {
@@ -37,12 +36,6 @@ export const ColorPicker = ({ title, onChange, currentColor }: ColorPickerProps)
 			</Popover>
 		</StyledColorPicker>
 	)
-}
-
-ColorPicker.propTypes = {
-	title: PropTypes.string,
-	onChange: PropTypes.func,
-	currentColor: PropTypes.string,
 }
 
 const StyledColorPicker = styled.div`

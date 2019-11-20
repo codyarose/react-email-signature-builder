@@ -1,5 +1,4 @@
 import React, { ReactNode } from 'react'
-import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 type AccordionProps = {
@@ -15,15 +14,6 @@ export const Accordion = ({ title, children }: AccordionProps) => (
 		<Content>{children}</Content>
 	</StyledAccordion>
 )
-
-Accordion.propTypes = {
-	title: PropTypes.string,
-	children: PropTypes.oneOfType([
-		PropTypes.string,
-		PropTypes.element,
-		PropTypes.array,
-	]),
-}
 
 const StyledAccordion = styled.article`
 	width: 100%;
