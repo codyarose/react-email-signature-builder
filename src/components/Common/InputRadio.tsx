@@ -1,8 +1,14 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React, { FormEvent } from 'react'
 import styled from 'styled-components'
 
-export const InputRadio = ({ name, checked, onChange, label }) => (
+export interface InputRadioProps {
+	name: string,
+	checked: string,
+	onChange: (e: FormEvent) => void,
+	label: string,
+}
+
+export const InputRadio = ({ name, checked, onChange, label }: InputRadioProps) => (
 	<StyledRadio>
 		<input
 			type="radio"
@@ -15,13 +21,6 @@ export const InputRadio = ({ name, checked, onChange, label }) => (
 		<label htmlFor={name}>{label}</label>
 	</StyledRadio>
 )
-
-InputRadio.propTypes = {
-	name: PropTypes.string.isRequired,
-	checked: PropTypes.string.isRequired,
-	onChange: PropTypes.func.isRequired,
-	label: PropTypes.string.isRequired,
-}
 
 const StyledRadio = styled.div`
 	display: flex;
